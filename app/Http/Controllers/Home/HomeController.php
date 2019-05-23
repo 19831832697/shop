@@ -9,9 +9,20 @@ class HomeController extends Controller
 {
     //
     public function index(){
-//        echo "aa";
-        return view('home.index');
+    //        echo "aa";
+        $where=[
+            'goods_status'=>1,
+            'goods_new'=>1
+        ];
+        $goodsInfo=GoodsModel::where($where)->get();
+        $goodswhere=[
+            'goods_status'=>1,
+        ];
+        $goods=GoodsModel::orderBy('goods_salenum','desc')->paginate(4);
+        //dd($goods);
+        return view('home.index',['goodsInfo'=>$goodsInfo,'goods'=>$goods]);
     }
+<<<<<<< HEAD
     //最新商品
     public function goodsnew(){
         $where=[
@@ -21,4 +32,8 @@ class HomeController extends Controller
         $goodsInfo=GoodsModel::where($where)->all();
         dd($goodsInfo);
     }
+=======
+    
+    
+>>>>>>> lian
 }
