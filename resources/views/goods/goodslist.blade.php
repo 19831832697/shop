@@ -459,7 +459,7 @@
 <script>
 	$(function(){
 		//减
-		$("#subtract").click(function(){
+		$(document).on('click','#subtract',function(){
 			var text=parseInt($("#text").val());
 			var txt=text-1;
 			if(text<=1){
@@ -467,10 +467,16 @@
 			}else{
 				$("#text").val(txt);
 			}
-
+			$.get(
+					'/add?goods_id='+goods_id+'&buy_num='+txt,
+					function(res){
+						console.log(res);
+					}
+			);
 		})
+
 		//加
-		$("#add").click(function(){
+		$(document).on('click','#add',function(){
 			var text=parseInt($("#text").val());
 			var goods_id=$(this).attr('goods_id');
 			var goods_num=$(this).attr('goods_num');
@@ -480,16 +486,26 @@
 			}else{
 				$("#text").val(txt);
 			}
-//
+			$.get(
+					'/add?goods_id='+goods_id+'&buy_num='+txt,
+					function(res){
+						console.log(res);
+					}
+			);
 		})
-		$("#cart").click(function(){
-//			alert(11);
+
+		//加入购物车
+		$(document).on('click','#cart',function(){
 			var buy_num=parseInt($("#text").val());
 			var goods_id=$("#add").attr('goods_id');
 			$.get(
 					'/cart?goods_id='+goods_id+'&buy_num='+buy_num,
 					function(res){
-						console.log(res);
+						if(res.ser==0){
+							alert(res.msg);
+						}else{
+							alert(res.msg);
+						}
 					}
 			);
 		})
