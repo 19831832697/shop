@@ -367,7 +367,7 @@
 
     <ul class="slides">
         <li>
-            <img src="img/slide1.jpg" alt="">
+            <img src="uploads/20190523/MQ9PeJJkAmkH35j0PY376hddIzdwssaCuZzZ9kwK.jpeg" alt="">
             <div class="caption slider-content  center-align">
                 <h2>WELCOME TO MSTORE</h2>
                 <h4>Lorem ipsum dolor sit amet.</h4>
@@ -375,14 +375,13 @@
             </div>
         </li>
         <li>
-            <img src="img/slide2.jpg" alt="">
+            <img src="uploads/20190523/MQ9PeJJkAmkH35j0PY376hddIzdwssaCuZzZ9kwK.jpeg" alt="">
             <div class="caption slider-content center-align">
                 <h2>JACKETS BUSINESS</h2>
                 <h4>Lorem ipsum dolor sit amet.</h4>
                 <a href="" class="btn button-default">立即去购物</a>
             </div>
         </li>
-
     </ul>
 
 </div>
