@@ -33,4 +33,4 @@ Route::get('/cart','Cart\CartController@cart');
 //生成订单
 Route::post('pay','pay\PayController@pay');
 //订单列表
-Route::post('payShow','pay\PayController@payShow');
+Route::post('payShow','pay\PayController@payShow'); 
