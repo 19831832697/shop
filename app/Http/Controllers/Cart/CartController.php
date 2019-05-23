@@ -9,7 +9,7 @@ class CartController extends Controller
 {
     //购物车
     public function cart(){
-
+        $arr=DB::table('shop_cart')->
         $arr=[
             'goods_name'=>1,
             'goods_id'=>1,

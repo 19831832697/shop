@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Goods;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\GoodsModel;
+use Illuminate\Support\Facades\DB;
 class GoodsController extends Controller
 {
     //商品详情
@@ -14,7 +15,9 @@ class GoodsController extends Controller
                 'goods_id'=>$id
             ];
             $res=GoodsModel::where($where)->first();
-            //dd($id);
-            return view('goods.goodslist',['res'=>$res]);
+            //购物车
+            $car=DB::table('shop_cart')->where($where)->first();
+
+            return view('goods.goodslist',['res'=>$res,'car'=>$car]);
     }
 }
