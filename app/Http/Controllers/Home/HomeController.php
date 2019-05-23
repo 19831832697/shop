@@ -22,18 +22,5 @@ class HomeController extends Controller
         //dd($goods);
         return view('home.index',['goodsInfo'=>$goodsInfo,'goods'=>$goods]);
     }
-<<<<<<< HEAD
-    //最新商品
-    public function goodsnew(){
-        $where=[
-            'goods_status'=>1,
-            'goods_new'=>1
-        ];
-        $goodsInfo=GoodsModel::where($where)->all();
-        dd($goodsInfo);
-    }
-=======
-    
-    
->>>>>>> lian
+
 }
