@@ -20,3 +20,9 @@ Route::get('/','Home\HomeController@index');
 
 //商品详情
 Route::get('/goods/goodslist','Goods\GoodsController@goodslist');
+//购物车
+Route::get('/cart','Cart\CartController@cart');
+//生成订单
+Route::post('pay','pay\PayController@pay');
+//订单列表
+Route::post('payShow','pay\PayController@payShow');
