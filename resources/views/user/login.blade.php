@@ -25,57 +25,7 @@
 <body>
 
 <!-- navbar top -->
-<div class="navbar-top">
-    <!-- site brand	 -->
-    <div class="site-brand">
-        <a href="index.html"><h1>Mstore</h1></a>
-    </div>
-    <!-- end site brand	 -->
-    <div class="side-nav-panel-right">
-        <a href="#" data-activates="slide-out-right" class="side-nav-left"><i class="fa fa-user"></i></a>
-    </div>
-</div>
-<!-- end navbar top -->
 
-<!-- side nav right-->
-<div class="side-nav-panel-right">
-    <ul id="slide-out-right" class="side-nav side-nav-panel collapsible">
-        <li class="profil">
-            <img src="img/profile.jpg" alt="">
-            <h2>John Doe</h2>
-        </li>
-        <li><a href="setting.html"><i class="fa fa-cog"></i>Settings</a></li>
-        <li><a href="about-us.html"><i class="fa fa-user"></i>About Us</a></li>
-        <li><a href="contact.html"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
-        <li><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
-        <li><a href="register.html"><i class="fa fa-user-plus"></i>Register</a></li>
-    </ul>
-</div>
-<!-- end side nav right-->
-
-<!-- navbar bottom -->
-<div class="navbar-bottom">
-    <div class="row">
-        <div class="col s2">
-            <a href="index.html"><i class="fa fa-home"></i></a>
-        </div>
-        <div class="col s2">
-            <a href="wishlist.html"><i class="fa fa-heart"></i></a>
-        </div>
-        <div class="col s4">
-            <div class="bar-center">
-                <a href="#animatedModal" id="cart-menu"><i class="fa fa-shopping-basket"></i></a>
-                <span>2</span>
-            </div>
-        </div>
-        <div class="col s2">
-            <a href="contact.html"><i class="fa fa-envelope-o"></i></a>
-        </div>
-        <div class="col s2">
-            <a href="#animatedModal2" id="nav-menu"><i class="fa fa-bars"></i></a>
-        </div>
-    </div>
-</div>
 <!-- end navbar bottom -->
 
 <!-- menu -->
@@ -363,60 +313,38 @@
 <!-- end cart menu -->
 
 
-<!-- register -->
+<!-- login -->
 <div class="pages section">
     <div class="container">
         <div class="pages-head">
-            <h3>REGISTER</h3>
+            <h3>LOGIN</h3>
         </div>
-        <div class="register">
+        <div class="login">
             <div class="row">
                 <form class="col s12">
                     <div class="input-field">
                         <input type="text" class="validate" placeholder="USERNAME" name="user_name" required>
                     </div>
                     <div class="input-field">
-                        <input type="email" placeholder="EMAIL" class="validate" name="user_email"required>
+                        <input type="password" class="validate" placeholder="PASSWORD" name="user_pwd" required>
                     </div>
-                    <div class="input-field">
-                        <input type="password" placeholder="PASSWORD" class="validate" name="user_pwd" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" class="validate" placeholder="AGAIN PASSWORD" name="user_pwd1"required>
-                    </div>
-                    <div class="btn button-default" id="submit">REGISTER</div>
+                    <a href=""><h6>Forgot Password ?</h6></a>
+                    {{--<a href="" class="btn button-default" id="sub">LOGIN</a>--}}
+                    {{--<button id="sub">登陆</button>--}}
+                    <input type="button" id="sub" value="登陆">
                 </form>
             </div>
         </div>
     </div>
 </div>
-<!-- end register -->
-
+<!-- end login -->
 
 <!-- loader -->
 <div id="fakeLoader"></div>
 <!-- end loader -->
 
 <!-- footer -->
-<div class="footer">
-    <div class="container">
-        <div class="about-us-foot">
-            <h6>Mstore</h6>
-            <p>is a lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.</p>
-        </div>
-        <div class="social-media">
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-google"></i></a>
-            <a href=""><i class="fa fa-linkedin"></i></a>
-            <a href=""><i class="fa fa-instagram"></i></a>
-        </div>
-        <div class="copyright">
-            <span>© 2017 All Right Reserved</span>
-        </div>
-    </div>
-</div>
-<!-- end footer -->
+
 
 <!-- scripts -->
 <script src="js/jquery.min.js"></script>
@@ -429,22 +357,21 @@
 </body>
 </html>
 <script>
-    $(function(){
-        $('#submit').click(function(){
+    $(document).ready(function(){
+        $(document).on('click','#sub',function(){
             var user_name=$("input[name='user_name']").val();
-            var user_email=$("input[name='user_email']").val();
             var user_pwd=$("input[name='user_pwd']").val();
-            var user_pwd1=$("input[name='user_pwd1']").val();
             $.ajax({
+                url:"/loginDo",
                 type:'post',
-                data:{user_name:user_name,user_email:user_email,user_pwd:user_pwd,user_pwd1:user_pwd1},
-                url:"/registerDo",
+                data:{user_name:user_name,user_pwd:user_pwd},
                 dataType:"json",
                 success:function(msg){
+//                    alert(2222);
                     if(msg.code==1){
                         alert(msg.msg);
-                        location.href="login";
-                    }else{
+                        location.href="/";
+                    }else if(msg.code==0){
                         alert(msg.msg);
                     }
                 }
