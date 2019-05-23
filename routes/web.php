@@ -28,6 +28,7 @@ Route::post('loginDo','User\UserController@loginDo');
 
 //商品详情
 Route::get('/goods/goodslist','Goods\GoodsController@goodslist');
+Route::get('/goods/goodsinfo','Goods\GoodsController@goodsInfo');
 //购物车
 Route::get('/cart','Cart\CartController@cart');
 //加减号
