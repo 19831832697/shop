@@ -28,6 +28,13 @@ Route::post('loginDo','User\UserController@loginDo');
 
 
 //商品详情
+<<<<<<< HEAD
+<<<<<<< HEAD
+Route::get('/goods/goodslist','Goods\GoodsController@goodslist');
+=======
+Route::get('/goods/goodslist','Goods\GoodsController@goodslist');
+>>>>>>> fengdan
+=======
 Route::get('/goods/goodslist','Goods\GoodsController@goodslist');
 //购物车
 Route::get('/cart','Cart\CartController@cart');
@@ -35,3 +42,4 @@ Route::get('/cart','Cart\CartController@cart');
 Route::post('pay','pay\PayController@pay');
 //订单列表
 Route::post('payShow','pay\PayController@payShow');
+>>>>>>> fengdan
