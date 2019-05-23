@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     //
     public function index(){
-    //        echo "aa";
+     //    echo "aa";
         $where=[
             'goods_status'=>1,
             'goods_new'=>1

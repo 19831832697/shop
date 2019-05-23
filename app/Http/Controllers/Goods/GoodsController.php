@@ -20,4 +20,12 @@ class GoodsController extends Controller
 
             return view('goods.goodslist',['res'=>$res,'car'=>$car]);
     }
+    //商品列表
+    public function goodsInfo(){
+        $where=[
+            'goods_status'=>1
+        ];
+        $goodsInfo=GoodsModel::where($where)->paginate(4);
+        return view('goods.goods',['goodsInfo'=>$goodsInfo]);
+    }
 }
