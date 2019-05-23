@@ -382,8 +382,8 @@
                 @foreach($goodsInfo as $k=>$v)
 				<div class="col s6">
 					<div class="content">
-						<img src="/{{$v->goods_image}}" alt="">
-						<h6><a href="">{{$v->goods_name}}</a></h6>
+						<img src="/{{$v->goods_img}}" alt="">
+						<h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
 						<div class="price">
 							${{$v->market_price}} <span>${{$v->goods_price}}</span>
 						</div>
@@ -393,34 +393,14 @@
 			@endforeach
 			</div>
 			<div class="row margin-bottom">
-				<div class="col s6">
-					<div class="content">
-						<img src="img/product-new3.png" alt="">
-						<h6><a href="">Fashion Men's</a></h6>
-						<div class="price">
-							$20 <span>$28</span>
-						</div>
-						<button class="btn button-default">ADD TO CART</button>
-					</div>
-				</div>
-				<div class="col s6">
-					<div class="content">
-						<img src="img/product-new4.png" alt="">
-						<h6><a href="">Fashion Men's</a></h6>
-						<div class="price">
-							$20 <span>$28</span>
-						</div>
-						<button class="btn button-default">ADD TO CART</button>
-					</div>
-				</div>
+			
 			
 			<div class="pagination-product">
 				<ul>
-					<li class="active">1</li>
-					<li><a href="">2</a></li>
-					<li><a href="">3</a></li>
-					<li><a href="">4</a></li>
-					<li><a href="">5</a></li>
+					<li class="active">
+                    {{ $goodsInfo->links() }}
+                    </li>
+				
 				</ul>
 			</div>
 		</div>
