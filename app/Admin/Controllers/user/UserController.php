@@ -1,20 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Session;
-
 
 Class UserController extends Controller
 {
     //注册页面
     public function register(){
-
         return view('user.register');
     }
     //注册
@@ -73,6 +70,7 @@ Class UserController extends Controller
             ];
             return json_encode($arr,JSON_UNESCAPED_UNICODE);
         }
+//       var_dump($data);
     }
 
     //登陆页面
@@ -83,12 +81,14 @@ Class UserController extends Controller
     public function loginDo(){
         $user_name=$_POST['user_name'];
         $user_pwd=$_POST['user_pwd'];
+        //验证为空
         if(empty($user_name) || empty($user_pwd)){
             $arr=[
                 'code'=>0,
                 'msg'=>'登陆所填元素不能为空'
             ];
             return json_encode($arr,JSON_UNESCAPED_UNICODE);
+
         }
         $where=[
             'user_name'=>$user_name,
@@ -114,6 +114,7 @@ Class UserController extends Controller
             return json_encode($arr,JSON_UNESCAPED_UNICODE);
         }
     }
+
 
 }
 
