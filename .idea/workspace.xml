@@ -512,12 +512,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="1570" />
+          <entry key="php" value="1572" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="1570" />
+          <entry key="PHP" value="1572" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -537,16 +537,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="414">
               <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="391">
+              <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="276">
+              <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+>>>>>>> fengdan
+=======
+            <state relative-caret-position="414">
+              <caret line="27" column="51" lean-forward="true" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+>>>>>>> fengdan
+>>>>>>> cdf1132e80fc66f79ea4c9f932436449886584a0
+>>>>>>> fengdan
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <file pinned="false" current-in-tab="false">
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="GoodsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Goods/GoodsController.php">
+=======
+>>>>>>> fengdan
       <file pinned="false" current-in-tab="true">
+>>>>>>> cdf1132e80fc66f79ea4c9f932436449886584a0
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/pay/PayController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
@@ -584,8 +611,20 @@
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/app/Model/PayModel.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/Http/Controllers/pay/PayController.php" />
+>>>>>>> fengdan
+=======
+>>>>>>> fengdan
+>>>>>>> fengdan
+        <option value="$PROJECT_DIR$/routes/web.php" />
+>>>>>>> cdf1132e80fc66f79ea4c9f932436449886584a0
+        <option value="$PROJECT_DIR$/app/Http/Controllers/pay/PayController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
       </list>
     </option>
   </component>
@@ -789,12 +828,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558585575006</updated>
+<<<<<<< HEAD
       <workItem from="1558585577771" duration="12456000" />
+=======
+      <workItem from="1558585577771" duration="12801000" />
+>>>>>>> fengdan
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="12456000" />
+=======
+    <option name="totallyTimeSpent" value="12801000" />
+>>>>>>> fengdan
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -880,6 +927,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -887,6 +935,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> fengdan
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/pay/PayController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -895,6 +945,13 @@
             <element signature="e#44#67#0#PHP" expanded="true" />
             <element signature="e#215#302#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
         </state>
       </provider>
     </entry>
