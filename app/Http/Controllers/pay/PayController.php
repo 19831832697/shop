@@ -15,6 +15,7 @@ class PayController extends Controller
      * @return false|string
      */
     public function pay(Request $request){
+        //接值
         $user_id=$request->input('user_id');
         $goods_id=$request->input('goods_id');
         $order_amount=$request->input('order_amount');
