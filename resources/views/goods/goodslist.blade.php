@@ -371,10 +371,11 @@
 				<h5>{{$res->goods_name}}</h5>
 				<div class="price">${{$res->market_price}} <span>${{$res->goods_price}}</span></div>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam eaque in non delectus, error iste veniam commodi mollitia, officia possimus, repellendus maiores doloribus provident. Itaque, ab perferendis nemo tempore! Accusamus</p>
-				<button type="button" class="btn button-default">点击加入购物车</button>
-			</div>
-
-			<div class="review">
+						<input style="width: 50px; height: 38px; border: 2px white; float: left;" type="button"id="subtract" value="-" />
+						<input style="width: 80px; height: 38px; float: left;" type="text" value="@if($car=='') 1 @else {{$car->buy_num}} @endif" id="text">
+						<input style="width: 50px; height: 38px; border: 2px white; float: left;" type="button" id="add"value="+" goods_num="{{$res->goods_num}}" goods_id="{{$res->goods_id}}"/>
+				<br><br><br><p style=" background-color: #008CBA;border: none;color: white;padding: 11px 190px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;"><a href="javascript:;" id="cart" >加入购物车</a></p>
+				<div class="review">
 					<h5>1 reviews</h5>
 					<div class="review-details">
 						<div class="row">
@@ -413,6 +414,7 @@
 								<div class="btn button-default">POST REVIEW</div>
 							</div>
 						</form>
+						
 					</div>
 				</div>
 		</div>
@@ -454,3 +456,42 @@
 
 </body>
 </html>
+<script>
+	$(function(){
+		//减
+		$("#subtract").click(function(){
+			var text=parseInt($("#text").val());
+			var txt=text-1;
+			if(text<=1){
+				alert("购买数量不能小于1");
+			}else{
+				$("#text").val(txt);
+			}
+
+		})
+		//加
+		$("#add").click(function(){
+			var text=parseInt($("#text").val());
+			var goods_id=$(this).attr('goods_id');
+			var goods_num=$(this).attr('goods_num');
+			var txt=text+1;
+			if(text>=goods_num){
+				alert("购买数量不能大于库存");
+			}else{
+				$("#text").val(txt);
+			}
+//
+		})
+		$("#cart").click(function(){
+//			alert(11);
+			var buy_num=parseInt($("#text").val());
+			var goods_id=$("#add").attr('goods_id');
+			$.get(
+					'/cart?goods_id='+goods_id+'&buy_num='+buy_num,
+					function(res){
+						console.log(res);
+					}
+			);
+		})
+	})
+</script>

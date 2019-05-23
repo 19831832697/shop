@@ -22,6 +22,5 @@ class HomeController extends Controller
         //dd($goods);
         return view('home.index',['goodsInfo'=>$goodsInfo,'goods'=>$goods]);
     }
-    
-    
+
 }
