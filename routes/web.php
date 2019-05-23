@@ -19,4 +19,8 @@ Route::get('/','Home\HomeController@index');
 
 
 //商品详情
+<<<<<<< HEAD
 Route::get('/goods/goodslist','Goods\GoodsController@goodslist');
+=======
+Route::get('/goods/goodslist','Goods\GoodsController@goodslist');
+>>>>>>> fengdan
