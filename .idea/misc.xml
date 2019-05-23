@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
 <<<<<<< HEAD
     <OptionsSetting value="true" id="Add" />
@@ -20,5 +21,9 @@
     <ConfirmationsSetting value="0" id="添加" />
     <ConfirmationsSetting value="0" id="移除" />
 >>>>>>> 4ba1482e315442935da8e418deee6423e18cd87d
+=======
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+>>>>>>> fengdan
   </component>
 </project>
