@@ -28,9 +28,19 @@ Route::post('loginDo','User\UserController@loginDo');
 
 //商品详情
 Route::get('/goods/goodslist','Goods\GoodsController@goodslist');
+Route::get('/goods/goodsinfo','Goods\GoodsController@goodsInfo');
 //购物车
 Route::get('/cart','Cart\CartController@cart');
+//加减号
+Route::get('/add','Cart\CartController@add');
+Route::get('/subtract','Cart\CartController@subtract');
+//购物车展示
+Route::get('/cartlist','Cart\CartController@cartlist');
 //生成订单
 Route::post('pay','pay\PayController@pay');
 //订单列表
 Route::post('payShow','pay\PayController@payShow');
+//去支付
+Route::get('z_pay','pay\MoneyController@z_pay');
+Route::post('notify','alipay\AlipayController@notify');//异步回调
+Route::get('aliReturn','alipay\AlipayController@aliReturn');//同步回调
