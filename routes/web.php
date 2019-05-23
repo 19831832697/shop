@@ -39,4 +39,8 @@ Route::get('/cartlist','Cart\CartController@cartlist');
 //生成订单
 Route::post('pay','pay\PayController@pay');
 //订单列表
-Route::post('payShow','pay\PayController@payShow'); 
+Route::post('payShow','pay\PayController@payShow');
+//去支付
+Route::get('z_pay','pay\MoneyController@z_pay');
+Route::post('notify','alipay\AlipayController@notify');//异步回调
+Route::get('aliReturn','alipay\AlipayController@aliReturn');//同步回调
