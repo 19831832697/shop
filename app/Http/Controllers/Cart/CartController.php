@@ -9,14 +9,18 @@ class CartController extends Controller
 {
     //购物车
     public function cart(){
-        $arr=DB::table('shop_cart')->
-        $arr=[
-            'goods_name'=>1,
-            'goods_id'=>1,
-            'user_id'=>1,
+        $goods_id=$_GET['goods_id'];
+        $buy_num=$_GET['buy_num'];
+        $arr=DB::table('shop_goods')->where(['goods_id'=>$goods_id])->first();
+        $info=[
+            'goods_name'=>$arr->goods_name,
+            'goods_id'=>$arr->goods_id,
+            'buy_num'=>$buy_num,
             'status'=>1,
-            'buy_num'=>1,
             'create_time'=>time()
         ];
+        $catr_info=DB::table('shop_cart')->insert($info);
+        dd($catr_info);
+//
     }
 }
