@@ -16,3 +16,5 @@
 //});
 
 Route::get('/','Home\HomeController@index');
+//最新商品（首页）
+Route::get('/goods/new','Home\HomeController@goodsnew');
