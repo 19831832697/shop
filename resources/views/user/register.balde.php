@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="zxx">
 <head>
     <meta charset="UTF-8">
@@ -98,7 +97,7 @@
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="/goods/goodsinfo" class="button-link">
+                    <a href="product-list.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-bars"></i>
@@ -130,7 +129,7 @@
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="cartlist" class="button-link">
+                    <a href="cart.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-shopping-cart"></i>
@@ -363,165 +362,36 @@
 </div>
 <!-- end cart menu -->
 
-<!-- slider -->
-<div class="slider">
 
-    <ul class="slides">
-        <li>
-            <img src="uploads/20190523/MQ9PeJJkAmkH35j0PY376hddIzdwssaCuZzZ9kwK.jpeg" alt="">
-            <div class="caption slider-content  center-align">
-                <h2>WELCOME TO MSTORE</h2>
-                <h4>Lorem ipsum dolor sit amet.</h4>
-                <a href="" class="btn button-default">立即去购物</a>
-            </div>
-        </li>
-        <li>
-            <img src="uploads/20190523/MQ9PeJJkAmkH35j0PY376hddIzdwssaCuZzZ9kwK.jpeg" alt="">
-            <div class="caption slider-content center-align">
-                <h2>JACKETS BUSINESS</h2>
-                <h4>Lorem ipsum dolor sit amet.</h4>
-                <a href="" class="btn button-default">立即去购物</a>
-            </div>
-        </li>
-
-    </ul>
-
-</div>
-<!-- end slider -->
-
-<!-- features -->
-<div class="features section">
+<!-- register -->
+<div class="pages section">
     <div class="container">
-        <div class="row">
-            <div class="col s6">
-                <div class="content">
-                    <div class="icon">
-                        <i class="fa fa-car"></i>
-                    </div>
-                    <h6>Free Shipping</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content">
-                    <div class="icon">
-                        <i class="fa fa-dollar"></i>
-                    </div>
-                    <h6>Money Back</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-            </div>
+        <div class="pages-head">
+            <h3>REGISTER</h3>
         </div>
-        <div class="row margin-bottom-0">
-            <div class="col s6">
-                <div class="content">
-                    <div class="icon">
-                        <i class="fa fa-lock"></i>
+        <div class="register">
+            <div class="row">
+                <form class="col s12">
+                    <div class="input-field">
+                        <input type="text" class="validate" placeholder="USERNAME" name="user_name" required>
                     </div>
-                    <h6>Secure Payment</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content">
-                    <div class="icon">
-                        <i class="fa fa-support"></i>
+                    <div class="input-field">
+                        <input type="email" placeholder="EMAIL" class="validate" name="user_email"required>
                     </div>
-                    <h6>24/7 Support</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
+                    <div class="input-field">
+                        <input type="password" placeholder="PASSWORD" class="validate" name="user_pwd" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="validate" placeholder="AGAIN PASSWORD" name="user_pwd1"required>
+                    </div>
+                    <div class="btn button-default" id="submit">REGISTER</div>
+                </form>
             </div>
         </div>
     </div>
 </div>
-<!-- end features -->
+<!-- end register -->
 
-<!-- quote -->
-<div class="section quote">
-    <div class="container">
-        <h4>FAS时尚高达50％的折扣</h4>
-        <p>Lorem存有悲坐阿梅德，consectetur adipiscing ELIT。事情会通过正确的是耻辱发生在这里，
-        </p>
-    </div>
-</div>
-<!-- end quote -->
-
-<!-- product -->
-<div class="section product">
-    <div class="container">
-        <div class="section-head">
-            <h4>最新商品</h4>
-            <div class="divider-top"></div>
-            <div class="divider-bottom"></div>
-        </div>
-        @foreach($goodsInfo as $k=>$v)
-        <div class="row">
-            <div class="col s6">
-                <div class="content">
-                    <img src="{{$v->goods_img}}" alt="">
-                    <h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
-                    <div class="price">
-                        ${{$v->market_price}} <span>${{$v->goods_price}}</span>
-                    </div>
-                    <button class="btn button-default">加入购物车</button>
-                </div>
-            </div>
-        @endforeach
-            </div>
-        </div>
-       
-        </div>
-    </div>
-</div>
-<!-- end product -->
-
-<!-- promo -->
-<div class="promo section">
-    <div class="container">
-        <div class="content">
-            <h4>PRODUCT BUNDLE</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-            <button class="btn button-default">SHOP NOW</button>
-        </div>
-    </div>
-</div>
-<!-- end promo -->
-
-<!-- product -->
-<div class="section product">
-    <div class="container">
-        <div class="section-head">
-            <h4>顶级产品</h4>
-            <div class="divider-top"></div>
-            <div class="divider-bottom"></div>
-        </div>
-        @foreach($goods as $k=>$v)
-        <div class="row">
-            <div class="col s6">
-                <div class="content">
-                    <img src="{{$v->goods_img}}" alt="" >
-                    <h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
-                    <div class="price">
-                    ${{$v->market_price}} <span>${{$v->goods_price}}</span>
-                    </div>
-                    <button class="btn button-default">加入购物车</button>
-                </div>
-            </div>
-            @endforeach
-      
-        </div>
-       
-        <div class="pagination-product">
-            <ul>
-                <!-- <li class="active"> -->
-                {{ $goods->links() }}
-                <!-- </li> -->
-             
-            </ul>
-        </div>
-    </div>
-</div>
-<!-- end product -->
 
 <!-- loader -->
 <div id="fakeLoader"></div>
@@ -558,3 +428,27 @@
 
 </body>
 </html>
+<script>
+    $(function(){
+        $('#submit').click(function(){
+            var user_name=$("input[name='user_name']").val();
+            var user_email=$("input[name='user_email']").val();
+            var user_pwd=$("input[name='user_pwd']").val();
+            var user_pwd1=$("input[name='user_pwd1']").val();
+            $.ajax({
+                type:'post',
+                data:{user_name:user_name,user_email:user_email,user_pwd:user_pwd,user_pwd1:user_pwd1},
+                url:"/registerDo",
+                dataType:"json",
+                success:function(msg){
+                    if(msg.code==1){
+                        alert(msg.msg);
+                        location.href="login";
+                    }else{
+                        alert(msg.msg);
+                    }
+                }
+            })
+        })
+    })
+</script>

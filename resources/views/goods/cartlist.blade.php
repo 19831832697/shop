@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="zxx">
 <head>
     <meta charset="UTF-8">
@@ -98,7 +97,7 @@
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="/goods/goodsinfo" class="button-link">
+                    <a href="product-list.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-bars"></i>
@@ -130,7 +129,7 @@
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="cartlist" class="button-link">
+                    <a href="cart.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-shopping-cart"></i>
@@ -260,6 +259,7 @@
         <div class="cart-menu">
             <div class="container">
                 <div class="content">
+
                     <div class="cart-1">
                         <div class="row">
                             <div class="col s5">
@@ -295,40 +295,7 @@
                         </div>
                     </div>
                     <div class="divider"></div>
-                    <div class="cart-2">
-                        <div class="row">
-                            <div class="col s5">
-                                <img src="img/cart-menu2.png" alt="">
-                            </div>
-                            <div class="col s7">
-                                <h5><a href="">Fashion Men's</a></h5>
-                            </div>
-                        </div>
-                        <div class="row quantity">
-                            <div class="col s5">
-                                <h5>Quantity</h5>
-                            </div>
-                            <div class="col s7">
-                                <input value="1" type="text">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s5">
-                                <h5>Price</h5>
-                            </div>
-                            <div class="col s7">
-                                <h5>$20</h5>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s5">
-                                <h5>Action</h5>
-                            </div>
-                            <div class="col s7">
-                                <div class="action"><i class="fa fa-trash"></i></div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="total">
                     <div class="row">
@@ -363,165 +330,75 @@
 </div>
 <!-- end cart menu -->
 
-<!-- slider -->
-<div class="slider">
-
-    <ul class="slides">
-        <li>
-            <img src="uploads/20190523/MQ9PeJJkAmkH35j0PY376hddIzdwssaCuZzZ9kwK.jpeg" alt="">
-            <div class="caption slider-content  center-align">
-                <h2>WELCOME TO MSTORE</h2>
-                <h4>Lorem ipsum dolor sit amet.</h4>
-                <a href="" class="btn button-default">立即去购物</a>
-            </div>
-        </li>
-        <li>
-            <img src="uploads/20190523/MQ9PeJJkAmkH35j0PY376hddIzdwssaCuZzZ9kwK.jpeg" alt="">
-            <div class="caption slider-content center-align">
-                <h2>JACKETS BUSINESS</h2>
-                <h4>Lorem ipsum dolor sit amet.</h4>
-                <a href="" class="btn button-default">立即去购物</a>
-            </div>
-        </li>
-
-    </ul>
-
-</div>
-<!-- end slider -->
-
-<!-- features -->
-<div class="features section">
+<!-- cart -->
+<div class="cart section">
     <div class="container">
-        <div class="row">
-            <div class="col s6">
-                <div class="content">
-                    <div class="icon">
-                        <i class="fa fa-car"></i>
+        <div class="pages-head">
+            <h3>购物车</h3>
+        </div>
+        <div class="content" >
+            @foreach($arr as $v)
+                <div class="cart-1">
+                    <div class="row">
+                        <div class="col s5">
+                            <h5>商品图片</h5>
+                        </div>
+                        <div class="col s7">
+                            <img src="/{{$v->goods_img}}" alt="" style="height: 300px; width: 280px;">
+                        </div>
                     </div>
-                    <h6>Free Shipping</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content">
-                    <div class="icon">
-                        <i class="fa fa-dollar"></i>
+                    <div class="row">
+                        <div class="col s5">
+                            <h5>商品名称</h5>
+                        </div>
+                        <div class="col s7">
+                            <h5><a href="">{{$v->goods_name}}</a></h5>
+                        </div>
                     </div>
-                    <h6>Money Back</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-            </div>
-        </div>
-        <div class="row margin-bottom-0">
-            <div class="col s6">
-                <div class="content">
-                    <div class="icon">
-                        <i class="fa fa-lock"></i>
+                    <div class="row">
+                        <div class="col s5">
+                            <h5>购买数量</h5>
+                        </div>
+                        <div class="col s7">
+                            <input value="{{$v->buy_num}}" type="text">
+                        </div>
                     </div>
-                    <h6>Secure Payment</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content">
-                    <div class="icon">
-                        <i class="fa fa-support"></i>
+                    <div class="row">
+                        <div class="col s5">
+                            <h5>价格</h5>
+                        </div>
+                        <div class="col s7">
+                            <h5>${{$v->goods_price}}</h5>
+                        </div>
                     </div>
-                    <h6>24/7 Support</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end features -->
-
-<!-- quote -->
-<div class="section quote">
-    <div class="container">
-        <h4>FAS时尚高达50％的折扣</h4>
-        <p>Lorem存有悲坐阿梅德，consectetur adipiscing ELIT。事情会通过正确的是耻辱发生在这里，
-        </p>
-    </div>
-</div>
-<!-- end quote -->
-
-<!-- product -->
-<div class="section product">
-    <div class="container">
-        <div class="section-head">
-            <h4>最新商品</h4>
-            <div class="divider-top"></div>
-            <div class="divider-bottom"></div>
-        </div>
-        @foreach($goodsInfo as $k=>$v)
-        <div class="row">
-            <div class="col s6">
-                <div class="content">
-                    <img src="{{$v->goods_img}}" alt="">
-                    <h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
-                    <div class="price">
-                        ${{$v->market_price}} <span>${{$v->goods_price}}</span>
+                    <div class="row">
+                        <div class="col s5">
+                            <h5>删除</h5>
+                        </div>
+                        <div class="col s7">
+                            <h5><i class="fa fa-trash"></i></h5>
+                        </div>
                     </div>
-                    <button class="btn button-default">加入购物车</button>
                 </div>
-            </div>
-        @endforeach
-            </div>
-        </div>
-       
-        </div>
-    </div>
-</div>
-<!-- end product -->
-
-<!-- promo -->
-<div class="promo section">
-    <div class="container">
-        <div class="content">
-            <h4>PRODUCT BUNDLE</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-            <button class="btn button-default">SHOP NOW</button>
-        </div>
-    </div>
-</div>
-<!-- end promo -->
-
-<!-- product -->
-<div class="section product">
-    <div class="container">
-        <div class="section-head">
-            <h4>顶级产品</h4>
-            <div class="divider-top"></div>
-            <div class="divider-bottom"></div>
-        </div>
-        @foreach($goods as $k=>$v)
-        <div class="row">
-            <div class="col s6">
-                <div class="content">
-                    <img src="{{$v->goods_img}}" alt="" >
-                    <h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
-                    <div class="price">
-                    ${{$v->market_price}} <span>${{$v->goods_price}}</span>
-                    </div>
-                    <button class="btn button-default">加入购物车</button>
-                </div>
-            </div>
+                <div class="divider"></div>
             @endforeach
-      
+
         </div>
-       
-        <div class="pagination-product">
-            <ul>
-                <!-- <li class="active"> -->
-                {{ $goods->links() }}
-                <!-- </li> -->
-             
-            </ul>
+        <div class="total">
+            <div class="row">
+                <div class="col s7">
+                    <h5>总价</h5>
+                </div>
+                <div class="col s5">
+                    <h5>$<sanm>0</sanm></h5>
+                </div>
+            </div>
+
         </div>
+        <input type="button" class="btn button-default" value="去结算">
     </div>
 </div>
-<!-- end product -->
+<!-- end cart -->
 
 <!-- loader -->
 <div id="fakeLoader"></div>
@@ -557,4 +434,5 @@
 <script src="js/main.js"></script>
 
 </body>
+</html>
 </html>

@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="/css/animate.css">
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="shortcut icon" href="img/favicon.png">
+	<link rel="shortcut icon" href="/img/favicon.png">
 
 </head>
 <body>
@@ -102,7 +102,7 @@
 								<div class="icon">
 									<i class="fa fa-bars"></i>
 								</div>
-								Product List
+                                列表展示
 							</div>
 						</a>
 					</div>
@@ -262,7 +262,7 @@
 						<div class="cart-1">
 							<div class="row">
 								<div class="col s5">
-									<img src="/img/cart-menu1.png" alt="">
+									<img src="img/cart-menu1.png" alt="">
 								</div>
 								<div class="col s7">
 									<h5><a href="">Fashion Men's</a></h5>
@@ -297,7 +297,7 @@
 						<div class="cart-2">
 							<div class="row">
 								<div class="col s5">
-									<img src="/img/cart-menu2.png" alt="">
+									<img src="img/cart-menu2.png" alt="">
 								</div>
 								<div class="col s7">
 									<h5><a href="">Fashion Men's</a></h5>
@@ -361,66 +361,53 @@
 		</div>
 	</div>
 	<!-- end cart menu -->
-	
-	<!-- shop single -->
-	<div class="pages section">
-		<div class="container">
 
-			<div class="shop-single">
-				<img src="/{{$res->goods_img}}" alt="暂无图片">
-				<h5>{{$res->goods_name}}</h5>
-				<div class="price">${{$res->market_price}} <span>${{$res->goods_price}}</span></div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam eaque in non delectus, error iste veniam commodi mollitia, officia possimus, repellendus maiores doloribus provident. Itaque, ab perferendis nemo tempore! Accusamus</p>
-						<input style="width: 50px; height: 38px; border: 2px white; float: left;" type="button"id="subtract" value="-" />
-						<input style="width: 80px; height: 38px; float: left;" type="text" value="@if($car=='') 1 @else {{$car->buy_num}} @endif" id="text">
-						<input style="width: 50px; height: 38px; border: 2px white; float: left;" type="button" id="add"value="+" goods_num="{{$res->goods_num}}" goods_id="{{$res->goods_id}}"/>
-				<br><br><br><p style=" background-color: #008CBA;border: none;color: white;padding: 11px 190px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;"><a href="javascript:;" id="cart" >加入购物车</a></p>
-				<div class="review">
-					<h5>1 reviews</h5>
-					<div class="review-details">
-						<div class="row">
-							<div class="col s3">
-								<img src="/img/user-comment.jpg" alt="" class="responsive-img">
-							</div>
-							<div class="col s9">
-								<div class="review-title">
-									<span><strong>John Doe</strong> | Juni 5, 2016 at 9:24 am | <a href="">Reply</a></span>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis accusantium corrupti asperiores et praesentium dolore.</p>
-							</div>
+	<!-- product -->
+	<div class="section product product-list">
+		<div class="container">
+			<div class="pages-head">
+				<h3>PRODUCT LIST</h3>
+			</div>
+			<div class="input-field">
+				<select>
+					<option value="">Popular</option>
+					<option value="1">New Product</option>
+					<option value="2">Best Sellers</option>
+					<option value="3">Best Reviews</option>
+					<option value="4">Low Price</option>
+					<option value="5">High Price</option>
+				</select>
+			</div>
+			<div class="row">
+                @foreach($goodsInfo as $k=>$v)
+				<div class="col s6">
+					<div class="content">
+						<img src="/{{$v->goods_img}}" alt="">
+						<h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
+						<div class="price">
+							${{$v->market_price}} <span>${{$v->goods_price}}</span>
 						</div>
-					</div>
-				</div>	
-				<div class="review-form">
-					<div class="review-head">
-						<h5>Post Review in Below</h5>
-						<p>Lorem ipsum dolor sit amet consectetur*</p>
-					</div>
-					<div class="row">
-						<form class="col s12 form-details">
-							<div class="input-field">
-								<input type="text" required class="validate" placeholder="NAME">
-							</div>
-							<div class="input-field">
-								<input type="email" class="validate" placeholder="EMAIL" required>
-							</div>
-							<div class="input-field">
-								<input type="text" class="validate" placeholder="SUBJECT" required>
-							</div>
-							<div class="input-field">
-								<textarea name="textarea-message" id="textarea1" cols="30" rows="10" class="materialize-textarea" class="validate" placeholder="YOUR REVIEW"></textarea>
-							</div>
-							<div class="form-button">
-								<div class="btn button-default">POST REVIEW</div>
-							</div>
-						</form>
-						
+						<button class="btn button-default">加入购物车</button>
 					</div>
 				</div>
+			@endforeach
+			</div>
+			<div class="row margin-bottom">
+			
+			
+			<div class="pagination-product">
+				<ul>
+					<li class="active">
+                    {{ $goodsInfo->links() }}
+                    </li>
+				
+				</ul>
+			</div>
 		</div>
 	</div>
-	<!-- end shop single -->
+	<!-- end product -->
 
+	
 	<!-- loader -->
 	<div id="fakeLoader"></div>
 	<!-- end loader -->
@@ -456,58 +443,3 @@
 
 </body>
 </html>
-<script>
-	$(function(){
-		//减
-		$(document).on('click','#subtract',function(){
-			var text=parseInt($("#text").val());
-			var txt=text-1;
-			if(text<=1){
-				alert("购买数量不能小于1");
-			}else{
-				$("#text").val(txt);
-			}
-			$.get(
-					'/add?goods_id='+goods_id+'&buy_num='+txt,
-					function(res){
-						console.log(res);
-					}
-			);
-		})
-
-		//加
-		$(document).on('click','#add',function(){
-			var text=parseInt($("#text").val());
-			var goods_id=$(this).attr('goods_id');
-			var goods_num=$(this).attr('goods_num');
-			var txt=text+1;
-			if(text>=goods_num){
-				alert("购买数量不能大于库存");
-			}else{
-				$("#text").val(txt);
-			}
-			$.get(
-					'/add?goods_id='+goods_id+'&buy_num='+txt,
-					function(res){
-						console.log(res);
-					}
-			);
-		})
-
-		//加入购物车
-		$(document).on('click','#cart',function(){
-			var buy_num=parseInt($("#text").val());
-			var goods_id=$("#add").attr('goods_id');
-			$.get(
-					'/cart?goods_id='+goods_id+'&buy_num='+buy_num,
-					function(res){
-						if(res.ser==0){
-							alert(res.msg);
-						}else{
-							alert(res.msg);
-						}
-					}
-			);
-		})
-	})
-</script>
