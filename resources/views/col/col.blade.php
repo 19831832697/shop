@@ -8,7 +8,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="HandheldFriendly" content="True">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/materialize.css">
     <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/normalize.css">
@@ -369,61 +373,19 @@
             <h3>WISHLIST</h3>
         </div>
         <div class="content">
-            <div class="cart-1">
-                <div class="row">
-                    <div class="col s5">
-                        <h5>Image</h5>
-                    </div>
-                    <div class="col s7">
-                        <img src="img/wishlist1.png" alt="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s5">
-                        <h5>Name</h5>
-                    </div>
-                    <div class="col s7">
-                        <h5><a href="">Fashion Men's</a></h5>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s5">
-                        <h5>Stock Status</h5>
-                    </div>
-                    <div class="col s7">
-                        <h5>In Stock</h5>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s5">
-                        <h5>Price</h5>
-                    </div>
-                    <div class="col s7">
-                        <h5>$20</h5>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s5">
-                        <h5>Action</h5>
-                    </div>
-                    <div class="col s7">
-                        <h5><i class="fa fa-trash"></i></h5>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col 12">
-                        <button class="btn button-default">SEND TO CART</button>
-                    </div>
-                </div>
-            </div>
+
             <div class="divider"></div>
+
+
+            {{--收藏展示--}}
+            @foreach($arr as $k=>$v)
             <div class="cart-2">
                 <div class="row">
                     <div class="col s5">
                         <h5>Image</h5>
                     </div>
                     <div class="col s7">
-                        <img src="img/wishlist2.png" alt="">
+                        <img src="/{{$v->praise_img}}" alt="">
                     </div>
                 </div>
                 <div class="row">
@@ -431,23 +393,16 @@
                         <h5>Name</h5>
                     </div>
                     <div class="col s7">
-                        <h5><a href="">Fashion Men's</a></h5>
+                        <h5><a href="">{{$v->praise_name}}</a></h5>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col s5">
-                        <h5>Stock Status</h5>
-                    </div>
-                    <div class="col s7">
-                        <h5>In Stock</h5>
-                    </div>
-                </div>
+
                 <div class="row">
                     <div class="col s5">
                         <h5>Price</h5>
                     </div>
                     <div class="col s7">
-                        <h5>$20</h5>
+                        <h5>${{$v->praise_price}}</h5>
                     </div>
                 </div>
                 <div class="row">
@@ -455,15 +410,35 @@
                         <h5>Action</h5>
                     </div>
                     <div class="col s7">
-                        <h5><i class="fa fa-trash"></i></h5>
+                        {{--删除--}}
+                        <h5>
+                         <div class="glyphicon glyphicon-trash" id="delete" praiseid="{{$v->praise_id}}"></div>
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s5">
+                        <h5>全部清空选择处</h5>
+                    </div>
+                    <div class="col s7">
+                        {{--删除--}}
+                        <h5>
+                            <input type="hidden" value="0" praiseid="{{$v->praise_id}}" class="b">
+                            <button class="a">点击选择</button>
+                        </h5>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col 12">
-                        <button class="btn button-default">SEND TO CART</button>
+                        <button class="btn button-default">添加到购物车</button>
+
                     </div>
                 </div>
             </div>
+            @endforeach
+            <button class="btn button-default" id="aa">全部清空</button>
+
+
         </div>
     </div>
 </div>
@@ -504,3 +479,59 @@
 
 </body>
 </html>
+<script>
+    $(function(){
+        //点击删除
+        $(document).on("click","#delete",function(){
+                //alert('aa');
+                var id=$(this).attr('praiseid');
+                //console.log(id);
+                    $.get(
+                            "/col/del",
+                            {id:id},
+                            function(res){
+                                //console.log(res);
+                                if(res.error==1){
+                                    alert('删除成功');
+                                    window.location.reload();
+                                }else{
+                                    alert('删除失败');
+                                }
+                            }
+                    )
+        })
+        //全部删除
+        $(document).on("click",".a",function(){
+            var text=$(this).html();
+            if(text=='已经选择'){
+                $(this).html('请选择').prev().val('0');
+            }else{
+                $(this).html('已经选择').prev().val('1');
+            }
+
+
+        })
+
+        $(document).on("click","#aa",function(){
+            //alert('aa');
+            var div=$(".b");
+            //console.log(div);
+            var id="";
+            div.each(function(index){
+                if($(this).val()==1){
+                    id+=parseInt($(this).attr('praiseid'))+',';
+                }
+            })
+            id=id.substr(0,id.length-1);
+            console.log(id);
+            $.get(
+                    "/col/dela",
+                    {id:id},
+                    function(res){
+                        console.log(res);
+                    }
+            )
+        })
+
+    })
+</script>

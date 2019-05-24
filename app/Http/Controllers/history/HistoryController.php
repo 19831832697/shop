@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 class HistoryController extends Controller
 {
     /**
-     *
+     * 浏览历史
      */
     public function history(){
 

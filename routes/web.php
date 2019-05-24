@@ -39,7 +39,7 @@ Route::get('/add','Cart\CartController@add');
 Route::get('/subtract','Cart\CartController@subtract');
 
 //加入,展示，删除收藏
-Route::post('/col/add','Collect\ColController@add');
+Route::get('/col/add','Collect\ColController@add');
 Route::get('/col/list','Collect\ColController@list');
 Route::get('/col/del','Collect\ColController@del');
 //生成订单

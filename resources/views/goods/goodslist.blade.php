@@ -373,7 +373,7 @@
 	<div class="pages section">
 		<div class="container">
 
-			<div class="shop-single">
+			<div class="shop-single" goods_id="{{$res->goods_id}}">
 				<img src="/{{$res->goods_img}}" alt="暂无图片">
 				<h5>{{$res->goods_name}}</h5>
 				<div class="price">${{$res->market_price}} <span>${{$res->goods_price}}</span></div>
@@ -384,8 +384,10 @@
 
 				<br><br><br><p style=" background-color: #008CBA;border: none;color: white;padding: 11px 190px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">
 						<a href="javascript:;" id="cart" >加入购物车</a>
-					<div class="glyphicon glyphicon-heart" style="width:150px;hight:150px; float: right;" id="button" goodsid="{{$res->goods_id}}">此处是点击收藏</div>
-						</p>
+
+					<div class="glyphicon glyphicon-heart" style="width:150px;hight:150px; float: right;" id="button" goodsid="{{$res->goods_id}}"> 此处是点击收藏 </div>
+
+					</p>
 				<div class="review">
 					<h5>1 reviews</h5>
 					<div class="review-details">
@@ -469,6 +471,19 @@
 </html>
 <script>
 	$(function(){
+		var goods_id=$(".shop-single").attr('goods_id');
+//		console.log(goods_id);
+		$.get(
+				"/goods/aaa?goods_id="+goods_id,
+				function(res){
+					console.log(res);
+					if(res=="未收藏"){
+						$("#button").css({color:"gray"}).html('未收藏');
+					}else {
+						$("#button").css({color:"red"}).html('已收藏');
+					}
+				}
+		);
 		//减
 		$(document).on('click','#subtract',function(){
 			var text=parseInt($("#text").val());
@@ -522,14 +537,21 @@
 		})
 		//点击收藏
 		$(document).on("click","#button",function(){
-			//alert('收藏');
+//			alert('收藏');
 			var id=$(this).attr('goodsid');
 			//console.log(id);
 			$.get(
 					"/col/add",
 					{id:id},
 					function(res){
-							console.log(res);
+						//console.log(res);
+						if(res.error==1){
+							$("#button").css({color:"red"}).html('已收藏');
+						}else if(res.error==2){
+							alert('收藏失败');
+						}else if(res.error==3){
+							$("#button").css({color:"gray"}).html('未收藏');
+						}
 					}
 			)
 		})
