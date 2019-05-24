@@ -18,27 +18,39 @@ class GoodsController extends Controller
             //购物车
             $car=DB::table('shop_cart')->where($where)->first();
             //浏览历史
-            $user_id=session('user_id');
+//            $user_id=session('user_id');
+        $user_id=1;
             if(empty($user_id)){
+                echo 7777;
                 $data=DB::table('shop_goods')->where($where)->first();
-                $is_tell=$data->is_tell;
-                $is_tell+=1;
-                DB::table('shop_goods')->where($where)->update(['is_tell'=>$is_tell]);
+                if($data){
+                    $is_tell=$data->is_tell;
+                    $is_tell+=1;
+                    DB::table('shop_goods')->where($where)->update(['is_tell'=>$is_tell]);
+                }else{
+                    $res=[
+                        'code'=>40030,
+                        'msg'=>'没有此商品'
+                    ];
+                    return json_encode($res,JSON_UNESCAPED_UNICODE);
+                }
             }else{
-                $where=[
+                $whereInfo=[
                     'goods_id'=>$id,
                     'user_id'=>$user_id
                 ];
-                $arrInfo=DB::table('history')->where($where)->first();
+                $arrInfo=DB::table('history')->where($whereInfo)->first();
                 if($arrInfo){
-                    DB::table('history')->where($where)->update(['create_time'=>time()]);
+                   DB::table('history')->where($whereInfo)->update(['create_time'=>time()]);
                 }else{
                     $dataInfo=[
                         'user_id'=>$user_id,
                         'goods_id'=>$id,
                         'create_time'=>time()
                     ];
-                    DB::table('history')->insert($dataInfo);
+//                    var_dump($dataInfo);die;
+                    $aa=DB::table('history')->insert($dataInfo);
+                    var_dump($aa);die;
                 }
 
             }
