@@ -55,7 +55,7 @@
 			<li><a href="about-us.html"><i class="fa fa-user"></i>About Us</a></li>
 			<li><a href="contact.html"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
 			<li><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
-			<li><a href="register.html"><i class="fa fa-user-plus"></i>Register</a></li>
+			<li><a href="/register"><i class="fa fa-user-plus"></i>Register</a></li>
 		</ul>
 	</div>
 	<!-- end side nav right-->
@@ -64,14 +64,14 @@
 	<div class="navbar-bottom">
 		<div class="row">
 			<div class="col s2">
-				<a href="index.html"><i class="fa fa-home"></i></a>
+				<a href="/"><i class="fa fa-home"></i></a>
 			</div>
 			<div class="col s2">
-				<a href="wishlist.html"><i class="fa fa-heart"></i></a>
+				<a href="/col/list"><i class="fa fa-heart"></i></a>
 			</div>
 			<div class="col s4">
 				<div class="bar-center">
-					<a href="#animatedModal" id="cart-menu"><i class="fa fa-shopping-basket"></i></a>
+					<a href="/cartlist"><i class="fa fa-shopping-basket"></i></a>
 					<span>2</span>
 				</div>
 			</div>
@@ -242,7 +242,7 @@
 						</a>
 					</div>
 					<div class="col s4">
-						<a href="register.html" class="button-link">
+						<a href="/register" class="button-link">
 							<div class="menu-link">
 								<div class="icon">
 									<i class="fa fa-user-plus"></i>
@@ -256,118 +256,6 @@
 		</div>
 	</div>
 	<!-- end menu -->
-
-	<!-- cart menu -->
-	<div class="menus" id="animatedModal">
-		<div class="close-animatedModal close-icon">
-			<i class="fa fa-close"></i>
-		</div>
-		<div class="modal-content">
-			<div class="cart-menu">
-				<div class="container">
-					<div class="content">
-						<div class="cart-1">
-							<div class="row">
-								<div class="col s5">
-									<img src="/img/cart-menu1.png" alt="">
-								</div>
-								<div class="col s7">
-									<h5><a href="">Fashion Men's</a></h5>
-								</div>
-							</div>
-							<div class="row quantity">
-								<div class="col s5">
-									<h5>Quantity</h5>
-								</div>
-								<div class="col s7">
-									<input value="1" type="text">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col s5">
-									<h5>Price</h5>
-								</div>
-								<div class="col s7">
-									<h5>$20</h5>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col s5">
-									<h5>Action</h5>
-								</div>
-								<div class="col s7">
-									<div class="action"><i class="fa fa-trash"></i></div>
-								</div>
-							</div>
-						</div>
-						<div class="divider"></div>
-						<div class="cart-2">
-							<div class="row">
-								<div class="col s5">
-									<img src="/img/cart-menu2.png" alt="">
-								</div>
-								<div class="col s7">
-									<h5><a href="">Fashion Men's</a></h5>
-								</div>
-							</div>
-							<div class="row quantity">
-								<div class="col s5">
-									<h5>Quantity</h5>
-								</div>
-								<div class="col s7">
-									<input value="1" type="text">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col s5">
-									<h5>Price</h5>
-								</div>
-								<div class="col s7">
-									<h5>$20</h5>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col s5">
-									<h5>Action</h5>
-								</div>
-								<div class="col s7">
-									<div class="action"><i class="fa fa-trash"></i></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="total">
-						<div class="row">
-							<div class="col s7">
-								<h5>Fashion Men's</h5>
-							</div>
-							<div class="col s5">
-								<h5>$21.00</h5>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col s7">
-								<h5>Fashion Men's</h5>
-							</div>
-							<div class="col s5">
-								<h5>$21.00</h5>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col s7">
-								<h6>Total</h6>
-							</div>
-							<div class="col s5">
-								<h6>$41.00</h6>
-							</div>
-						</div>
-					</div>
-					<button class="btn button-default">Process to Checkout</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end cart menu -->
 	
 	<!-- shop single -->
 	<div class="pages section">
@@ -471,6 +359,7 @@
 </html>
 <script>
 	$(function(){
+		$("#text").attr("disabled", true);
 		var goods_id=$(".shop-single").attr('goods_id');
 //		console.log(goods_id);
 		$.get(
@@ -519,6 +408,7 @@
 					}
 			);
 		})
+
 
 		//加入购物车
 		$(document).on('click','#cart',function(){
