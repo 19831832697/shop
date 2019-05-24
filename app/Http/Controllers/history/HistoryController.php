@@ -10,7 +10,11 @@ class HistoryController extends Controller
     /**
      * 浏览历史
      */
-    public function history(){
-
+    public function history(Request $request){
+//        $user_id=session('uid');
+        $user_id=1;
+        if(empty($user_id)){
+            
+        }
     }
 }
