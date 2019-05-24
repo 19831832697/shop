@@ -270,8 +270,8 @@
 						<input style="width: 80px; height: 38px; float: left;" type="text" value="@if($car=='') 1 @else {{$car->buy_num}} @endif" id="text">
 						<input style="width: 50px; height: 38px; border: 2px white; float: left;" type="button" id="add"value="+" goods_num="{{$res->goods_num}}" goods_id="{{$res->goods_id}}"/>
 
-				<br><br><br><p style=" background-color: #008CBA;border: none;color: white;padding: 11px 190px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">
-						<a href="javascript:;" id="cart" >加入购物车</a>
+				<br><br><br><p style=" background-color: #008CBA;border: none;color: white;padding: 9px 40px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">
+						<a href="javascript:;"  id="cart" >加入购物车</a>
 
 					<div class="glyphicon glyphicon-heart" style="width:150px;hight:150px; float: right;" id="button" goodsid="{{$res->goods_id}}"> 此处是点击收藏 </div>
 
