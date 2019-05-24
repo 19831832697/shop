@@ -42,7 +42,7 @@ Route::get('/subtract','Cart\CartController@subtract');
 Route::get('/col/add','Collect\ColController@add');
 Route::get('/col/list','Collect\ColController@list');
 Route::get('/col/del','Collect\ColController@del');
-//生成订单
+//点击去结算生成订单
 Route::post('pay','pay\PayController@pay');
 //订单列表
 Route::post('payShow','pay\PayController@payShow');
