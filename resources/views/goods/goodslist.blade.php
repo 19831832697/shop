@@ -8,6 +8,13 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-touch-fullscreen" content="yes">
 	<meta name="HandheldFriendly" content="True">
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 
 	<link rel="stylesheet" href="/css/materialize.css">
 	<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
@@ -374,7 +381,11 @@
 						<input style="width: 50px; height: 38px; border: 2px white; float: left;" type="button"id="subtract" value="-" />
 						<input style="width: 80px; height: 38px; float: left;" type="text" value="@if($car=='') 1 @else {{$car->buy_num}} @endif" id="text">
 						<input style="width: 50px; height: 38px; border: 2px white; float: left;" type="button" id="add"value="+" goods_num="{{$res->goods_num}}" goods_id="{{$res->goods_id}}"/>
-				<br><br><br><p style=" background-color: #008CBA;border: none;color: white;padding: 11px 190px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;"><a href="javascript:;" id="cart" >加入购物车</a></p>
+
+				<br><br><br><p style=" background-color: #008CBA;border: none;color: white;padding: 11px 190px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">
+						<a href="javascript:;" id="cart" >加入购物车</a>
+					<div class="glyphicon glyphicon-heart" style="width:150px;hight:150px; float: right;" id="button" goodsid="{{$res->goods_id}}">此处是点击收藏</div>
+						</p>
 				<div class="review">
 					<h5>1 reviews</h5>
 					<div class="review-details">
@@ -508,6 +519,19 @@
 						}
 					}
 			);
+		})
+		//点击收藏
+		$(document).on("click","#button",function(){
+			//alert('收藏');
+			var id=$(this).attr('goodsid');
+			//console.log(id);
+			$.get(
+					"/col/add",
+					{id:id},
+					function(res){
+							console.log(res);
+					}
+			)
 		})
 	})
 </script>
