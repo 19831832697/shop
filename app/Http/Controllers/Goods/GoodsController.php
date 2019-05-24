@@ -17,7 +17,7 @@ class GoodsController extends Controller
             $res=GoodsModel::where($where)->first();
             //购物车
             $car=DB::table('shop_cart')->where($where)->first();
-
+            //浏览历史
             $user_id=session('user_id');
             if(empty($user_id)){
                 $data=DB::table('shop_goods')->where($where)->first();
@@ -51,5 +51,17 @@ class GoodsController extends Controller
         ];
         $goodsInfo=GoodsModel::where($where)->paginate(4);
         return view('goods.goods',['goodsInfo'=>$goodsInfo]);
+    }
+    public function historyShow(){
+        $user_id=session('user_id');
+        if(empty($user_id)){
+            $arr=DB::table('shop_goods')->orderBy('is_tell','desc')->limit(10);
+        }else{
+            $whereInfo=[
+                'user_id'=>$user_id
+            ];
+            $arr=DB::table('history')->where($whereInfo)->get();
+        }
+        return json_encode($arr);
     }
 }
