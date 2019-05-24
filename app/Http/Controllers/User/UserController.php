@@ -121,7 +121,7 @@ Class UserController extends Controller
                     }
                 }else{
                     $where=[
-                        'errno'=>1,
+                        'errno'=>0,
                         'errno_time'=>$time
                     ];
                     DB::table('user')->where(['user_id'=>$user_id])->update($where);
@@ -136,7 +136,7 @@ Class UserController extends Controller
             }else{
                 if($time - $errno_time > 3600){
                     $where=[
-                        'errno'=>$errno+1,
+                        'errno'=>1,
                         'errno_time'=>$time
                     ];
                     DB::table('user')->where(['user_id'=>$user_id])->update($where);
