@@ -26,10 +26,11 @@ Class UserController extends Controller
         $data = $request->input();
         $user_name = $data['user_name'];
         $user_email = $data['user_email'];
+        $user_tel = $data['user_tel'];
         $user_pwd = $data['user_pwd'];
         $user_pwd1 = $data['user_pwd1'];
         //验证为空
-        if (empty($user_name) || empty($user_email) || empty($user_pwd)) {
+        if (empty($user_name) || empty($user_email) || empty($user_pwd) || empty($user_tel) ) {
             $arr = [
                 'code' => 0,
                 'msg' => '所填元素不能为空'
@@ -54,6 +55,15 @@ Class UserController extends Controller
             ];
             return json_encode($arr, JSON_UNESCAPED_UNICODE);
         }
+        //验证手机号是否重复
+        $data3 = DB::table('user')->where(['user_tel'=>$user_tel])->first();
+        if ($data3) {
+            $arr = [
+                'code' => 0,
+                'msg' => '此手机号已被注册'
+            ];
+            return json_encode($arr, JSON_UNESCAPED_UNICODE);
+        }
         //验证密码
         if ($user_pwd !== $user_pwd1) {
             $arr = [
@@ -69,6 +79,7 @@ Class UserController extends Controller
         $dataInfo = [
             'user_name' => $user_name,
             'user_email' => $user_email,
+            'user_tel' => $user_tel,
             'user_pwd' => $password,
             'add_time' => $time
         ];
