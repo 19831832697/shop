@@ -403,7 +403,7 @@
                         alert(data.msg);
                         // window.location.href="/login";
                     }else if(data.code==200){
-                        window.location.href="/paylist";
+                        window.location.href="/paylist?data.order_no="+data.order_no;
                     }
                 }
             })
