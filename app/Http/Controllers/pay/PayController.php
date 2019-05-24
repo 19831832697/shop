@@ -64,6 +64,7 @@ class PayController extends Controller
             if($orderInfo){
                 $res=[
                     'code'=>200,
+                    'order_no'=>$order_no
                 ];
                 return json_encode($res, JSON_UNESCAPED_UNICODE);
             }
@@ -76,8 +77,23 @@ class PayController extends Controller
              return json_encode($res, JSON_UNESCAPED_UNICODE);
         }
     }
-    public function paylist(){
-        return view('pay.paylist');
+
+    /**
+     * 订单页面
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function paylist(Request $request){
+        $order_no=$request->input('order_no');
+        $user_id=$_COOKIE['user_id'];
+        $where=[
+            'order_no'=>$order_no,
+            'user_id'=>$user_id
+        ];
+        $arrInfo=DB::table('shop_order_detail')->where($where)->get();
+        $arr=json_decode($arrInfo,true);
+        var_dump($arr);die;
+        return view('pay/paylist',['arr'=>$arr]);
     }
 
     /**
