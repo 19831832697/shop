@@ -90,44 +90,84 @@ Class UserController extends Controller
 
     //登陆
     public function loginDo(){
-        $user_name = $_POST['user_name'];
-        $user_pwd = $_POST['user_pwd'];
-        if (empty($user_name) || empty($user_pwd)) {
-            $arr = [
-                'code' => 0,
-                'msg' => '登陆所填元素不能为空'
+        $user_name=$_POST['user_name'];
+        $user_pwd=$_POST['user_pwd'];
+        //验证为空
+        if(empty($user_name) || empty($user_pwd)){
+            $arr=[
+                'code'=>0,
+                'msg'=>'登陆所填元素不能为空'
             ];
-            return json_encode($arr, JSON_UNESCAPED_UNICODE);
+            return json_encode($arr,JSON_UNESCAPED_UNICODE);
         }
 
-        $data = DB::table('user')->where(['user_name' => $user_name])->first();
-
-        if ($data) {
+        $data=DB::table('user')->where(['user_name'=>$user_name])->first();
+        $errno=$data->errno;
+        $errno_time=$data->errno_time;
+        $user_id=$data->user_id;
+        $time=time();
+        if($data){
             //用库存在
-            if (password_verify($user_pwd, $data->user_pwd)) {
+            if(password_verify($user_pwd,$data->user_pwd)){
                 //登陆逻辑
-                $user_id = $data->user_id;
-                setcookie('user_id', $user_id);
-                $arr = [
-                    'code' => 1,
-                    'msg' => '登陆成功'
+
+                if($time - $errno_time < 3600){
+                    if($errno >= 3){
+                        $arr=[
+                            'code'=>0,
+                            'msg'=>'登录次数超过限制次数不能登陆'
+                        ];
+                        return json_encode($arr,JSON_UNESCAPED_UNICODE);
+                    }
+                }else{
+                    $where=[
+                        'errno'=>1,
+                        'errno_time'=>$time
+                    ];
+                    DB::table('user')->where(['user_id'=>$user_id])->update($where);
+                }
+                setcookie('user_id',$user_id);
+                $arr=[
+                    'code'=>1,
+                    'msg'=>'登陆成功'
                 ];
 
-                return json_encode($arr, JSON_UNESCAPED_UNICODE);
-            } else {
+                return json_encode($arr,JSON_UNESCAPED_UNICODE);
+            }else{
+                if($time - $errno_time > 3600){
+                    $where=[
+                        'errno'=>$errno+1,
+                        'errno_time'=>$time
+                    ];
+                    DB::table('user')->where(['user_id'=>$user_id])->update($where);
+                }else{
+                    if($errno >= 3){
+                        $arr=[
+                            'code'=>0,
+                            'msg'=>'账号已锁定,请一小时后再次登陆'
+                        ];
+                        return json_encode($arr,JSON_UNESCAPED_UNICODE);
+                    }else{
+                        $where=[
+                            'errno'=>$errno+1,
+                            'errno_time'=>$time
+                        ];
+                        DB::table('user')->where(['user_id'=>$user_id])->update($where);
+                    }
+                }
                 //登录失败
-                $arr = [
-                    'code' => 0,
-                    'msg' => '密码不正确'
+                $arr=[
+                    'code'=>0,
+                    'msg'=>'密码不正确'
                 ];
-                return json_encode($arr, JSON_UNESCAPED_UNICODE);
+                return json_encode($arr,JSON_UNESCAPED_UNICODE);
             }
-        } else {
-            $arr = [
-                'code' => 0,
-                'msg' => '账号错误'
+        }else{
+            $arr=[
+                'code'=>0,
+                'msg'=>'账号错误'
             ];
-            return json_encode($arr, JSON_UNESCAPED_UNICODE);
+            return json_encode($arr,JSON_UNESCAPED_UNICODE);
         }
     }
 
