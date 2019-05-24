@@ -15,8 +15,7 @@ class PayController extends Controller
      * @return false|string
      */
     public function pay(Request $request){
-        //接值
-        $user_id=$request->input('user_id');
+        $user_id=$_COOKIE['user_id'];
         $goods_id=$request->input('goods_id');
         $order_amount=$request->input('order_amount');
         if(empty($user_id)){
@@ -26,9 +25,9 @@ class PayController extends Controller
             ];
             return json_encode($res,JSON_UNESCAPED_UNICODE);
         }
-        $goods_id=rtrim($goods_id,',');
-        $goodsId=explode(',',$goods_id);
-        if(empty($goodsId)){
+        $id=rtrim($goods_id,',');
+        $goodsId=explode(',',$id);
+        if(empty($id)){
             $res=[
                 'code'=>40020,
                 'msg'=>'请至少选择一件商品去结算！'
@@ -48,7 +47,7 @@ class PayController extends Controller
             ->join('shop_cart','shop_goods.goods_id','=','shop_cart.goods_id')
             ->whereIn('shop_goods.goods_id',$goodsId)
             ->get()->toArray();
-         if(!empty($arrInfo)){
+        if(!empty($arrInfo)){
             foreach ($arrInfo as $k=>$v){
                 $arr=[
                     'goods_id'=>$v->goods_id,
@@ -60,16 +59,25 @@ class PayController extends Controller
                     'buy_num'=>$v->buy_num,
                     'ctime'=>time(),
                 ];
-
+                $orderInfo=DB::table('shop_order_detail')->insert($arr);
             }
-            DB::table('shop_order_detail')->insert($arr);
-        }else{
-            $res=[
-                'code'=>40020,
-                'msg'=>'没有此商品'
-            ];
-            return json_encode($res,JSON_UNESCAPED_UNICODE);
+            if($orderInfo){
+                $res=[
+                    'code'=>200,
+                ];
+                return json_encode($res, JSON_UNESCAPED_UNICODE);
+            }
+
+        }else {
+             $res = [
+                 'code' => 40020,
+                 'msg' => '没有此商品'
+             ];
+             return json_encode($res, JSON_UNESCAPED_UNICODE);
         }
+    }
+    public function paylist(){
+        return view('pay.paylist');
     }
 
     /**
@@ -79,7 +87,7 @@ class PayController extends Controller
      */
     public function payShow(Request $request){
         $order_no=$request->input('order_no');
-        $user_id=$request->input('user_id');
+        $user_id=$_COOKIE['user_id'];
         $where=[
             'order_no'=>$order_no,
             'user_id'=>$user_id

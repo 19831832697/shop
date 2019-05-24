@@ -162,12 +162,12 @@
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="blog-single.html" class="button-link">
+                    <a href="historyShow" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-file-text-o"></i>
                             </div>
-                            Blog Single
+                            history
                         </div>
                     </a>
                 </div>

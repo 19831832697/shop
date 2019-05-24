@@ -73,4 +73,16 @@ class CartController extends Controller
         return view('goods/cartlist',['arr'=>$info]);
     }
 
+    //购物车删除
+    public function subtract(){
+        $catr_id=$_GET['catr_id'];
+//        dd($catr_id);
+        $catr_info=DB::table('shop_cart')->where('id',$catr_id)->delete();
+//        dd($catr_info);
+        if($catr_info){
+            echo "删除成功";
+        }else{
+            echo "删除失败";
+        }
+    }
 }

@@ -9,17 +9,17 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="HandheldFriendly" content="True">
 
-    <link rel="stylesheet" href="css/materialize.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/owl.transitions.css">
-    <link rel="stylesheet" href="css/fakeLoader.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/materialize.css">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <link rel="stylesheet" href="/css/owl.theme.css">
+    <link rel="stylesheet" href="/css/owl.transitions.css">
+    <link rel="stylesheet" href="/css/fakeLoader.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/style.css">
 
-    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="shortcut icon" href="/img/favicon.png">
 
 </head>
 <body>
@@ -102,7 +102,7 @@
                             <div class="icon">
                                 <i class="fa fa-bars"></i>
                             </div>
-                            Product List
+                            列表展示
                         </div>
                     </a>
                 </div>
@@ -362,93 +362,83 @@
 </div>
 <!-- end cart menu -->
 
-
-<!-- register -->
-<div class="pages section">
+<!-- product -->
+<div class="section product product-list">
     <div class="container">
         <div class="pages-head">
-            <h3>REGISTER</h3>
+            <h3>PRODUCT LIST</h3>
         </div>
-        <div class="register">
-            <div class="row">
-                <form class="col s12">
-                    <div class="input-field">
-                        <input type="text" class="validate" placeholder="USERNAME" name="user_name" required>
+        <div class="input-field">
+            <select>
+                <option value="">Popular</option>
+                <option value="1">New Product</option>
+                <option value="2">Best Sellers</option>
+                <option value="3">Best Reviews</option>
+                <option value="4">Low Price</option>
+                <option value="5">High Price</option>
+            </select>
+        </div>
+        <div class="row">
+            @foreach($arr as $k=>$v)
+                <div class="col s6">
+                    <div class="history">
+                        <img src="/{{$v->goods_img}}" alt="">
+                        <h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
+                        <div class="price">
+                            ${{$v->market_price}} <span>${{$v->goods_price}}</span>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="email" placeholder="EMAIL" class="validate" name="user_email"required>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" placeholder="PASSWORD" class="validate" name="user_pwd" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" class="validate" placeholder="AGAIN PASSWORD" name="user_pwd1"required>
-                    </div>
-                    <div class="btn button-default" id="submit">REGISTER</div>
-                </form>
+                </div>
+            @endforeach
+        </div>
+        <div class="row margin-bottom">
+
+
+            <div class="pagination-product">
+                <ul>
+                    <li class="active">
+
+                    </li>
+
+                </ul>
             </div>
         </div>
     </div>
-</div>
-<!-- end register -->
+    <!-- end product -->
 
 
-<!-- loader -->
-<div id="fakeLoader"></div>
-<!-- end loader -->
+    <!-- loader -->
+    <div id="fakeLoader"></div>
+    <!-- end loader -->
 
-<!-- footer -->
-<div class="footer">
-    <div class="container">
-        <div class="about-us-foot">
-            <h6>Mstore</h6>
-            <p>is a lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.</p>
-        </div>
-        <div class="social-media">
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-google"></i></a>
-            <a href=""><i class="fa fa-linkedin"></i></a>
-            <a href=""><i class="fa fa-instagram"></i></a>
-        </div>
-        <div class="copyright">
-            <span>© 2017 All Right Reserved</span>
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="about-us-foot">
+                <h6>Mstore</h6>
+                <p>is a lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.</p>
+            </div>
+            <div class="social-media">
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-google"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+                <a href=""><i class="fa fa-instagram"></i></a>
+            </div>
+            <div class="copyright">
+                <span>© 2017 All Right Reserved</span>
+            </div>
         </div>
     </div>
-</div>
-<!-- end footer -->
+    <!-- end footer -->
 
-<!-- scripts -->
-<script src="js/jquery.min.js"></script>
-<script src="js/materialize.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/fakeLoader.min.js"></script>
-<script src="js/animatedModal.min.js"></script>
-<script src="js/main.js"></script>
+    <!-- scripts -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/materialize.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/fakeLoader.min.js"></script>
+    <script src="/js/animatedModal.min.js"></script>
+    <script src="/js/main.js"></script>
 
 </body>
 </html>
-<script>
-    $(function(){
-        $('#submit').click(function(){
-            var user_name=$("input[name='user_name']").val();
-            var user_email=$("input[name='user_email']").val();
-            var user_pwd=$("input[name='user_pwd']").val();
-            var user_pwd1=$("input[name='user_pwd1']").val();
-            $.ajax({
-                type:'post',
-                data:{user_name:user_name,user_email:user_email,user_pwd:user_pwd,user_pwd1:user_pwd1},
-                url:"/registerDo",
-                dataType:"json",
-                success:function(msg){
-                    if(msg.code==1){
-                        alert(msg.msg);
-                        location.href="login";
-                    }else{
-                        alert(msg.msg);
-                    }
-                }
-            })
-        })
-    })
-</script>
