@@ -1,3 +1,8 @@
+<style>
+    .b{
+        color:red;
+    }
+</style>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -269,7 +274,8 @@
                         <div class="col s5" id="catr">
                             <h5>商品图片</h5>
                         </div>
-                        <div class="glyphicon glyphicon-ok" amount="{{$v->goods_price * $v->buy_num}}" id="top1" catr_id="{{$v->id}}"></div>
+                        <div id="aa" type="1"class="glyphicon glyphicon-ok" amount="{{$v->goods_price * $v->buy_num}}"
+                             goods_id="{{$v->goods_id}}" catr_id="{{$v->id}}"></div>
                         <div class="col s7">
                             <img src="/{{$v->goods_img}}" alt="" style="height: 300px; width: 280px;">
                         </div>
@@ -322,15 +328,15 @@
             </div>
 
         </div>
-        <input type="button" class="btn button-default" value="去结算">
+        <input type="button" class="button-default" id="btn" value="去结算">
     </div>
 </div>
 <!-- end cart -->
 
 <!-- loader -->
 <div id="fakeLoader"></div>
-<!-- end loader -->
 
+<!-- end loader -->
 <!-- footer -->
 <div class="footer">
     <div class="container">
@@ -363,27 +369,44 @@
 </html>
 </html>
 <script>
-    //单选
-    $(function(){
+    $(document).ready(function(){
+        //单选
         var sum=0
          $(document).on('click','.glyphicon',function(){
+             $(this).addClass('b');
+             $(this).attr('type','2')
             var _this=$(this);
-            var reg = _this.css({color:"red"});
-
+            // var reg = _this.css({color:"red"});
             $.each($(this),function(){
                 sum += parseInt($(this).attr('amount'));
             });
              $("#am").html(sum);
-
         })
 
-    })
-    //立即支付
-    $(function(){
-        $(document).on('click','.btn',function(){
-            //总数
-            var sum= $("#am").html();
-
+         //点击去结算
+        $(document).on('click','#btn',function(){
+            var order_amount= $("#am").html();//总价格
+            var goods_id="";
+            $.each($('.glyphicon-ok'),function() {
+                var type=$(this).attr('type');
+                if (type == 2){
+                    goods_id += $(this).attr('goods_id') + ',';
+                }
+            })
+            $.ajax({
+                url:"/pay",
+                method:"POST",
+                data:{order_amount:order_amount,goods_id:goods_id},
+                dataType:"json",
+                success:function(data){
+                    if(data.code==40020){
+                        alert(data.msg);
+                        // window.location.href="/login";
+                    }else if(data.code==200){
+                        window.location.href="/paylist";
+                    }
+                }
+            })
         })
     })
 </script>
