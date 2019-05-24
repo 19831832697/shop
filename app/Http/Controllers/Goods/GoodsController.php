@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\GoodsModel;
 use Illuminate\Support\Facades\DB;
-use App\Model\PraiseModel;
 class GoodsController extends Controller
 {
     //商品详情
@@ -52,14 +51,8 @@ class GoodsController extends Controller
                     DB::table('history')->insert($dataInfo);
                 }
 
-<<<<<<< HEAD
-
-
-            return view('goods.goodslist',['res'=>$res,'car'=>$car,]);
-=======
             }
             return view('goods.goodslist',['res'=>$res,'car'=>$car]);
->>>>>>> 7c7787479692daec1d9a015300637aaed85d1156
     }
 
     /**
@@ -74,20 +67,6 @@ class GoodsController extends Controller
         return view('goods.goods',['goodsInfo'=>$goodsInfo]);
     }
 
-<<<<<<< HEAD
-    public function aaa(){
-        $id=$_GET['goods_id'];
-//        dd($id);
-        $where=[
-            'goods_id'=>$id
-        ];
-        $res=PraiseModel::where($where)->first();
-        if(empty($res)){
-            echo "未收藏";
-        }else{
-            echo "收藏";
-        }
-=======
     /**
      * 浏览记录展示
      * @return false|string
@@ -107,6 +86,19 @@ class GoodsController extends Controller
         }
 //        $arrInfo=json_encode($arr);
         return view('goods/history',['arr'=>$arr]);
->>>>>>> 7c7787479692daec1d9a015300637aaed85d1156
+    }
+    //收藏
+    public function aaa(){
+        $id=$_GET['goods_id'];
+//        dd($id);
+        $where=[
+            'goods_id'=>$id
+        ];
+        $res=PraiseModel::where($where)->first();
+        if(empty($res)){
+            echo "未收藏";
+        }else{
+            echo "收藏";
+        }
     }
 }

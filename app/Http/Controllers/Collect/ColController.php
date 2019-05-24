@@ -81,7 +81,12 @@ class ColController extends Controller
     }
     //全部删除
     public function dela(Request $request){
-
+            $id=$request->input('id');
+           // dd($id);
+        //    $where=[
+        //        'praise_id'=>$id
+        //    ];
+           $res=PraiseModel::destroy([$id]);
     }
 
 }

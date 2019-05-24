@@ -424,7 +424,17 @@
                         {{--删除--}}
                         <h5>
                             <input type="hidden" value="0" praiseid="{{$v->praise_id}}" class="b">
-                            <button class="a">点击选择</button>
+                            <button class="a" style="background-color: #e7e7e7; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+
+">点击选择</button>
                         </h5>
                     </div>
                 </div>
