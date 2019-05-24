@@ -19,7 +19,7 @@ class GoodsController extends Controller
             $car=DB::table('shop_cart')->where($where)->first();
             //浏览历史
 //            $user_id=session('user_id');
-        $user_id=1;
+            $user_id=1;
             if(empty($user_id)){
                 echo 7777;
                 $data=DB::table('shop_goods')->where($where)->first();
@@ -48,15 +48,17 @@ class GoodsController extends Controller
                         'goods_id'=>$id,
                         'create_time'=>time()
                     ];
-//                    var_dump($dataInfo);die;
-                    $aa=DB::table('history')->insert($dataInfo);
-                    var_dump($aa);die;
+                    DB::table('history')->insert($dataInfo);
                 }
 
             }
             return view('goods.goodslist',['res'=>$res,'car'=>$car]);
     }
-    //商品列表
+
+    /**
+     * 商品列表
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function goodsInfo(){
         $where=[
             'goods_status'=>1
@@ -64,16 +66,25 @@ class GoodsController extends Controller
         $goodsInfo=GoodsModel::where($where)->paginate(4);
         return view('goods.goods',['goodsInfo'=>$goodsInfo]);
     }
+
+    /**
+     * 浏览记录展示
+     * @return false|string
+     */
     public function historyShow(){
-        $user_id=session('user_id');
+//        $user_id=session('user_id');
+        $user_id=1;
         if(empty($user_id)){
             $arr=DB::table('shop_goods')->orderBy('is_tell','desc')->limit(10);
         }else{
             $whereInfo=[
                 'user_id'=>$user_id
             ];
-            $arr=DB::table('history')->where($whereInfo)->get();
+            $arr=DB::table('history')
+                ->join('shop_goods','shop_goods.goods_id','=','history.goods_id')
+                ->where($whereInfo)->get();
         }
-        return json_encode($arr);
+//        $arrInfo=json_encode($arr);
+        return view('goods/history',['arr'=>$arr]);
     }
 }
