@@ -61,8 +61,6 @@ Route::get('/goods/aaa','Goods\GoodsController@aaa');
 //点击去结算生成订单
 Route::post('/pay','pay\PayController@pay');
 Route::get('/paylist','pay\PayController@paylist');
-//订单列表
-Route::post('payShow','pay\PayController@payShow');
 //去支付
 Route::get('z_pay','pay\MoneyController@z_pay');
 Route::post('notify','alipay\AlipayController@notify');//异步回调
