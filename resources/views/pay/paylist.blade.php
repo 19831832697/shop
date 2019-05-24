@@ -448,5 +448,16 @@
 
            }
         })
+        $(document).on('click','#btn',function(){
+            $.ajax({
+                url:"/z_pay",
+                method:"get",
+                data:{order_no:order_no},
+                dataType:"json",
+                success:function(){
+
+                }
+            })
+        })
     })
 </script>
