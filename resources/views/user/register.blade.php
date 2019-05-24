@@ -379,6 +379,9 @@
                         <input type="email" placeholder="EMAIL" class="validate" name="user_email"required>
                     </div>
                     <div class="input-field">
+                        <input type="text" placeholder="TEL" class="validate" name="user_tel" required>
+                    </div>
+                    <div class="input-field">
                         <input type="password" placeholder="PASSWORD" class="validate" name="user_pwd" required>
                     </div>
                     <div class="input-field">
@@ -433,11 +436,12 @@
         $('#submit').click(function(){
             var user_name=$("input[name='user_name']").val();
             var user_email=$("input[name='user_email']").val();
+            var user_tel=$("input[name='user_tel']").val();
             var user_pwd=$("input[name='user_pwd']").val();
             var user_pwd1=$("input[name='user_pwd1']").val();
             $.ajax({
                 type:'post',
-                data:{user_name:user_name,user_email:user_email,user_pwd:user_pwd,user_pwd1:user_pwd1},
+                data:{user_name:user_name,user_email:user_email,user_tel:user_tel,user_pwd:user_pwd,user_pwd1:user_pwd1},
                 url:"/registerDo",
                 dataType:"json",
                 success:function(msg){

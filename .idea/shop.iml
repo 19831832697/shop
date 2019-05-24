@@ -95,11 +95,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> zhangyang
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+>>>>>>> 7c7787479692daec1d9a015300637aaed85d1156
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
@@ -112,6 +115,8 @@
         </SOURCES>
       </library>
     </orderEntry>
+<<<<<<< HEAD
+=======
     <orderEntry type="module-library">
       <library name="PHP" type="php">
         <CLASSES>
@@ -285,5 +290,6 @@
       </library>
     </orderEntry>
 >>>>>>> master
+>>>>>>> 7c7787479692daec1d9a015300637aaed85d1156
   </component>
 </module>

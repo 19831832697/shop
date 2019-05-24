@@ -328,10 +328,10 @@
                     <div class="input-field">
                         <input type="password" class="validate" placeholder="PASSWORD" name="user_pwd" required>
                     </div>
-                    <a href=""><h6>Forgot Password ?</h6></a>
+                    <a href="password"><h6>Forgot Password ?</h6></a>
                     {{--<a href="" class="btn button-default" id="sub">LOGIN</a>--}}
                     {{--<button id="sub">登陆</button>--}}
-                    <input type="button" id="sub" value="登陆">
+                    <div class="btn button-default" id="sub">LOGIN</div>
                 </form>
             </div>
         </div>
