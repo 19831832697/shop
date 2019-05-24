@@ -102,11 +102,12 @@ Class UserController extends Controller
         }
 
         $data=DB::table('user')->where(['user_name'=>$user_name])->first();
-        $errno=$data->errno;
-        $errno_time=$data->errno_time;
-        $user_id=$data->user_id;
-        $time=time();
+
         if($data){
+            $errno=$data->errno;
+            $errno_time=$data->errno_time;
+            $user_id=$data->user_id;
+            $time=time();
             //用库存在
             if(password_verify($user_pwd,$data->user_pwd)){
                 //登陆逻辑
