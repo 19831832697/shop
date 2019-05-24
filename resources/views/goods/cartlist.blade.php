@@ -18,17 +18,20 @@
     <link rel="stylesheet" href="css/fakeLoader.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
-
     <link rel="shortcut icon" href="img/favicon.png">
 
 </head>
 <body>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <!-- navbar top -->
 <div class="navbar-top">
     <!-- site brand	 -->
     <div class="site-brand">
-        <a href="index.html"><h1>Mstore</h1></a>
+        <a href="/"><h1>Mstore</h1></a>
     </div>
     <!-- end site brand	 -->
     <div class="side-nav-panel-right">
@@ -248,87 +251,7 @@
         </div>
     </div>
 </div>
-<!-- end menu -->
 
-<!-- cart menu -->
-<div class="menus" id="animatedModal">
-    <div class="close-animatedModal close-icon">
-        <i class="fa fa-close"></i>
-    </div>
-    <div class="modal-content">
-        <div class="cart-menu">
-            <div class="container">
-                <div class="content">
-
-                    <div class="cart-1">
-                        <div class="row">
-                            <div class="col s5">
-                                <img src="img/cart-menu1.png" alt="">
-                            </div>
-                            <div class="col s7">
-                                <h5><a href="">Fashion Men's</a></h5>
-                            </div>
-                        </div>
-                        <div class="row quantity">
-                            <div class="col s5">
-                                <h5>Quantity</h5>
-                            </div>
-                            <div class="col s7">
-                                <input value="1" type="text">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s5">
-                                <h5>Price</h5>
-                            </div>
-                            <div class="col s7">
-                                <h5>$20</h5>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s5">
-                                <h5>Action</h5>
-                            </div>
-                            <div class="col s7">
-                                <div class="action"><i class="fa fa-trash"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="divider"></div>
-
-                </div>
-                <div class="total">
-                    <div class="row">
-                        <div class="col s7">
-                            <h5>Fashion Men's</h5>
-                        </div>
-                        <div class="col s5">
-                            <h5>$21.00</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s7">
-                            <h5>Fashion Men's</h5>
-                        </div>
-                        <div class="col s5">
-                            <h5>$21.00</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s7">
-                            <h6>Total</h6>
-                        </div>
-                        <div class="col s5">
-                            <h6>$41.00</h6>
-                        </div>
-                    </div>
-                </div>
-                <button class="btn button-default">Process to Checkout</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end cart menu -->
 
 <!-- cart -->
 <div class="cart section">
@@ -338,11 +261,15 @@
         </div>
         <div class="content" >
             @foreach($arr as $v)
+
                 <div class="cart-1">
+
                     <div class="row">
-                        <div class="col s5">
+
+                        <div class="col s5" id="catr">
                             <h5>商品图片</h5>
                         </div>
+                        <div class="glyphicon glyphicon-ok" amount="{{$v->goods_price * $v->buy_num}}" id="top1" catr_id="{{$v->id}}"></div>
                         <div class="col s7">
                             <img src="/{{$v->goods_img}}" alt="" style="height: 300px; width: 280px;">
                         </div>
@@ -368,7 +295,7 @@
                             <h5>价格</h5>
                         </div>
                         <div class="col s7">
-                            <h5>${{$v->goods_price}}</h5>
+                            $<h5 ><span id="zong">{{$v->goods_price * $v->buy_num}}</span></h5>
                         </div>
                     </div>
                     <div class="row">
@@ -379,10 +306,10 @@
                             <h5><i class="fa fa-trash"></i></h5>
                         </div>
                     </div>
+                    <div class="divider"></div>
                 </div>
-                <div class="divider"></div>
-            @endforeach
 
+            @endforeach
         </div>
         <div class="total">
             <div class="row">
@@ -390,7 +317,7 @@
                     <h5>总价</h5>
                 </div>
                 <div class="col s5">
-                    <h5>$<sanm>0</sanm></h5>
+                    <h5>$<sanm id="am">0</sanm></h5>
                 </div>
             </div>
 
@@ -432,7 +359,31 @@
 <script src="js/fakeLoader.min.js"></script>
 <script src="js/animatedModal.min.js"></script>
 <script src="js/main.js"></script>
-
 </body>
 </html>
 </html>
+<script>
+    //单选
+    $(function(){
+        var sum=0
+         $(document).on('click','.glyphicon',function(){
+            var _this=$(this);
+            var reg = _this.css({color:"red"});
+
+            $.each($(this),function(){
+                sum += parseInt($(this).attr('amount'));
+            });
+             $("#am").html(sum);
+
+        })
+
+    })
+    //立即支付
+    $(function(){
+        $(document).on('click','.btn',function(){
+            //总数
+            var sum= $("#am").html();
+
+        })
+    })
+</script>
