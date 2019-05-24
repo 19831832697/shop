@@ -367,27 +367,19 @@
 <div class="pages section">
     <div class="container">
         <div class="pages-head">
-            <h3>REGISTER</h3>
+            <h3>CHECK YOUR IDENTITY</h3>
         </div>
         <div class="register">
             <div class="row">
                 <form class="col s12">
                     <div class="input-field">
-                        <input type="text" class="validate" placeholder="USERNAME" name="user_name" required>
+                        <input type="text" id="tel" placeholder="YOUR TEL" class="validate" name="user_tel" required>
                     </div>
-                    <div class="input-field">
-                        <input type="email" placeholder="EMAIL" class="validate" name="user_email"required>
+                    <div class="btn button-default" id="sub">获取验证码呀</div>
+                    <div class="input-group">
+                        <input type="text" class="validate" placeholder="YOUR CODE" id="code" name="code" required>
                     </div>
-                    <div class="input-field">
-                        <input type="text" placeholder="YOUR TEL" id="tel" class="validate" name="user_tel" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" placeholder="YOUR NEW PASSWORD" id="pwd1" class="validate" name="user_pwd" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" class="validate" id="pwd2" placeholder="YOUR NEW PASSWORD AGAIN" name="user_pwd1"required>
-                    </div>
-                    <div class="btn button-default" id="submit">REGISTER</div>
+                    <div class="btn button-default" id="submit">CHECK</div>
                 </form>
             </div>
         </div>
@@ -427,38 +419,36 @@
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/fakeLoader.min.js"></script>
 <script src="js/animatedModal.min.js"></script>
+<script src="js/leftTime.js"></script>
 <script src="js/main.js"></script>
 
 </body>
 </html>
 <script>
     $(function(){
-        //注册
+        //点击提交
         $('#submit').click(function(){
-            var user_name=$("input[name='user_name']").val();
-            var user_email=$("input[name='user_email']").val();
             var user_tel=$("input[name='user_tel']").val();
-            var user_pwd=$("input[name='user_pwd']").val();
-            var user_pwd1=$("input[name='user_pwd1']").val();
+            var code=$("input[name='code']").val();
             $.ajax({
                 type:'post',
-                data:{user_name:user_name,user_email:user_email,user_tel:user_tel,user_pwd:user_pwd,user_pwd1:user_pwd1},
-                url:"/registerDo",
+                data:{user_tel:user_tel,code:code},
+                url:"/checkId",
                 dataType:"json",
                 success:function(msg){
                     if(msg.code==1){
                         alert(msg.msg);
-                        location.href="login";
+                        location.href="pwdShow";
                     }else{
                         alert(msg.msg);
+                        location.reload();
                     }
                 }
             })
         })
-
-        //失焦正则
+        // 手机号失去焦点
         function registertel(){
-            //手机号
+            // 手机号失去焦点
             $('#tel').blur(function(){
                 reg=/^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[06-8])\d{8}$/;//验证手机正则(输入前7位至11位)
                 var that = $(this);
@@ -479,30 +469,51 @@
                     // ajax请求后台数据
                 }
             })
-            // 密码失去焦点
-            $('#pwd1').blur(function(){
-                reg=/^[0-9]{6,16}$/;
-                var that = $(this);
-                if( that.val()==""|| that.val()=="YOUR NEW PASSWORD")
-                {
-                    alert('请设置您的密码');
-                }else if(!reg.test($("#pwd1").val())){
-                    alert('请输入6-16位数字');
-                }
-            })
-
-            // 重复输入密码失去焦点时
-            $('#pwd2').blur(function(){
-                var that = $(this);
-                var pwd1 = $('#pwd1').val();
-                var pwd2 = that.val();
-                if(pwd1 != pwd2){
-                    alert('您两次输入的密码不一致哦！');
-                }
-            })
-
         }
         registertel();
 
     })
+</script>
+<script type="text/javascript">
+    $(function(){
+        //60秒倒计时
+        $("#sub").on("click",function(){
+            var _this=$(this);
+            if(!$(this).hasClass("on")){
+                var data={};
+                var user_tel=$('#tel').val();
+                var code=$('#code').val();
+                data.user_tel=user_tel;
+                data.code=code;
+                var url="code";
+
+                $.ajax({
+                    type:'POST',
+                    data:data,
+                    dataType:'json',
+                    url:url,
+                    success:function(msg){
+                        if(msg.code==1){
+                            alert(msg.msg)
+
+                        }else{
+                            alert(msg.msg)
+                            location.reload();
+
+                        }
+                    }
+
+                })
+                $.leftTime(60,function(d){
+                    if(d.status){
+                        _this.addClass("on");
+                        _this.html((d.s=="00"?"60":d.s)+"秒后重新获取");
+                    }else{
+                        _this.removeClass("on");
+                        _this.html("获取验证码");
+                    }
+                });
+            }
+        });
+    });
 </script>
