@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Model\GoodsModel;
 use App\Model\PraiseModel;
 use Illuminate\Support\Facades\DB;
+use App\Model\PraiseModel;
 class GoodsController extends Controller
 {
     //商品详情
@@ -93,7 +94,8 @@ class GoodsController extends Controller
         $id=$_GET['goods_id'];
 //        dd($id);
         $where=[
-            'goods_id'=>$id
+            'goods_id'=>$id,
+            'user_id'=>$_COOKIE['user_id']
         ];
         $res=PraiseModel::where($where)->first();
         if(empty($res)){
