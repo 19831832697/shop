@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Goods;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\GoodsModel;
+use App\Model\PraiseModel;
 use Illuminate\Support\Facades\DB;
 class GoodsController extends Controller
 {

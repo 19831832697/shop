@@ -538,7 +538,10 @@
                     "/col/dela",
                     {id:id},
                     function(res){
-                        console.log(res);
+                       if(res.error==1){
+                            alert('删除成功');
+                            window.location.reload();
+                       }
                     }
             )
         })
