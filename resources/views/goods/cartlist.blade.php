@@ -373,12 +373,21 @@
         //单选
         var sum=0
          $(document).on('click','.glyphicon',function(){
-             $(this).addClass('b');
-             $(this).attr('type','2')
-            var _this=$(this);
-            // var reg = _this.css({color:"red"});
+             var type=$(this).attr('type');
+             if (type == 1){
+                 $(this).attr('type',2);
+                 $(this).addClass('b');
+             }else{
+                 $(this).removeClass("b"); //移除
+                 $(this).attr('type',1);
+             }
             $.each($(this),function(){
-                sum += parseInt($(this).attr('amount'));
+                var type=$(this).attr('type');
+                if (type == 2){
+                    sum += parseInt($(this).attr('amount'));
+                }else{
+                    sum -= parseInt($(this).attr('amount'));
+                }
             });
              $("#am").html(sum);
         })
@@ -403,7 +412,8 @@
                         alert(data.msg);
                         // window.location.href="/login";
                     }else if(data.code==200){
-                        window.location.href="/paylist?data.order_no="+data.order_no;
+                        var order_no=data.order_no;
+                        window.location.href="/paylist?order_no="+data.order_no;
                     }
                 }
             })
