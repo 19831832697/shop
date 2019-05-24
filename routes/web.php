@@ -44,8 +44,11 @@ Route::get('/subtract','Cart\CartController@subtract');
 Route::get('/col/add','Collect\ColController@add');
 Route::get('/col/list','Collect\ColController@list');
 Route::get('/col/del','Collect\ColController@del');
+Route::get('/col/dela','Collect\ColController@dela');
+Route::get('/goods/aaa','Goods\GoodsController@aaa');
 //点击去结算生成订单
-Route::post('pay','pay\PayController@pay');
+Route::post('/pay','pay\PayController@pay');
+Route::get('/paylist','pay\PayController@paylist');
 //订单列表
 Route::post('payShow','pay\PayController@payShow');
 //去支付

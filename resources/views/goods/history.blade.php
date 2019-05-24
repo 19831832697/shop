@@ -387,7 +387,6 @@
                         <div class="price">
                             ${{$v->market_price}} <span>${{$v->goods_price}}</span>
                         </div>
-                        {{--<button class="btn button-default">加入购物车</button>--}}
                     </div>
                 </div>
             @endforeach
@@ -398,7 +397,7 @@
             <div class="pagination-product">
                 <ul>
                     <li class="active">
-{{--                        {{ $goodsInfo->links() }}--}}
+
                     </li>
 
                 </ul>

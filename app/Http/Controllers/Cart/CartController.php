@@ -73,4 +73,14 @@ class CartController extends Controller
         return view('goods/cartlist',['arr'=>$info]);
     }
 
+    //求和
+    public function subtract(){
+        $catr_id=explode(',',$_GET['catr_id']);
+//        dd($catr_id);
+        $catr_info=DB::table('shop_cart')->wherein('id',$catr_id)->get();
+//        dd($catr_info);
+//        foreach($catr_info as $k=>$v){
+//            $k['']
+//        }
+    }
 }
