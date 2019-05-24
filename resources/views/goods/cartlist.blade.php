@@ -309,7 +309,7 @@
                             <h5>删除</h5>
                         </div>
                         <div class="col s7">
-                            <h5><i class="fa fa-trash"></i></h5>
+                            <h5><i class="fa fa-trash" goods_id="{{$v->goods_id}}"></i></h5>
                         </div>
                     </div>
                     <div class="divider"></div>
@@ -390,6 +390,24 @@
                 }
             });
              $("#am").html(sum);
+        })
+
+        //删除
+        $(document).on('click','.fa',function(){
+            var goods_id=$(this).attr('goods_id');
+//            console.log(goods_id);
+            $.get(
+                    '/subtract',
+                    {goods_id:goods_id},
+                    function(res){
+                        if(res=="删除成功"){
+                            alert('删除成功');
+                            window.location.reload();
+                        }else{
+                            alert('删除失败');
+                        }
+                    }
+            );
         })
 
          //点击去结算

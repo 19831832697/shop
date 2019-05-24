@@ -14,11 +14,13 @@ class ColController extends Controller
        // dd($id);
         $where=[
             'goods_id'=>$id
+
         ];
         $arr=PraiseModel::where($where)->first();
         if($arr){
             $pwhere=[
-                'praise_id'=>$arr->praise_id
+                'praise_id'=>$arr->praise_id,
+                'user_id'=>$_COOKIE['user_id'],
             ];
             $p=PraiseModel::where($pwhere)->delete();
 
@@ -33,7 +35,7 @@ class ColController extends Controller
         //添加
         $goodsInfo=GoodsModel::where($where)->first();
         $info=[
-            'user_id'=>1,
+            'user_id'=>$_COOKIE['user_id'],
             'goods_id'=>$goodsInfo->goods_id,
             'praise_name'=>$goodsInfo->goods_name,
             'praise_price'=>$goodsInfo->goods_price,
@@ -55,7 +57,7 @@ class ColController extends Controller
     }
     //展示
     public function list(Request $request){
-        $arr=PraiseModel::get();
+        $arr=PraiseModel::where(['user_id'=>$_COOKIE['user_id']])->get();
        // dd($arr);
             return view('col.col',['arr'=>$arr]);
     }
