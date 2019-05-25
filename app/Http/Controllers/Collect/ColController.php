@@ -10,6 +10,9 @@ class ColController extends Controller
 {
     //收藏
     public function add(Request $request){
+        if(empty($_COOKIE['user_id'])){
+            echo "<script>alert('请先登录');location.href='/login';</script>";
+        }
         $id=$request->input('id');
        // dd($id);
         $where=[
