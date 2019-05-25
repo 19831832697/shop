@@ -90,7 +90,6 @@ class GoodsController extends Controller
      */
     public function aaa(){
         $id=$_GET['goods_id'];
-//        dd($id);
         $where=[
             'goods_id'=>$id,
             'user_id'=>$_COOKIE['user_id']

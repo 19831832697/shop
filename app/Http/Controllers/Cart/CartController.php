@@ -7,7 +7,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 class CartController extends Controller
 {
-    //购物车
+    /**
+     * 加入购物车
+     * @return array
+     */
     public function cart(){
         $goods_id=$_GET['goods_id'];
         $buy_num=$_GET['buy_num'];
@@ -55,7 +58,9 @@ class CartController extends Controller
       }
     }
 
-    //购物车加减
+    /**
+     * 购物车加减
+     */
     public function add(){
         $goods_id=$_GET['goods_id'];
         $buy_num=$_GET['buy_num'];
@@ -65,16 +70,18 @@ class CartController extends Controller
         }
     }
 
-    //购物车列表
+    /**
+     * 购物车列表
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function cartlist(){
         $where=[
             'user_id'=>$_COOKIE['user_id'],
+            'status'=>1
         ];
         $arr=DB::table('shop_cart')->get()->toArray();
         $goods_id=array_column($arr,'goods_id');
         $goods_info=DB::table('shop_goods')->wherein('goods_id',$goods_id)->get();
-//        dd($goods_info);
-//        $info=DB::table('shop_cart')->join("shop_goods","shop_cart.goods_id"."="."shop_goods.goods_id")->get();
         $info=DB::table('shop_cart')
             ->join('shop_goods', 'shop_cart.goods_id', '=', 'shop_goods.goods_id')
             ->where($where)
@@ -82,7 +89,9 @@ class CartController extends Controller
         return view('goods/cartlist',['arr'=>$info]);
     }
 
-    //购物车删除
+    /**
+     * 购物车删除
+     */
     public function subtract(){
         $goods_id=$_GET['goods_id'];
         $where=[

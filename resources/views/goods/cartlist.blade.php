@@ -175,9 +175,6 @@
                                 <i class="fa fa-envelope-o"></i>
                             </div>
                             Contact
-
-
-
                         </div>
                     </a>
                 </div>

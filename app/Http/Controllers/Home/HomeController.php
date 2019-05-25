@@ -9,7 +9,6 @@ class HomeController extends Controller
 {
     //
     public function index(){
-     //    echo "aa";
         $where=[
             'goods_status'=>1,
             'goods_new'=>1
@@ -19,7 +18,6 @@ class HomeController extends Controller
             'goods_status'=>1,
         ];
         $goods=GoodsModel::orderBy('goods_salenum','desc')->paginate(4);
-        //dd($goods);
         return view('home.index',['goodsInfo'=>$goodsInfo,'goods'=>$goods]);
     }
 
