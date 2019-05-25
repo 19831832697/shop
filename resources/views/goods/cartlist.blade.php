@@ -369,7 +369,7 @@
             );
         })
 
-         //点击去结算
+         //点击提交订单
         $(document).on('click','#btn',function(){
             var order_amount= $("#am").html();//总价格
             var goods_id="";

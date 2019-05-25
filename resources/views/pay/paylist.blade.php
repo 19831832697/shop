@@ -376,9 +376,9 @@
                     <h6><a href="/goods/goodslist?goods_id={{$v['goods_id']}}">{{$v['goods_name']}}</a></h6>
                     
                     <div class="price">
-                        ${{$v['market_price']}} <span>${{$v['goods_price']}}</span>
+                        价格:<span>{{$v['goods_price']}}</span> 市场价格:{{$v['market_price']}}
                     </div>
-                   
+
                 </div>
             </div>
            
@@ -442,7 +442,7 @@
 {{--<script src="js/jquery.js"></script>--}}
 <script>
     $(document).ready(function(){
-        //提交订单
+        //展示订单下的商品
         _url=window.location.href;
         var orderno_place=_url.lastIndexOf("o=");
         order_no=_url.substring(orderno_place+2,_url.length);
