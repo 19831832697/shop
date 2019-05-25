@@ -15,6 +15,13 @@ class CartController extends Controller
         $goods_id=$_GET['goods_id'];
         $buy_num=$_GET['buy_num'];
         $user_id=$_COOKIE['user_id'];
+        if(empty($user_id)){
+            $res=[
+                'code'=>40025,
+                'msg'=>'您还没有登录，请先去登录！'
+            ];
+            return json_encode($res,JSON_UNESCAPED_UNICODE);
+        }
         $where=[
             'goods_id'=>$goods_id,
             'user_id'=>$user_id

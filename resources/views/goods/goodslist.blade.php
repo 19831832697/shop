@@ -379,14 +379,17 @@
 			var buy_num=parseInt($("#text").val());
 			var goods_id=$("#add").attr('goods_id');
 			$.get(
-					'/cart?goods_id='+goods_id+'&buy_num='+buy_num,
-					function(res){
-						if(res.ser==0){
-							alert(res.msg);
-						}else{
-							alert(res.msg);
-						}
+				'/cart?goods_id='+goods_id+'&buy_num='+buy_num,
+				function(res){
+					if(res.ser==0){
+						alert(res.msg);
+					}else if(res.code==40025){
+                        alert(res.msg);
+                        window.location.href="/login";
+					}else{
+						alert(res.msg);
 					}
+				}
 			);
 		})
 		//点击收藏
