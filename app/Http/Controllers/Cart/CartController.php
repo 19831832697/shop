@@ -12,16 +12,25 @@ class CartController extends Controller
      * @return array
      */
     public function cart(){
+        if(empty($_COOKIE['user_id'])){
+            echo "<script>alert('请先登录');location.href='/login';</script>";
+        }
         $goods_id=$_GET['goods_id'];
         $buy_num=$_GET['buy_num'];
         $user_id=$_COOKIE['user_id'];
+        if(empty($user_id)){
+            $res=[
+                'code'=>40025,
+                'msg'=>'您还没有登录，请先去登录！'
+            ];
+            return json_encode($res,JSON_UNESCAPED_UNICODE);
+        }
         $where=[
             'goods_id'=>$goods_id,
             'user_id'=>$user_id
         ];
         $catr=DB::table('shop_cart')->where($where)->first();
         $arr=DB::table('shop_goods')->where(['goods_id'=>$goods_id])->first();
-//        dd($arr);
         if(empty($catr)){
             $info=[
                 'goods_name'=>$arr->goods_name,
@@ -75,6 +84,9 @@ class CartController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function cartlist(){
+        if(empty($_COOKIE['user_id'])){
+            echo "<script>alert('请先登录');location.href='/login';</script>";
+        }
         $where=[
             'user_id'=>$_COOKIE['user_id'],
             'status'=>1
@@ -93,6 +105,9 @@ class CartController extends Controller
      * 购物车删除
      */
     public function subtract(){
+        if(empty($_COOKIE['user_id'])){
+            echo "<script>alert('请先登录');location.href='/login';</script>";
+        }
         $goods_id=$_GET['goods_id'];
         $where=[
             'goods_id'=>$goods_id,

@@ -10,6 +10,9 @@ class ColController extends Controller
 {
     //收藏
     public function add(Request $request){
+        if(empty($_COOKIE['user_id'])){
+            echo "<script>alert('请先登录');location.href='/login';</script>";
+        }
         $id=$request->input('id');
        // dd($id);
         $where=[
@@ -57,7 +60,7 @@ class ColController extends Controller
     }
     //展示
     public function list(Request $request){
-        $arr=PraiseModel::where(['user_id'=>$_COOKIE['user_id']])->get();
+        $arr=PraiseModel::where(['user_id'=>$_COOKIE['user_id']])->orderBy('praise_id','desc')->get();
        // dd($arr);
             return view('col.col',['arr'=>$arr]);
     }

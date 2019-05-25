@@ -252,7 +252,7 @@
                             <h5>购买数量</h5>
                         </div>
                         <div class="col s7">
-                            <input value="{{$v->buy_num}}" type="text">
+                            <input  disabled="disabled" value="{{$v->buy_num}}" type="text">
                         </div>
                     </div>
                     <div class="row">
@@ -369,7 +369,7 @@
             );
         })
 
-         //点击去结算
+         //点击提交订单
         $(document).on('click','#btn',function(){
             var order_amount= $("#am").html();//总价格
             var goods_id="";
@@ -385,9 +385,11 @@
                 data:{order_amount:order_amount,goods_id:goods_id},
                 dataType:"json",
                 success:function(data){
-                    if(data.code==40020){
+                    if(data.code==40025){
                         alert(data.msg);
-                        // window.location.href="/login";
+                        window.location.href="/login";
+                    }else if(data.code==40020){
+                        alert(data.msg);
                     }else if(data.code==200){
                         var order_no=data.order_no;
                         window.location.href="/paylist?order_no="+data.order_no;

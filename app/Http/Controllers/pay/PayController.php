@@ -20,7 +20,7 @@ class PayController extends Controller
         $order_amount=$request->input('order_amount');
         if(empty($user_id)){
             $res=[
-                'code'=>40020,
+                'code'=>40025,
                 'msg'=>'您还没有登录，请先去登录！'
             ];
             return json_encode($res,JSON_UNESCAPED_UNICODE);
@@ -37,7 +37,7 @@ class PayController extends Controller
             ];
             return json_encode($res,JSON_UNESCAPED_UNICODE);
         }
-        //生成
+        //生成订单
         $order_no=date('YmdHis',time()).rand(1000,9999);
         $dataInfo=[
             'order_no'=>$order_no,
@@ -95,11 +95,12 @@ class PayController extends Controller
         $order_no=$request->input('order_no');
         $user_id=$_COOKIE['user_id'];
         $where=[
-            'order_no'=>$order_no,
-            'user_id'=>$user_id
+            'shop_order_detail.order_no'=>$order_no,
+            'shop_order_detail.user_id'=>$user_id
         ];
         $arrInfo=DB::table('shop_order_detail')
             ->join('shop_goods','shop_goods.goods_id','=','shop_order_detail.goods_id')
+            ->join('shop_order','shop_order.order_id','=','shop_order_detail.order_id')
             ->where($where)->get();
         $arr=json_decode($arrInfo,true);
         return view('pay/paylist',['arr'=>$arr,'order_no'=>$order_no]);
