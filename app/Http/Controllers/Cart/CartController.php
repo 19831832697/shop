@@ -21,7 +21,6 @@ class CartController extends Controller
         ];
         $catr=DB::table('shop_cart')->where($where)->first();
         $arr=DB::table('shop_goods')->where(['goods_id'=>$goods_id])->first();
-//        dd($arr);
         if(empty($catr)){
             $info=[
                 'goods_name'=>$arr->goods_name,

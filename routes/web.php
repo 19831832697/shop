@@ -58,9 +58,11 @@ Route::get('/col/list','Collect\ColController@list');
 Route::get('/col/del','Collect\ColController@del');
 Route::get('/col/dela','Collect\ColController@dela');
 Route::get('/goods/aaa','Goods\GoodsController@aaa');
+
 //点击去结算生成订单
 Route::post('/pay','pay\PayController@pay');
 Route::get('/paylist','pay\PayController@paylist');
+
 //支付宝支付
 Route::get('z_pay','pay\MoneyController@z_pay');
 Route::post('notify','pay\MoneyController@notify');//异步回调

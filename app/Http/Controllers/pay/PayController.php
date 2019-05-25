@@ -37,7 +37,7 @@ class PayController extends Controller
             ];
             return json_encode($res,JSON_UNESCAPED_UNICODE);
         }
-        //生成
+        //生成订单
         $order_no=date('YmdHis',time()).rand(1000,9999);
         $dataInfo=[
             'order_no'=>$order_no,

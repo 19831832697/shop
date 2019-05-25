@@ -160,7 +160,7 @@ class MoneyController extends Controller
         $where=[
             'order_no'=>$out_trade_no
         ];
-//        //修改订单表
+       //修改订单表
         $updateInfo=[
             'pay_status'=>2,
             'status'=>2,
@@ -186,6 +186,7 @@ class MoneyController extends Controller
         }
         //修改订单详情表
         $detailInfo=[
+            'buy_num'=>0,
             'utime'=>time(),
         ];
         DB::table('shop_order_detail')->where($where)->update($detailInfo);
