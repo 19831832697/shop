@@ -420,15 +420,37 @@
 <script src="js/animatedModal.min.js"></script>
 <script src="js/leftTime.js"></script>
 <script src="js/main.js"></script>
+<script src="layui/layui.js"></script>
 
 </body>
 </html>
 <script>
     $(function(){
+        layui.use("layer",function(){
+            var layer=layui.layer;
         //点击修改
         $('#submit').click(function(){
             var pwd1=$("input[name='pwd1']").val();
             var pwd2=$("input[name='pwd2']").val();
+
+            //验证密码
+            reg=/^[0-9]{6,16}$/;
+            if(pwd1==""|| pwd1=="YOUR NEW PASSWORD"){
+                layer.msg('密码不能为空');
+                return false;
+            }else if(!reg.test(pwd1)){
+                layer.msg('密码请输入6-16位数字');
+                return false;
+            }
+            //验证确认密码
+            if(pwd2==""|| pwd2=="YOUR NEW PASSWORD AGAIN"){
+                layer.msg('确认密码不能为空');
+                return false;
+            }else if(pwd2 !== pwd1){
+                layer.msg('密码与确认密码不一致');
+                return false;
+            }
+
             $.ajax({
                 type:'post',
                 data:{pwd1:pwd1,pwd2:pwd2},
@@ -436,10 +458,10 @@
                 dataType:"json",
                 success:function(msg){
                     if(msg.code==1){
-                        alert(msg.msg);
+                        layer.msg(msg.msg);
                         location.href="login";
                     }else{
-                        alert(msg.msg);
+                        layer.msg(msg.msg);
                         location.reload();
                     }
                 }
@@ -447,31 +469,8 @@
         })
 
 
-        //密码正则
-        function registertel(){
-            // 密码失去焦点
-            $('#pwd1').blur(function(){
-                reg=/^[0-9]{6,16}$/;
-                var that = $(this);
-                if( that.val()==""|| that.val()=="YOUR NEW PASSWORD")
-                {
-                    alert('请设置您的密码');
-                }else if(!reg.test($("#pwd1").val())){
-                    alert('请输入6-16位数字');
-                }
-            })
 
-            // 重复输入密码失去焦点时
-            $('#pwd2').blur(function(){
-                var that = $(this);
-                var pwd1 = $('#pwd1').val();
-                var pwd2 = that.val();
-                if(pwd1 != pwd2){
-                    alert('您两次输入的密码不一致哦！');
-                }
-            })
-        }
-        registertel();
 
+      })
     })
 </script>

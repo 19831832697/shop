@@ -379,10 +379,10 @@
                         <input type="email" placeholder="EMAIL" class="validate" name="user_email"required>
                     </div>
                     <div class="input-field">
-                        <input type="text" placeholder="YOUR TEL" id="tel" class="validate" name="user_tel" required>
+                        <input type="text" placeholder="YOUR TEL"  class="validate" name="user_tel" required>
                     </div>
                     <div class="input-field">
-                        <input type="password" placeholder="YOUR NEW PASSWORD" id="pwd1" class="validate" name="user_pwd" required>
+                        <input type="password" placeholder="YOUR NEW PASSWORD"  class="validate" name="user_pwd" required>
                     </div>
                     <div class="input-field">
                         <input type="password" class="validate" id="pwd2" placeholder="YOUR NEW PASSWORD AGAIN" name="user_pwd1"required>
@@ -428,11 +428,14 @@
 <script src="js/fakeLoader.min.js"></script>
 <script src="js/animatedModal.min.js"></script>
 <script src="js/main.js"></script>
+<script src="layui/layui.js"></script>
 
 </body>
 </html>
 <script>
     $(function(){
+        layui.use("layer",function(){
+            var layer=layui.layer;
         //注册
         $('#submit').click(function(){
             var user_name=$("input[name='user_name']").val();
@@ -440,6 +443,59 @@
             var user_tel=$("input[name='user_tel']").val();
             var user_pwd=$("input[name='user_pwd']").val();
             var user_pwd1=$("input[name='user_pwd1']").val();
+
+
+            //验证用户名为空
+            if( user_name==""|| user_name=="USERNAME")
+            {
+                layer.msg('用户名不能为空');
+                return false;
+            }
+            //验证邮箱为空
+            if(user_email==""|| user_email=="EMAIL"){
+                layer.msg('邮箱不能为空');
+                return false;
+            }
+            //验证手机号为空
+            if(user_tel==""|| user_tel=="YOUR TEL"){
+                layer.msg('手机号不能为空');
+                return false;
+            }
+            //验证手机号
+            reg=/^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[06-8])\d{8}$/;//验证手机正则(输入前7位至11位)
+            if(user_tel==""|| user_tel=="YOUR TEL"){
+                layer.msg('手机号不能为空');
+                return false;
+            }else if(user_tel.length<11)
+            {
+                layer.msg('您输入的手机号长度有误');
+                return false;
+            }else if(!reg.test(user_tel))
+            {
+                layer.msg('您输入的手机号不存在');
+                return false;
+            }else if(user_tel.length == 11){
+                // ajax请求后台数据
+            }
+
+            //验证密码
+            reg=/^[0-9]{6,16}$/;
+            if(user_pwd==""|| user_pwd=="YOUR NEW PASSWORD"){
+                layer.msg('密码不能为空');
+                return false;
+            }else if(!reg.test(user_pwd)){
+                layer.msg('密码请输入6-16位数字');
+                return false;
+            }
+            //验证确认密码
+            if(user_pwd1==""|| user_pwd1=="YOUR NEW PASSWORD AGAIN"){
+                layer.msg('确认密码不能为空');
+                return false;
+            }else if(user_pwd1 !== user_pwd){
+                layer.msg('密码与确认密码不一致');
+                return false;
+            }
+
             $.ajax({
                 type:'post',
                 data:{user_name:user_name,user_email:user_email,user_tel:user_tel,user_pwd:user_pwd,user_pwd1:user_pwd1},
@@ -447,62 +503,15 @@
                 dataType:"json",
                 success:function(msg){
                     if(msg.code==1){
-                        alert(msg.msg);
+                        layer.msg(msg.msg);
                         location.href="login";
                     }else{
-                        alert(msg.msg);
+                        layer.msg(msg.msg);
                     }
                 }
             })
         })
 
-        //失焦正则
-        function registertel(){
-            //手机号
-            $('#tel').blur(function(){
-                reg=/^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[06-8])\d{8}$/;//验证手机正则(输入前7位至11位)
-                var that = $(this);
-
-                if( that.val()==""|| that.val()=="YOUR TEL")
-                {
-                    alert('请输入你的手机号');
-                }
-                else if(that.val().length<11)
-                {
-                    alert('您输入的手机号长度有误');
-                }
-                else if(!reg.test($("#tel").val()))
-                {
-                    alert('您输入的手机号不存在');
-                }
-                else if(that.val().length == 11){
-                    // ajax请求后台数据
-                }
-            })
-            // 密码失去焦点
-            $('#pwd1').blur(function(){
-                reg=/^[0-9]{6,16}$/;
-                var that = $(this);
-                if( that.val()==""|| that.val()=="YOUR NEW PASSWORD")
-                {
-                    alert('请设置您的密码');
-                }else if(!reg.test($("#pwd1").val())){
-                    alert('请输入6-16位数字');
-                }
-            })
-
-            // 重复输入密码失去焦点时
-            $('#pwd2').blur(function(){
-                var that = $(this);
-                var pwd1 = $('#pwd1').val();
-                var pwd2 = that.val();
-                if(pwd1 != pwd2){
-                    alert('您两次输入的密码不一致哦！');
-                }
-            })
-
-        }
-        registertel();
-
     })
+  })
 </script>
