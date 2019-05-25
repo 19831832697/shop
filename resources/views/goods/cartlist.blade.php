@@ -7,7 +7,7 @@
 <html lang="zxx">
 <head>
     <meta charset="UTF-8">
-    <title>Mstore - Online Shop Mobile Template</title>
+    <title>第七组</title>
     <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -303,8 +303,8 @@
 <div class="footer">
     <div class="container">
         <div class="about-us-foot">
-            <h6>Mstore</h6>
-            <p>is a lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.</p>
+            <h6>成功便是站起比倒下多一次</h6>
+            <p>无论什么时候，不管遇到什么情况，我绝不允许自己有一点点灰心丧气</p>
         </div>
         <div class="social-media">
             <a href=""><i class="fa fa-facebook"></i></a>

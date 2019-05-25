@@ -367,11 +367,13 @@
 <div class="pages section">
     <div class="container">
         <div class="pages-head">
-            <h3>ABOUT US</h3>
+            <h3>关于我们</h3>
         </div>
         <div class="about-us">
-            <img src="img/about.jpg" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore consequuntur praesentium dignissimos voluptatum esse, perspiciatis mollitia repellendus rerum magni aspernatur ipsam maxime dolorem iure laudantium at veritatis doloribus, numquam, dicta?</p>
+            <img src="http://img.400388.com/20171210/58cee3227aa50761d0fecdd784413bf8.jpg" alt="">
+            <p>
+                永远不要怪别人不帮你，也永远别怪他人不关心你。活在世上，我们都是独立的个体，痛苦难受都得自己承受。没人能真正理解你，石头没砸在他脚上，他永远体会不到有多疼。人生路上，我们都是孤独的行者，如人饮水冷暖自知，真正能帮你的，永远只有你自己。
+            </p>
         </div>
     </div>
 </div>
@@ -386,8 +388,8 @@
 <div class="footer">
     <div class="container">
         <div class="about-us-foot">
-            <h6>Mstore</h6>
-            <p>is a lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.</p>
+            <h6>成功便是站起比倒下多一次</h6>
+            <p>无论什么时候，不管遇到什么情况，我绝不允许自己有一点点灰心丧气</p>
         </div>
         <div class="social-media">
             <a href=""><i class="fa fa-facebook"></i></a>
@@ -397,7 +399,7 @@
             <a href=""><i class="fa fa-instagram"></i></a>
         </div>
         <div class="copyright">
-            <span>© 2017 All Right Reserved</span>
+            <span>© 2019 第七组</span>
         </div>
     </div>
 </div>

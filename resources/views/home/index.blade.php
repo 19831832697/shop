@@ -3,7 +3,7 @@
 <html lang="zxx">
 <head>
     <meta charset="UTF-8">
-    <title>Mstore - Online Shop Mobile Template</title>
+    <title>第七组</title>
     <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -45,7 +45,7 @@
             <img src="img/profile.jpg" alt="">
             <h2>John Doe</h2>
         </li>
-        <li><a href="setting.html"><i class="fa fa-cog"></i>个人中心</a></li>
+        <li><a href="/aboutus"><i class="fa fa-cog"></i>个人中心</a></li>
         <li><a href="/aboutus"><i class="fa fa-user"></i>关于我们</a></li>
         <li><a href="contact"><i class="fa fa-envelope-o"></i>联系我们</a></li>
         <li><a href="login"><i class="fa fa-sign-in"></i>登录</a></li>
@@ -403,8 +403,8 @@
 <!-- quote -->
 <div class="section quote">
     <div class="container">
-        <h4>FAS时尚高达50％的折扣</h4>
-        <p>Lorem存有悲坐阿梅德，consectetur adipiscing ELIT。事情会通过正确的是耻辱发生在这里，
+        <h4>永远要相信边上的人比你聪明</h4>
+        <p>一个人真正的智慧，是用积极的心态，专注于自己喜欢的事，别人怎么说，怎么看，都不重要，重要的是要活出自己
         </p>
     </div>
 </div>
@@ -422,12 +422,12 @@
         <div class="row">
             <div class="col s6">
                 <div class="content">
-                    <img src="{{$v->goods_img}}" alt="">
+                    <a href="/goods/goodslist?goods_id={{$v->goods_id}}"><img src="{{$v->goods_img}}" alt=""></a>
                     <h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
                     <div class="price">
                         ${{$v->market_price}} <span>${{$v->goods_price}}</span>
                     </div>
-                    <button class="btn button-default">加入购物车</button>
+                    <button class="btn button-default" id="str" goods_id="{{$v->goods_id}}" buy_num="1">加入购物车</button>
                 </div>
             </div>
         @endforeach
@@ -468,7 +468,7 @@
                     <div class="price">
                     ${{$v->market_price}} <span>${{$v->goods_price}}</span>
                     </div>
-                    <button class="btn button-default">加入购物车</button>
+                    <button class="btn button-default" id="str" goods_id="{{$v->goods_id}}" buy_num="1">加入购物车</button>
                 </div>
             </div>
             @endforeach
@@ -495,8 +495,8 @@
 <div class="footer">
     <div class="container">
         <div class="about-us-foot">
-            <h6>Mstore</h6>
-            <p>is a lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.</p>
+            <h6>成功便是站起比倒下多一次</h6>
+            <p>无论什么时候，不管遇到什么情况，我绝不允许自己有一点点灰心丧气</p>
         </div>
         <div class="social-media">
             <a href=""><i class="fa fa-facebook"></i></a>
@@ -522,3 +522,23 @@
 
 </body>
 </html>
+<script>
+    $(function(){
+        $(document).on('click','#str',function () {
+            var buy_num=$(this).attr('buy_num');
+            var goods_id=$(this).attr('goods_id');
+
+            $.get(
+                    '/cart',
+                    {goods_id:goods_id,buy_num:buy_num},
+                    function(res){
+                        if(res.ser==0){
+                            alert(res.msg);
+                        }else{
+                            alert(res.msg);
+                        }
+                    }
+            );
+        })
+    })
+</script>
