@@ -368,30 +368,20 @@
         <div class="pages-head">
             <h3>PRODUCT LIST</h3>
         </div>
-        <div class="input-field">
-            <select>
-                <option value="">Popular</option>
-                <option value="1">New Product</option>
-                <option value="2">Best Sellers</option>
-                <option value="3">Best Reviews</option>
-                <option value="4">Low Price</option>
-                <option value="5">High Price</option>
-            </select>
-        </div>
         <div class="row">
             @foreach($arr as $k=>$v)
-            <div class="col s6">
-                <div class="history">
-                    <img src="/{{$v->goods_img}}" alt="">
-                    <h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
+            <div class="col s6" class="glyphicon glyphicon-ok">
+                <div class="order">
+                    <img src="/{{$v['goods_img']}}" alt="">
+                    <h6><a href="/goods/goodslist?goods_id={{$v['goods_id']}}">{{$v['goods_name']}}</a></h6>
                     <div class="price">
-                        ${{$v->market_price}} <span>${{$v->goods_price}}</span>
+                        ${{$v['market_price']}} <span>${{$v['goods_price']}}</span>
                     </div>
-                    {{--<button class="btn button-default">加入购物车</button>--}}
                 </div>
             </div>
             @endforeach
         </div>
+        <input type="button" class="button-default" id="btn" value="去支付">
         <div class="row margin-bottom">
 
 
@@ -443,21 +433,31 @@
 
 </body>
 </html>
-<script src="js/jquery.js"></script>
+{{--<script src="js/jquery.js"></script>--}}
 <script>
     $(document).ready(function(){
         _url=window.location.href;
         var orderno_place=_url.lastIndexOf("o=");
         order_no=_url.substring(orderno_place+2,_url.length);
-        alert(order_no);
         $.ajax({
-            url:"paylist",
+            url:"/paylist",
             method:"get",
             data:{order_no:order_no},
             dataType:"json",
            success:function(){
 
            }
+        })
+        $(document).on('click','#btn',function(){
+            $.ajax({
+                url:"/z_pay",
+                method:"get",
+                data:{order_no:order_no},
+                dataType:"json",
+                success:function(){
+
+                }
+            })
         })
     })
 </script>

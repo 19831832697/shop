@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\pay;
 
+use App\Model\PayModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class MoneyController extends Controller
 {
@@ -36,11 +38,11 @@ class MoneyController extends Controller
      */
     public function z_pay(Request $request)
     {
-        $order_no = $_GET['orderno'];
+        $order_no = $_GET['order_no'];
         $where = [
             'order_no' => $order_no
         ];
-        $dataInfo = OrderModel::where($where)->first();
+        $dataInfo = PayModel::where($where)->first();
 //        var_dump($dataInfo);die;
         if ($dataInfo) {
             $order_id = $dataInfo->order_id;
@@ -53,7 +55,7 @@ class MoneyController extends Controller
             }
             //业务参数
             $bizcont = [
-                'subject' => 'Lening-Order: ' . $oid,
+                'subject' => 'Lening-Order: ' . $order_id,
                 'out_trade_no' => $order_info->order_no,
                 'total_amount' => $order_info->order_amount,
                 'product_code' => 'QUICK_WAP_WAY',
@@ -82,6 +84,7 @@ class MoneyController extends Controller
             $url = rtrim($param_str, '&');
             $url = $this->gate_way . $url;
             return redirect($url, 302);
+//            header("Location:".$url);
         }
     }
 
@@ -165,7 +168,7 @@ class MoneyController extends Controller
             'pay_status'=>2,
             'status'=>2,
         ];
-        $aa=DB::table('shop_order')->where($where)->update($updateInfo);
+        DB::table('shop_order')->where($where)->update($updateInfo);
         $dataInfo=DB::table('shop_order_detail')->where($where)->get();
         $data=[];
         foreach($dataInfo as $k=>$v){

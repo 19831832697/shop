@@ -183,6 +183,113 @@ Class UserController extends Controller
         }
     }
 
+    //进入验证页面
+    public  function password(){
+        return view('user.password');
+    }
+    //验证码
+    public function code(Request $request){
+        $tel=$request->input('user_tel');
+        $data=DB::table('user')->where(['user_tel'=>$tel])->first();
+        if(empty($data)){
+            $arr = ["code" => 0, "msg" => "请填写已经注册过的手机号"];
+            return json_encode($arr,JSON_UNESCAPED_UNICODE);
+        }
+        $num = rand(1000,9999);
+        $bol=100;
+        if($bol == 100){
+            $arr=array(
+                'tel'=>$tel,
+                'code'=>$num,
+                'out_time'=>time()+60,
+                'status'=>1,
+            );
+            $res=DB::table('code')->insert($arr);
+            if ($res) {
+                $arr = ["code" => 1, "msg" => "发送验证码成功,有效期1分钟"];
+                return json_encode($arr,JSON_UNESCAPED_UNICODE);
+            }else {
+                $arr = ["code" => 0, "msg" => "添加数据库失败"];
+                return json_encode($arr,JSON_UNESCAPED_UNICODE);
+            }
+        }else{
+            $arr=[
+                'code'=>0,
+                'msg'=>'验证码发送失败'
+            ];
+            return json_encode($arr,JSON_UNESCAPED_UNICODE);
+        }
+
+
+    }
+    //验证身份
+    public function checkId(Request $request)
+    {
+        $user_tel = $request->input('user_tel');
+
+        $code = $request->input('code');
+        $time = time();
+        $codewhere = [
+            'tel' => $user_tel,
+            'code' => $code,
+            'status' => 1
+        ];
+        // $sql="select * from code where tel=$name and code=$code and timeout>$time and `status`=1";
+        $arrinfo = DB::table('code')->where($codewhere)->first();
+        if ($arrinfo) {
+            if ($time > $arrinfo->out_time) {
+                $arr = [
+                    'code' => 0,
+                    'msg' => '验证码失效'
+                ];
+                return json_encode($arr, JSON_UNESCAPED_UNICODE);
+            }else{
+
+                setcookie('user_tel',$user_tel);
+
+                $arr = [
+                    'code' => 1,
+                    'msg' => '验证身份成功,请您修改密码'
+                ];
+                return json_encode($arr, JSON_UNESCAPED_UNICODE);
+            }
+        } else {
+            $arr = [
+                'code' => 0,
+                'msg' => '验证码错误'
+            ];
+            return json_encode($arr, JSON_UNESCAPED_UNICODE);
+        }
+
+
+    }
+    //进入修改密码页面
+    public function pwdShow(){
+        return view('user.pwdshow');
+    }
+    //修改密码
+    public function pwdChange(Request $request){
+        $tel= $_COOKIE['user_tel'];
+        $pwd1=$request->input('pwd1');
+        //密码加密处理
+        $password=password_hash($pwd1,PASSWORD_BCRYPT);
+        $data=DB::table('user')->where(['user_tel'=>$tel])->update(['user_pwd'=>$password]);
+        if($data){
+            $arr=[
+                'code'=>1,
+                'msg'=>'修改密码成功,去登陆把'
+            ];
+            return  json_encode($arr,JSON_UNESCAPED_UNICODE);
+        }else{
+            $arr=[
+                'code'=>0,
+                'msg'=>'修改密码失败'
+            ];
+            return  json_encode($arr,JSON_UNESCAPED_UNICODE);
+        }
+
+    }
+
 
 }
 

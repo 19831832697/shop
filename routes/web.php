@@ -25,6 +25,18 @@ Route::post('registerDo','User\UserController@registerDo');
 Route::get('login','User\UserController@login');
 //登录
 Route::post('loginDo','User\UserController@loginDo');
+//忘记密码进入手机号验证页面
+Route::get('password', 'User\UserController@password');
+//验证码发送
+Route::post('code', 'User\UserController@code');
+//验证
+Route::post('checkId', 'User\UserController@checkId');
+//进入修改页面
+Route::get('pwdShow', 'User\UserController@pwdShow');
+//修改密码成功
+Route::post('pwdChange', 'User\UserController@pwdChange');
+
+
 
 //商品详情
 Route::get('/goods/goodslist','Goods\GoodsController@goodslist');
@@ -49,8 +61,6 @@ Route::get('/goods/aaa','Goods\GoodsController@aaa');
 //点击去结算生成订单
 Route::post('/pay','pay\PayController@pay');
 Route::get('/paylist','pay\PayController@paylist');
-//订单列表
-Route::post('payShow','pay\PayController@payShow');
 //去支付
 Route::get('z_pay','pay\MoneyController@z_pay');
 Route::post('notify','alipay\AlipayController@notify');//异步回调

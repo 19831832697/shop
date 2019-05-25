@@ -27,6 +27,9 @@ class PayController extends Controller
         }
         $id=rtrim($goods_id,',');
         $goodsId=explode(',',$id);
+        $where=[
+            'user_id'=>$user_id,
+        ];
         if(empty($id)){
             $res=[
                 'code'=>40020,
@@ -68,7 +71,6 @@ class PayController extends Controller
                 ];
                 return json_encode($res, JSON_UNESCAPED_UNICODE);
             }
-
         }else {
              $res = [
                  'code' => 40020,
@@ -90,25 +92,11 @@ class PayController extends Controller
             'order_no'=>$order_no,
             'user_id'=>$user_id
         ];
-        $arrInfo=DB::table('shop_order_detail')->where($where)->get();
+        $arrInfo=DB::table('shop_order_detail')
+            ->join('shop_goods','shop_goods.goods_id','=','shop_order_detail.goods_id')
+            ->where($where)->get();
         $arr=json_decode($arrInfo,true);
-        var_dump($arr);die;
+//        var_dump($arr);die;
         return view('pay/paylist',['arr'=>$arr]);
-    }
-
-    /**
-     * 展示订单
-     * @param Request $request
-     * @return false|string
-     */
-    public function payShow(Request $request){
-        $order_no=$request->input('order_no');
-        $user_id=$_COOKIE['user_id'];
-        $where=[
-            'order_no'=>$order_no,
-            'user_id'=>$user_id
-        ];
-        $arrInfo=DB::table('shop_order_detail')->where($where)->get();
-        return json_encode($arrInfo,JSON_UNESCAPED_UNICODE);
     }
 }
