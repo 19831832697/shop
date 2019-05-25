@@ -43,12 +43,10 @@ class MoneyController extends Controller
             'order_no' => $order_no
         ];
         $dataInfo = PayModel::where($where)->first();
-//        var_dump($dataInfo);die;
         if ($dataInfo) {
             $order_id = $dataInfo->order_id;
             //验证订单状态 是否已支付 是否是有效订单
             $order_info = DB::table('shop_order')->where(['order_id' => $order_id])->first();
-//        var_dump($order_info);die;
             //判断订单是否已被删除
             if ($order_info->status == 2) {
                 die("订单已被删除，无法支付");
@@ -84,7 +82,6 @@ class MoneyController extends Controller
             $url = rtrim($param_str, '&');
             $url = $this->gate_way . $url;
             return redirect($url, 302);
-//            header("Location:".$url);
         }
     }
 
