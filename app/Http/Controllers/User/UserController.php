@@ -28,15 +28,6 @@ Class UserController extends Controller
         $user_email = $data['user_email'];
         $user_tel = $data['user_tel'];
         $user_pwd = $data['user_pwd'];
-        $user_pwd1 = $data['user_pwd1'];
-        //验证为空
-        if (empty($user_name) || empty($user_email) || empty($user_pwd) || empty($user_tel) ) {
-            $arr = [
-                'code' => 0,
-                'msg' => '所填元素不能为空'
-            ];
-            return json_encode($arr, JSON_UNESCAPED_UNICODE);
-        }
         //验证用户名是否存在
         $data1 = DB::table('user')->where(['user_name' => $user_name])->first();
         if ($data1) {
@@ -61,14 +52,6 @@ Class UserController extends Controller
             $arr = [
                 'code' => 0,
                 'msg' => '此手机号已被注册'
-            ];
-            return json_encode($arr, JSON_UNESCAPED_UNICODE);
-        }
-        //验证密码
-        if ($user_pwd !== $user_pwd1) {
-            $arr = [
-                'code' => 0,
-                'msg' => '密码与确认密码不一致'
             ];
             return json_encode($arr, JSON_UNESCAPED_UNICODE);
         }
@@ -192,7 +175,7 @@ Class UserController extends Controller
         $tel=$request->input('user_tel');
         $data=DB::table('user')->where(['user_tel'=>$tel])->first();
         if(empty($data)){
-            $arr = ["code" => 0, "msg" => "请填写已经注册过的手机号"];
+            $arr = ["code" => 0, "msg" => "请填写您注册时填写的手机号"];
             return json_encode($arr,JSON_UNESCAPED_UNICODE);
         }
         $num = rand(1000,9999);

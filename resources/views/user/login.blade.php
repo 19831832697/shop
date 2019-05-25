@@ -329,6 +329,7 @@
                         <input type="password" class="validate" placeholder="PASSWORD" name="user_pwd" required>
                     </div>
                     <a href="password"><h6>Forgot Password ?</h6></a>
+                    <a href="register"><h6>No Register?Go Register</h6></a>
                     {{--<a href="" class="btn button-default" id="sub">LOGIN</a>--}}
                     {{--<button id="sub">登陆</button>--}}
                     <div class="btn button-default" id="sub">LOGIN</div>
@@ -353,11 +354,14 @@
 <script src="js/fakeLoader.min.js"></script>
 <script src="js/animatedModal.min.js"></script>
 <script src="js/main.js"></script>
+<script src="layui/layui.js"></script>
 
 </body>
 </html>
 <script>
     $(document).ready(function(){
+        layui.use("layer",function(){
+            var layer=layui.layer;
         $(document).on('click','#sub',function(){
             var user_name=$("input[name='user_name']").val();
             var user_pwd=$("input[name='user_pwd']").val();
@@ -377,5 +381,6 @@
                 }
             })
         })
+    })
     })
 </script>

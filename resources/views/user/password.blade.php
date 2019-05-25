@@ -421,99 +421,172 @@
 <script src="js/animatedModal.min.js"></script>
 <script src="js/leftTime.js"></script>
 <script src="js/main.js"></script>
+<script src="layui/layui.js"></script>
 
 </body>
 </html>
-<script>
-    $(function(){
-        //点击提交
-        $('#submit').click(function(){
-            var user_tel=$("input[name='user_tel']").val();
-            var code=$("input[name='code']").val();
-            $.ajax({
-                type:'post',
-                data:{user_tel:user_tel,code:code},
-                url:"/checkId",
-                dataType:"json",
-                success:function(msg){
-                    if(msg.code==1){
-                        alert(msg.msg);
-                        location.href="pwdShow";
-                    }else{
-                        alert(msg.msg);
-                        location.reload();
-                    }
-                }
-            })
-        })
-        // 手机号失去焦点
-        function registertel(){
-            // 手机号失去焦点
-            $('#tel').blur(function(){
-                reg=/^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[06-8])\d{8}$/;//验证手机正则(输入前7位至11位)
-                var that = $(this);
-
-                if( that.val()==""|| that.val()=="YOUR TEL")
-                {
-                    alert('请输入你的手机号');
-                }
-                else if(that.val().length<11)
-                {
-                    alert('您输入的手机号长度有误');
-                }
-                else if(!reg.test($("#tel").val()))
-                {
-                    alert('您输入的手机号不存在');
-                }
-                else if(that.val().length == 11){
-                    // ajax请求后台数据
-                }
-            })
-        }
-        registertel();
-
-    })
-</script>
 <script type="text/javascript">
     $(function(){
-        //60秒倒计时
-        $("#sub").on("click",function(){
-            var _this=$(this);
-            if(!$(this).hasClass("on")){
-                var data={};
-                var user_tel=$('#tel').val();
-                var code=$('#code').val();
-                data.user_tel=user_tel;
-                data.code=code;
-                var url="code";
+        layui.use("layer",function(){
+            var layer=layui.layer;
+            //60秒倒计时
+            $("#sub").on("click",function(){
+                var _this=$(this);
+                if(!$(this).hasClass("on")){
+                    var data={};
+                    var user_tel=$('#tel').val();
+                    var code=$('#code').val();
+                    data.user_tel=user_tel;
+                    data.code=code;
+                    var url="code";
 
-                $.ajax({
-                    type:'POST',
-                    data:data,
-                    dataType:'json',
-                    url:url,
-                    success:function(msg){
-                        if(msg.code==1){
-                            alert(msg.msg)
+                    //验证手机号
+//                    reg=/^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[06-8])\d{8}$/;//验证手机正则(输入前7位至11位)
+//                    if(user_tel==""|| user_tel=="YOUR TEL"){
+//                        layer.msg('手机号不能为空');
+//                        return false;
+//                    }else if(user_tel.length<11)
+//                    {
+//                        layer.msg('您输入的手机号长度有误');
+//                        return false;
+//                    }else if(!reg.test(user_tel))
+//                    {
+//                        layer.msg('您输入的手机号不存在');
+//                        return false;
+//                    }else if(user_tel.length == 11){
+//                        // ajax请求后台数据
+//                    }
+                    $.ajax({
+                        type:'POST',
+                        data:data,
+                        dataType:'json',
+                        url:url,
+                        success:function(msg){
+                            if(msg.code==1){
+                                layer.msg(msg.msg)
 
-                        }else{
-                            alert(msg.msg)
-                            location.reload();
 
+                            }else{
+                                alert(msg.msg)
+                                location.href="password";
+
+                            }
                         }
-                    }
 
-                })
-                $.leftTime(60,function(d){
-                    if(d.status){
-                        _this.addClass("on");
-                        _this.html((d.s=="00"?"60":d.s)+"秒后重新获取");
-                    }else{
-                        _this.removeClass("on");
-                        _this.html("获取验证码");
-                    }
-                });
-            }
+                    })
+
+                    $.leftTime(60,function(d){
+                        if(d.status){
+                            _this.addClass("on");
+                            _this.html((d.s=="00"?"60":d.s)+"秒后重新获取");
+                        }else{
+                            _this.removeClass("on");
+                            _this.html("获取验证码");
+                        }
+                    });
+                }
+            });
         });
     });
+</script>
+<script>
+    $(function(){
+        layui.use("layer",function(){
+        var layer=layui.layer;
+            //60秒倒计时
+            $("#sub").on("click",function(){
+                var _this=$(this);
+                if(!$(this).hasClass("on")){
+                    var data={};
+                    var user_tel=$('#tel').val();
+                    var code=$('#code').val();
+                    data.user_tel=user_tel;
+                    data.code=code;
+                    var url="code";
+
+                    //验证手机号
+                    reg=/^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[06-8])\d{8}$/;//验证手机正则(输入前7位至11位)
+                    if(user_tel==""|| user_tel=="YOUR TEL"){
+                        layer.msg('手机号不能为空');
+                        return false;
+                    }else if(user_tel.length<11)
+                    {
+                        layer.msg('您输入的手机号长度有误');
+                        return false;
+                    }else if(!reg.test(user_tel))
+                    {
+                        layer.msg('您输入的手机号不存在');
+                        return false;
+                    }else if(user_tel.length == 11){
+                        // ajax请求后台数据
+                    }
+                    $.ajax({
+                        type:'POST',
+                        data:data,
+                        dataType:'json',
+                        url:url,
+                        success:function(msg){
+                            if(msg.code==1){
+                                layer.msg(msg.msg)
+
+                            }else{
+                                layer.msg(msg.msg)
+//                            location.reload();
+
+                            }
+                        }
+
+                    })
+                    $.leftTime(60,function(d){
+                        if(d.status){
+                            _this.addClass("on");
+                            _this.html((d.s=="00"?"60":d.s)+"秒后重新获取");
+                        }else{
+                            _this.removeClass("on");
+                            _this.html("获取验证码");
+                        }
+                    });
+                }
+            });
+            //点击提交
+            $('#submit').click(function(){
+                var user_tel=$("input[name='user_tel']").val();
+                var code=$("input[name='code']").val();
+
+                //验证手机号
+                reg=/^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[06-8])\d{8}$/;//验证手机正则(输入前7位至11位)
+                if(user_tel==""|| user_tel=="YOUR TEL"){
+                    layer.msg('手机号不能为空');
+                    return false;
+                }else if(user_tel.length<11)
+                {
+                    layer.msg('您输入的手机号长度有误');
+                    return false;
+                }else if(!reg.test(user_tel))
+                {
+                    layer.msg('您输入的手机号不存在');
+                    return false;
+                }else if(user_tel.length == 11){
+                    // ajax请求后台数据
+                }
+
+                $.ajax({
+                    type:'post',
+                    data:{user_tel:user_tel,code:code},
+                    url:"/checkId",
+                    dataType:"json",
+                    success:function(msg){
+                        if(msg.code==1){
+                            layer.msg(msg.msg);
+                            location.href="pwdShow";
+                        }else{
+                            layer.msg(msg.msg);
+//                            location.reload();
+                        }
+                    }
+                })
+            })
+
+        })
+    })
 </script>
