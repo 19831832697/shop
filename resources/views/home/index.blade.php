@@ -29,7 +29,7 @@
 <div class="navbar-top">
     <!-- site brand	 -->
     <div class="site-brand">
-        <a href="index.html"><h1>Mstore</h1></a>
+        <a href="/"><h1>Mstore</h1></a>
     </div>
     <!-- end site brand	 -->
     <div class="side-nav-panel-right">
@@ -152,16 +152,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s4">
-                    <a href="testimonial.html" class="button-link">
-                        <div class="menu-link">
-                            <div class="icon">
-                                <i class="fa fa-support"></i>
-                            </div>
-                            Testimonial
-                        </div>
-                    </a>
-                </div>
+
                 <div class="col s4">
                     <a href="#" class="button-link">
                         <div class="menu-link">
@@ -185,8 +176,6 @@
                         </div>
                     </a>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col s4">
                     <a href="#" class="button-link">
                         <div class="menu-link">
@@ -197,13 +186,16 @@
                         </div>
                     </a>
                 </div>
+            </div>
+            <div class="row">
+
                 <div class="col s4">
                     <a href="login" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-sign-in"></i>
                             </div>
-                            Login
+                            登录
                         </div>
                     </a>
                 </div>
