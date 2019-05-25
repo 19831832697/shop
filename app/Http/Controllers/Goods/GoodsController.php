@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Model\GoodsModel;
 use App\Model\PraiseModel;
 use Illuminate\Support\Facades\DB;
-use App\Model\PraiseModel;
 class GoodsController extends Controller
 {
     //商品详情
