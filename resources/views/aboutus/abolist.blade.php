@@ -1,8 +1,3 @@
-<style>
-    .b{
-        color:red;
-    }
-</style>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -23,12 +18,11 @@
     <link rel="stylesheet" href="css/fakeLoader.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
+
     <link rel="shortcut icon" href="img/favicon.png">
 
 </head>
 <body>
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <!-- navbar top -->
 <div class="navbar-top">
@@ -51,8 +45,8 @@
             <h2>John Doe</h2>
         </li>
         <li><a href="setting.html"><i class="fa fa-cog"></i>个人中心</a></li>
-        <li><a href="about-us"><i class="fa fa-user"></i>关于我们</a></li>
-        <li><a href="contact.html"><i class="fa fa-envelope-o"></i>联系我们</a></li>
+        <li><a href="about-us.html"><i class="fa fa-user"></i>关于我们</a></li>
+        <li><a href="contact"><i class="fa fa-envelope-o"></i>联系我们</a></li>
         <li><a href="login"><i class="fa fa-sign-in"></i>登录</a></li>
         <li><a href="register.html"><i class="fa fa-user-plus"></i>注册</a></li>
     </ul>
@@ -93,78 +87,118 @@
         <div class="container">
             <div class="row">
                 <div class="col s4">
-                    <a href="/" class="button-link">
+                    <a href="index.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-home"></i>
                             </div>
-                            商品首页
+                            Home
                         </div>
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="/goods/goodsinfo" class="button-link">
+                    <a href="product-list.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-bars"></i>
                             </div>
-                            商品列表
+                            Product List
                         </div>
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="/col/list" class="button-link">
+                    <a href="shop-single.html" class="button-link">
+                        <div class="menu-link">
+                            <div class="icon">
+                                <i class="fa fa-eye"></i>
+                            </div>
+                            Single Shop
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s4">
+                    <a href="wishlist.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-heart"></i>
                             </div>
-                            收藏
+                            Wishlist
                         </div>
                     </a>
                 </div>
-            </div>
-            <div class="row">
-
                 <div class="col s4">
-                    <a href="cartlist" class="button-link">
+                    <a href="cart.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-shopping-cart"></i>
                             </div>
-                            购物车
+                            Cart
                         </div>
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="#" class="button-link">
+                    <a href="checkout.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-credit-card"></i>
                             </div>
-                            银行卡
-                        </div>
-                    </a>
-                </div>
-                <div class="col s4">
-                    <a href="historyShow" class="button-link">
-                        <div class="menu-link">
-                            <div class="icon">
-                                <i class="fa fa-file-text-o"></i>
-                            </div>
-                            浏览历史
+                            Checkout
                         </div>
                     </a>
                 </div>
             </div>
             <div class="row">
-
                 <div class="col s4">
-                    <a href="#" class="button-link">
+                    <a href="blog.html" class="button-link">
+                        <div class="menu-link">
+                            <div class="icon">
+                                <i class="fa fa-bold"></i>
+                            </div>
+                            Blog
+                        </div>
+                    </a>
+                </div>
+                <div class="col s4">
+                    <a href="blog-single.html" class="button-link">
+                        <div class="menu-link">
+                            <div class="icon">
+                                <i class="fa fa-file-text-o"></i>
+                            </div>
+                            Blog Single
+                        </div>
+                    </a>
+                </div>
+                <div class="col s4">
+                    <a href="error404.html" class="button-link">
+                        <div class="menu-link">
+                            <div class="icon">
+                                <i class="fa fa-hourglass-half"></i>
+                            </div>
+                            404
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s4">
+                    <a href="testimonial.html" class="button-link">
+                        <div class="menu-link">
+                            <div class="icon">
+                                <i class="fa fa-support"></i>
+                            </div>
+                            Testimonial
+                        </div>
+                    </a>
+                </div>
+                <div class="col s4">
+                    <a href="about-us.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-user"></i>
                             </div>
-                            联系我们
+                            About Us
                         </div>
                     </a>
                 </div>
@@ -175,42 +209,38 @@
                                 <i class="fa fa-envelope-o"></i>
                             </div>
                             Contact
-
-
-
                         </div>
                     </a>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col s4">
-                    <a href="#" class="button-link">
+                    <a href="setting.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-cog"></i>
                             </div>
-                            个人中心
+                            Settings
                         </div>
                     </a>
                 </div>
-            </div>
-            <div class="row">
-
                 <div class="col s4">
-                    <a href="login" class="button-link">
+                    <a href="login.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-sign-in"></i>
                             </div>
-                            登录
+                            Login
                         </div>
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="register" class="button-link">
+                    <a href="register.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-user-plus"></i>
                             </div>
-                            注册
+                            Register
                         </div>
                     </a>
                 </div>
@@ -218,87 +248,140 @@
         </div>
     </div>
 </div>
+<!-- end menu -->
 
-
-<!-- cart -->
-<div class="cart section">
-    <div class="container">
-        <div class="pages-head">
-            <h3>购物车</h3>
-        </div>
-        <div class="content" >
-            @foreach($arr as $v)
-
-                <div class="cart-1">
-
-                    <div class="row">
-
-                        <div class="col s5" id="catr">
-                            <h5>商品图片</h5>
+<!-- cart menu -->
+<div class="menus" id="animatedModal">
+    <div class="close-animatedModal close-icon">
+        <i class="fa fa-close"></i>
+    </div>
+    <div class="modal-content">
+        <div class="cart-menu">
+            <div class="container">
+                <div class="content">
+                    <div class="cart-1">
+                        <div class="row">
+                            <div class="col s5">
+                                <img src="img/cart-menu1.png" alt="">
+                            </div>
+                            <div class="col s7">
+                                <h5><a href="">Fashion Men's</a></h5>
+                            </div>
                         </div>
-                        <div id="aa" type="1"class="glyphicon glyphicon-ok" amount="{{$v->goods_price * $v->buy_num}}"
-                             goods_id="{{$v->goods_id}}" catr_id="{{$v->id}}"></div>
-                        <div class="col s7">
-                            <img src="/{{$v->goods_img}}" alt="" style="height: 300px; width: 280px;">
+                        <div class="row quantity">
+                            <div class="col s5">
+                                <h5>Quantity</h5>
+                            </div>
+                            <div class="col s7">
+                                <input value="1" type="text">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s5">
-                            <h5>商品名称</h5>
+                        <div class="row">
+                            <div class="col s5">
+                                <h5>Price</h5>
+                            </div>
+                            <div class="col s7">
+                                <h5>$20</h5>
+                            </div>
                         </div>
-                        <div class="col s7">
-                            <h5><a href="">{{$v->goods_name}}</a></h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s5">
-                            <h5>购买数量</h5>
-                        </div>
-                        <div class="col s7">
-                            <input value="{{$v->buy_num}}" type="text">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s5">
-                            <h5>价格</h5>
-                        </div>
-                        <div class="col s7">
-                            $<h5 ><span id="zong">{{$v->goods_price * $v->buy_num}}</span></h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s5">
-                            <h5>删除</h5>
-                        </div>
-                        <div class="col s7">
-                            <h5><i class="fa fa-trash" goods_id="{{$v->goods_id}}"></i></h5>
+                        <div class="row">
+                            <div class="col s5">
+                                <h5>Action</h5>
+                            </div>
+                            <div class="col s7">
+                                <div class="action"><i class="fa fa-trash"></i></div>
+                            </div>
                         </div>
                     </div>
                     <div class="divider"></div>
+                    <div class="cart-2">
+                        <div class="row">
+                            <div class="col s5">
+                                <img src="img/cart-menu2.png" alt="">
+                            </div>
+                            <div class="col s7">
+                                <h5><a href="">Fashion Men's</a></h5>
+                            </div>
+                        </div>
+                        <div class="row quantity">
+                            <div class="col s5">
+                                <h5>Quantity</h5>
+                            </div>
+                            <div class="col s7">
+                                <input value="1" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s5">
+                                <h5>Price</h5>
+                            </div>
+                            <div class="col s7">
+                                <h5>$20</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s5">
+                                <h5>Action</h5>
+                            </div>
+                            <div class="col s7">
+                                <div class="action"><i class="fa fa-trash"></i></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-            @endforeach
-        </div>
-        <div class="total">
-            <div class="row">
-                <div class="col s7">
-                    <h5>总价</h5>
+                <div class="total">
+                    <div class="row">
+                        <div class="col s7">
+                            <h5>Fashion Men's</h5>
+                        </div>
+                        <div class="col s5">
+                            <h5>$21.00</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s7">
+                            <h5>Fashion Men's</h5>
+                        </div>
+                        <div class="col s5">
+                            <h5>$21.00</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s7">
+                            <h6>Total</h6>
+                        </div>
+                        <div class="col s5">
+                            <h6>$41.00</h6>
+                        </div>
+                    </div>
                 </div>
-                <div class="col s5">
-                    <h5>$<sanm id="am">0</sanm></h5>
-                </div>
+                <button class="btn button-default">Process to Checkout</button>
             </div>
-
         </div>
-        <input type="button" class="button-default" id="btn" value="提交订单">
     </div>
 </div>
-<!-- end cart -->
+<!-- end cart menu -->
+
+
+<!-- about us -->
+<div class="pages section">
+    <div class="container">
+        <div class="pages-head">
+            <h3>ABOUT US</h3>
+        </div>
+        <div class="about-us">
+            <img src="img/about.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore consequuntur praesentium dignissimos voluptatum esse, perspiciatis mollitia repellendus rerum magni aspernatur ipsam maxime dolorem iure laudantium at veritatis doloribus, numquam, dicta?</p>
+        </div>
+    </div>
+</div>
+<!-- end about us -->
+
 
 <!-- loader -->
 <div id="fakeLoader"></div>
-
 <!-- end loader -->
+
 <!-- footer -->
 <div class="footer">
     <div class="container">
@@ -314,7 +397,7 @@
             <a href=""><i class="fa fa-instagram"></i></a>
         </div>
         <div class="copyright">
-            <span>© 2019 第七组</span>
+            <span>© 2017 All Right Reserved</span>
         </div>
     </div>
 </div>
@@ -327,77 +410,6 @@
 <script src="js/fakeLoader.min.js"></script>
 <script src="js/animatedModal.min.js"></script>
 <script src="js/main.js"></script>
+
 </body>
 </html>
-</html>
-<script>
-    $(document).ready(function(){
-        //单选
-        var sum=0
-         $(document).on('click','.glyphicon',function(){
-             var type=$(this).attr('type');
-             if (type == 1){
-                 $(this).attr('type',2);
-                 $(this).addClass('b');
-             }else{
-                 $(this).removeClass("b"); //移除
-                 $(this).attr('type',1);
-             }
-            $.each($(this),function(){
-                var type=$(this).attr('type');
-                if (type == 2){
-                    sum += parseInt($(this).attr('amount'));
-                }else{
-                    sum -= parseInt($(this).attr('amount'));
-                }
-            });
-             $("#am").html(sum);
-        })
-
-        //删除
-        $(document).on('click','.fa',function(){
-            var goods_id=$(this).attr('goods_id');
-//            console.log(goods_id);
-            $.get(
-                    '/subtract',
-                    {goods_id:goods_id},
-                    function(res){
-                        if(res=="删除成功"){
-                            alert('删除成功');
-                            window.location.reload();
-                        }else{
-                            alert('删除失败');
-                        }
-                    }
-            );
-        })
-
-         //点击去结算
-        $(document).on('click','#btn',function(){
-            var order_amount= $("#am").html();//总价格
-            var goods_id="";
-            $.each($('.glyphicon-ok'),function() {
-                var type=$(this).attr('type');
-                if (type == 2){
-                    goods_id += $(this).attr('goods_id') + ',';
-                }
-            })
-            $.ajax({
-                url:"/pay",
-                method:"POST",
-                data:{order_amount:order_amount,goods_id:goods_id},
-                dataType:"json",
-                success:function(data){
-                    if(data.code==40020){
-                        alert(data.msg);
-                        // window.location.href="/login";
-                    }else if(data.code==200){
-                        var order_no=data.order_no;
-                        window.location.href="/paylist?order_no="+data.order_no;
-                    }
-                }
-            })
-        })
-
-    })
-</script>
