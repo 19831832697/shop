@@ -25,6 +25,6 @@
         colorLight : '#ffffff',
         correctLevel : QRCode.CorrectLevel.H
     });
-
+    
    
 </script>

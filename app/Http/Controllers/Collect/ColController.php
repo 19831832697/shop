@@ -57,7 +57,7 @@ class ColController extends Controller
     }
     //展示
     public function list(Request $request){
-        $arr=PraiseModel::where(['user_id'=>$_COOKIE['user_id']])->get();
+        $arr=PraiseModel::where(['user_id'=>$_COOKIE['user_id']])->orderBy('praise_id','desc')->get();
        // dd($arr);
             return view('col.col',['arr'=>$arr]);
     }
