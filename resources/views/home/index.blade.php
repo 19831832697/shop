@@ -550,7 +550,6 @@
         -webkit-animation: mymove 7s infinite; /* Chrome, Safari, Opera */
         animation: mymove 7s infinite;
     }
-
     /* Chrome, Safari, Opera */
     @-webkit-keyframes mymove {
         50% {
@@ -558,7 +557,6 @@
             filter: grayscale(100%);
         }
     }
-
     /* Standard syntax */
     @keyframes mymove {
         50% {
