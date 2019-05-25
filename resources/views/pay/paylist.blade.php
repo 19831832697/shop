@@ -384,9 +384,11 @@
            
             @endforeach
         </div>
-        <input type="button" class="button-default" id="btn" value="支付宝支付">
+        {{--<input type="button" class="button-default" id="btn" value="支付宝支付">--}}
+        <button><a href="/z_pay?order_no={{$order_no}}">支付宝支付</a></button>
         <button><a href="/wx_text?order_no={{$order_no}}">微信支付</a></button>
-     
+
+
         <div class="row margin-bottom">
 
             <div class="pagination-product">
@@ -452,18 +454,6 @@
            success:function(){
 
            }
-        })
-        //支付宝支付
-        $(document).on('click','#btn',function(){
-            $.ajax({
-                url:"/z_pay",
-                method:"get",
-                data:{order_no:order_no},
-                dataType:"json",
-                success:function(){
-
-                }
-            })
         })
     })
 </script>

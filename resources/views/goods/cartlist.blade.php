@@ -387,7 +387,7 @@
                 success:function(data){
                     if(data.code==40020){
                         alert(data.msg);
-                        // window.location.href="/login";
+                        window.location.href="/login";
                     }else if(data.code==200){
                         var order_no=data.order_no;
                         window.location.href="/paylist?order_no="+data.order_no;

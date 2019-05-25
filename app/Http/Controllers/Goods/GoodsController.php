@@ -11,47 +11,60 @@ class GoodsController extends Controller
 {
     //商品详情
     public function goodslist(Request $request){
-            $id=$request->input('goods_id');
-            $where=[
-                'goods_id'=>$id
-            ];
-            $res=GoodsModel::where($where)->first();
-            //购物车
-            $car=DB::table('shop_cart')->where($where)->first();
-            //浏览历史
-            $user_id=$_COOKIE['user_id'];
-            if(empty($user_id)){
-                $data=DB::table('shop_goods')->where($where)->first();
-                if($data){
-                    $is_tell=$data->is_tell;
-                    $is_tell+=1;
-                    DB::table('shop_goods')->where($where)->update(['is_tell'=>$is_tell]);
-                }else{
-                    $res=[
-                        'code'=>40030,
-                        'msg'=>'没有此商品'
-                    ];
-                    return json_encode($res,JSON_UNESCAPED_UNICODE);
-                }
-            }else{
-                $whereInfo=[
-                    'goods_id'=>$id,
-                    'user_id'=>$user_id
-                ];
-                $arrInfo=DB::table('history')->where($whereInfo)->first();
-                if($arrInfo){
-                   DB::table('history')->where($whereInfo)->update(['create_time'=>time()]);
-                }else{
-                    $dataInfo=[
-                        'user_id'=>$user_id,
-                        'goods_id'=>$id,
-                        'create_time'=>time()
-                    ];
-                    DB::table('history')->insert($dataInfo);
-                }
+        $id=$request->input('goods_id');
+        $where=[
+            'goods_id'=>$id
+        ];
+        //查询商品表
+        $res=GoodsModel::where($where)->first();
 
+        $whereInfo=[
+            'goods_id'=>$id,
+            'user_id'=>$_COOKIE['user_id'],
+        ];
+        //查询购物车表
+        $car=DB::table('shop_cart')->where($whereInfo)->first();
+        if($car){
+            $status=$car->status;
+            if($status==2){
+                DB::table('shop_cart')->where($whereInfo)->update(['buy_num'=>1]);
             }
-            return view('goods.goodslist',['res'=>$res,'car'=>$car]);
+        }
+
+        //浏览历史
+        $user_id=$_COOKIE['user_id'];
+        if(empty($user_id)){
+            $data=DB::table('shop_goods')->where($where)->first();
+            if($data){
+                $is_tell=$data->is_tell;
+                $is_tell+=1;
+                DB::table('shop_goods')->where($where)->update(['is_tell'=>$is_tell]);
+            }else{
+                $res=[
+                    'code'=>40030,
+                    'msg'=>'没有此商品'
+                ];
+                return json_encode($res,JSON_UNESCAPED_UNICODE);
+            }
+        }else{
+            $whereInfo=[
+                'goods_id'=>$id,
+                'user_id'=>$user_id
+            ];
+            $arrInfo=DB::table('history')->where($whereInfo)->first();
+            if($arrInfo){
+               DB::table('history')->where($whereInfo)->update(['create_time'=>time()]);
+            }else{
+                $dataInfo=[
+                    'user_id'=>$user_id,
+                    'goods_id'=>$id,
+                    'create_time'=>time()
+                ];
+                DB::table('history')->insert($dataInfo);
+            }
+
+        }
+        return view('goods.goodslist',['res'=>$res,'car'=>$car]);
     }
 
     /**
