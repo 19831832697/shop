@@ -61,7 +61,12 @@ Route::get('/goods/aaa','Goods\GoodsController@aaa');
 //点击去结算生成订单
 Route::post('/pay','pay\PayController@pay');
 Route::get('/paylist','pay\PayController@paylist');
-//去支付
+//支付宝支付
 Route::get('z_pay','pay\MoneyController@z_pay');
 Route::post('notify','alipay\AlipayController@notify');//异步回调
 Route::get('aliReturn','alipay\AlipayController@aliReturn');//同步回调
+
+//微信支付
+Route::get('wx_text','Wei\WeiPayController@text');
+Route::post('wx_notify','Wei\WeiPayController@notify');
+Route::get('wx_success','Wei\WeiPayController@success');
