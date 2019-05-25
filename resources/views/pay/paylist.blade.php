@@ -378,6 +378,9 @@
                     <div class="price">
                         价格:<span>{{$v['goods_price']}}</span> 市场价格:{{$v['market_price']}}
                     </div>
+                    <div>
+                        总价:{{$v['order_amount']}}
+                    </div>
 
                 </div>
             </div>
