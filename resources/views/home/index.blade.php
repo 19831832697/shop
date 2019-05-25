@@ -332,18 +332,18 @@
 
     <ul class="slides">
         <li>
-            <img src="uploads/20190523/MQ9PeJJkAmkH35j0PY376hddIzdwssaCuZzZ9kwK.jpeg" alt="">
+            <img src="https://www.runoob.com/try/demo_source/pineapple.jpg" alt="">
             <div class="caption slider-content  center-align">
-                <h2>WELCOME TO MSTORE</h2>
-                <h4>Lorem ipsum dolor sit amet.</h4>
+                <h2>跟我玩你指定输，整不好还得哭</h2>
+                <h4>每天努力奋斗一点点，以后的生活更扎实</h4>
                 <a href="" class="btn button-default">立即去购物</a>
             </div>
         </li>
         <li>
-            <img src="uploads/20190523/MQ9PeJJkAmkH35j0PY376hddIzdwssaCuZzZ9kwK.jpeg" alt="">
+            <img src="https://www.runoob.com/try/demo_source/pineapple.jpg" alt="">
             <div class="caption slider-content center-align">
-                <h2>JACKETS BUSINESS</h2>
-                <h4>Lorem ipsum dolor sit amet.</h4>
+                <h2>跟我玩你指定输，整不好还得哭</h2>
+                <h4>不要辜负自己所受的苦难，并且配得上自己的野心</h4>
                 <a href="" class="btn button-default">立即去购物</a>
             </div>
         </li>
@@ -419,10 +419,10 @@
             <div class="divider-bottom"></div>
         </div>
         @foreach($goodsInfo as $k=>$v)
-        <div class="row">
+        <div class="row " >
             <div class="col s6">
                 <div class="content">
-                    <a href="/goods/goodslist?goods_id={{$v->goods_id}}"><img src="{{$v->goods_img}}" alt=""></a>
+                    <a href="/goods/goodslist?goods_id={{$v->goods_id}}"><img src="{{$v->goods_img}}" alt="" ></a>
                     <h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
                     <div class="price">
                         ${{$v->market_price}} <span>${{$v->goods_price}}</span>
@@ -474,17 +474,20 @@
             @endforeach
       
         </div>
-       
+
+
         <div class="pagination-product">
+
             <ul>
                 <!-- <li class="active"> -->
                 {{ $goods->links() }}
                 <!-- </li> -->
-             
+
             </ul>
         </div>
     </div>
 </div>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <!-- end product -->
 
 <!-- loader -->
@@ -542,3 +545,23 @@
         })
     })
 </script>
+<style>
+    img {
+        -webkit-animation: mymove 7s infinite; /* Chrome, Safari, Opera */
+        animation: mymove 7s infinite;
+    }
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes mymove {
+        50% {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+    }
+    /* Standard syntax */
+    @keyframes mymove {
+        50% {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+    }
+</style>
