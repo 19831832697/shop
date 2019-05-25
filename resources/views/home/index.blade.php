@@ -49,7 +49,7 @@
         <li><a href="/aboutus"><i class="fa fa-user"></i>关于我们</a></li>
         <li><a href="contact"><i class="fa fa-envelope-o"></i>联系我们</a></li>
         <li><a href="login"><i class="fa fa-sign-in"></i>登录</a></li>
-        <li><a href="register.html"><i class="fa fa-user-plus"></i>注册</a></li>
+        <li><a href="/register"><i class="fa fa-user-plus"></i>注册</a></li>
     </ul>
 </div>
 <!-- end side nav right-->
@@ -332,7 +332,7 @@
 
     <ul class="slides">
         <li>
-            <img src="https://www.runoob.com/try/demo_source/pineapple.jpg" alt="">
+            <img class="img"src="https://www.runoob.com/try/demo_source/pineapple.jpg" alt="">
             <div class="caption slider-content  center-align">
                 <h2>跟我玩你指定输，整不好还得哭</h2>
                 <h4>每天努力奋斗一点点，以后的生活更扎实</h4>
@@ -340,7 +340,7 @@
             </div>
         </li>
         <li>
-            <img src="https://www.runoob.com/try/demo_source/pineapple.jpg" alt="">
+            <img class="img" src="https://www.runoob.com/try/demo_source/pineapple.jpg" alt="">
             <div class="caption slider-content center-align">
                 <h2>跟我玩你指定输，整不好还得哭</h2>
                 <h4>不要辜负自己所受的苦难，并且配得上自己的野心</h4>
@@ -546,7 +546,7 @@
     })
 </script>
 <style>
-    img {
+    .img {
         -webkit-animation: mymove 7s infinite; /* Chrome, Safari, Opera */
         animation: mymove 7s infinite;
     }
