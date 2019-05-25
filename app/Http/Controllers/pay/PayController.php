@@ -20,7 +20,7 @@ class PayController extends Controller
         $order_amount=$request->input('order_amount');
         if(empty($user_id)){
             $res=[
-                'code'=>40020,
+                'code'=>40025,
                 'msg'=>'您还没有登录，请先去登录！'
             ];
             return json_encode($res,JSON_UNESCAPED_UNICODE);
