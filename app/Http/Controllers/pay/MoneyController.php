@@ -163,7 +163,7 @@ class MoneyController extends Controller
         $where=[
             'order_no'=>$out_trade_no
         ];
-        //修改订单表
+//        //修改订单表
         $updateInfo=[
             'pay_status'=>2,
             'status'=>2,
@@ -175,16 +175,18 @@ class MoneyController extends Controller
             $data[]=$v->goods_id;
         }
         //查询商品表获取商品库存
-        $arrInfo=DB::table('shop_goods')->whereIn('goods_id',$data)->get();
+        $arrInfo=DB::table('shop_goods')
+            ->join('shop_cart','shop_goods.goods_id','=','shop_cart.goods_id')
+            ->whereIn('shop_goods.goods_id',$data)->get();
+
         foreach($arrInfo as $k=>$v){
             $goods_num=$v->goods_num;
+            $buy_num=$v->buy_num;
             $goodsInfo=[
-                'goods_num'=>$goods_num-1
+                'goods_num'=>$goods_num-$buy_num
             ];
             DB::table('shop_goods')->where('goods_id',$v->goods_id)->update($goodsInfo);
         }
-
-
         //修改订单详情表
         $detailInfo=[
             'utime'=>time(),
