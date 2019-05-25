@@ -228,7 +228,7 @@
 			<div class="shop-single" goods_id="{{$res->goods_id}}">
 				<img src="/{{$res->goods_img}}" alt="暂无图片">
 				<h5>{{$res->goods_name}}</h5>
-				<div class="price">${{$res->market_price}} <span>${{$res->goods_price}}</span></div>
+				<div class="price">${{$res->goods_price}} <span>${{$res->market_price}}</span></div>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam eaque in non delectus, error iste veniam commodi mollitia, officia possimus, repellendus maiores doloribus provident. Itaque, ab perferendis nemo tempore! Accusamus</p>
 						<input style="width: 50px; height: 38px; border: 2px white; float: left;" type="button"id="subtract" value="-" />
 						<input style="width: 80px; height: 38px; float: left;" type="text" value="@if($car=='') 1 @else {{$car->buy_num}} @endif" id="text">

@@ -385,7 +385,7 @@
 						<img src="/{{$v->goods_img}}" alt="">
 						<h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
 						<div class="price">
-							${{$v->market_price}} <span>${{$v->goods_price}}</span>
+							${{$v->goods_price}} <span>${{$v-> market_price}}</span>
 						</div>
 						<button class="btn button-default">加入购物车</button>
 					</div>
