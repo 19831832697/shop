@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Model\GoodsModel;
 use App\Model\PraiseModel;
 use Illuminate\Support\Facades\DB;
-use App\Model\PraiseModel;
 class GoodsController extends Controller
 {
     //商品详情
@@ -20,10 +19,8 @@ class GoodsController extends Controller
             //购物车
             $car=DB::table('shop_cart')->where($where)->first();
             //浏览历史
-//            $user_id=session('user_id');
-            $user_id=1;
+            $user_id=$_COOKIE['user_id'];
             if(empty($user_id)){
-                echo 7777;
                 $data=DB::table('shop_goods')->where($where)->first();
                 if($data){
                     $is_tell=$data->is_tell;
@@ -74,8 +71,7 @@ class GoodsController extends Controller
      * @return false|string
      */
     public function historyShow(){
-//        $user_id=session('user_id');
-        $user_id=1;
+        $user_id=$_COOKIE['user_id'];
         if(empty($user_id)){
             $arr=DB::table('shop_goods')->orderBy('is_tell','desc')->limit(10);
         }else{
@@ -86,13 +82,14 @@ class GoodsController extends Controller
                 ->join('shop_goods','shop_goods.goods_id','=','history.goods_id')
                 ->where($whereInfo)->get();
         }
-//        $arrInfo=json_encode($arr);
         return view('goods/history',['arr'=>$arr]);
     }
-    //收藏
+
+    /**
+     * 收藏
+     */
     public function aaa(){
         $id=$_GET['goods_id'];
-//        dd($id);
         $where=[
             'goods_id'=>$id,
             'user_id'=>$_COOKIE['user_id']

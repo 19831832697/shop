@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\pay;
 
+use App\Model\PayModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class MoneyController extends Controller
 {
@@ -36,24 +38,22 @@ class MoneyController extends Controller
      */
     public function z_pay(Request $request)
     {
-        $order_no = $_GET['orderno'];
+        $order_no = $_GET['order_no'];
         $where = [
             'order_no' => $order_no
         ];
-        $dataInfo = OrderModel::where($where)->first();
-//        var_dump($dataInfo);die;
+        $dataInfo = PayModel::where($where)->first();
         if ($dataInfo) {
             $order_id = $dataInfo->order_id;
             //验证订单状态 是否已支付 是否是有效订单
             $order_info = DB::table('shop_order')->where(['order_id' => $order_id])->first();
-//        var_dump($order_info);die;
             //判断订单是否已被删除
             if ($order_info->status == 2) {
                 die("订单已被删除，无法支付");
             }
             //业务参数
             $bizcont = [
-                'subject' => 'Lening-Order: ' . $oid,
+                'subject' => 'Lening-Order: ' . $order_id,
                 'out_trade_no' => $order_info->order_no,
                 'total_amount' => $order_info->order_amount,
                 'product_code' => 'QUICK_WAP_WAY',
@@ -160,28 +160,30 @@ class MoneyController extends Controller
         $where=[
             'order_no'=>$out_trade_no
         ];
-        //修改订单表
+//        //修改订单表
         $updateInfo=[
             'pay_status'=>2,
             'status'=>2,
         ];
-        $aa=DB::table('shop_order')->where($where)->update($updateInfo);
+        DB::table('shop_order')->where($where)->update($updateInfo);
         $dataInfo=DB::table('shop_order_detail')->where($where)->get();
         $data=[];
         foreach($dataInfo as $k=>$v){
             $data[]=$v->goods_id;
         }
         //查询商品表获取商品库存
-        $arrInfo=DB::table('shop_goods')->whereIn('goods_id',$data)->get();
+        $arrInfo=DB::table('shop_goods')
+            ->join('shop_cart','shop_goods.goods_id','=','shop_cart.goods_id')
+            ->whereIn('shop_goods.goods_id',$data)->get();
+
         foreach($arrInfo as $k=>$v){
             $goods_num=$v->goods_num;
+            $buy_num=$v->buy_num;
             $goodsInfo=[
-                'goods_num'=>$goods_num-1
+                'goods_num'=>$goods_num-$buy_num
             ];
             DB::table('shop_goods')->where('goods_id',$v->goods_id)->update($goodsInfo);
         }
-
-
         //修改订单详情表
         $detailInfo=[
             'utime'=>time(),
