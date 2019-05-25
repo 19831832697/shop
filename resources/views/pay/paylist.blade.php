@@ -385,11 +385,9 @@
             @endforeach
         </div>
         <input type="button" class="button-default" id="btn" value="支付宝支付">
-        <!-- <input type="button" class="button-default" id="wx" value="微信支付"> -->
-        <button><a href="/wx_text?order_no=201905250310127793">微信支付</a></button>
+        <button><a href="/wx_text?order_no={{$order_no}}">微信支付</a></button>
      
         <div class="row margin-bottom">
-
 
             <div class="pagination-product">
                 <ul>
@@ -442,6 +440,7 @@
 {{--<script src="js/jquery.js"></script>--}}
 <script>
     $(document).ready(function(){
+        //提交订单
         _url=window.location.href;
         var orderno_place=_url.lastIndexOf("o=");
         order_no=_url.substring(orderno_place+2,_url.length);
@@ -466,19 +465,5 @@
                 }
             })
         })
-        //微信支付
-        // $(document).on('click','#wx',function(){
-        //     //alert('wx');
-        //     $.ajax({
-        //         url:"/wx_text",
-        //         method:"get",
-        //         data:{order_no:order_no},
-        //         dataType:"json",
-        //         success:function(res){
-        //                 console.log(res);
-        //         }
-        //     })
-        // })
-
     })
 </script>

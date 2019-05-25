@@ -65,6 +65,12 @@ class PayController extends Controller
                 $orderInfo=DB::table('shop_order_detail')->insert($arr);
             }
             if($orderInfo){
+                $updateInfo=[
+                    'buy_num'=>0,
+                    'status'=>2
+                ];
+                //修改购物车状态
+                DB::table('shop_cart')->where($where)->whereIn('goods_id',$goodsId)->update($updateInfo);
                 $res=[
                     'code'=>200,
                     'order_no'=>$order_no
@@ -96,7 +102,6 @@ class PayController extends Controller
             ->join('shop_goods','shop_goods.goods_id','=','shop_order_detail.goods_id')
             ->where($where)->get();
         $arr=json_decode($arrInfo,true);
-//        var_dump($arr);die;
-        return view('pay/paylist',['arr'=>$arr]);
+        return view('pay/paylist',['arr'=>$arr,'order_no'=>$order_no]);
     }
 }
