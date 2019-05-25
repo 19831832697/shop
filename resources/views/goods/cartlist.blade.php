@@ -252,7 +252,7 @@
                             <h5>购买数量</h5>
                         </div>
                         <div class="col s7">
-                            <input value="{{$v->buy_num}}" type="text">
+                            <input  disabled="disabled" value="{{$v->buy_num}}" type="text">
                         </div>
                     </div>
                     <div class="row">
