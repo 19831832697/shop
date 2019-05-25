@@ -11,13 +11,16 @@ class GoodsController extends Controller
 {
     //商品详情
     public function goodslist(Request $request){
+
         $id=$request->input('goods_id');
         $where=[
             'goods_id'=>$id
         ];
         //查询商品表
         $res=GoodsModel::where($where)->first();
-
+        if(empty($_COOKIE['user_id'])){
+            echo "<script>alert('请先登录');location.href='/login';</script>";
+        }
         $whereInfo=[
             'goods_id'=>$id,
             'user_id'=>$_COOKIE['user_id'],
@@ -84,6 +87,9 @@ class GoodsController extends Controller
      * @return false|string
      */
     public function historyShow(){
+        if(empty($_COOKIE['user_id'])){
+            echo "<script>alert('请先登录');location.href='/login';</script>";
+        }
         $user_id=$_COOKIE['user_id'];
         if(empty($user_id)){
             $arr=DB::table('shop_goods')->orderBy('is_tell','desc')->limit(10);
@@ -102,6 +108,7 @@ class GoodsController extends Controller
      * 收藏
      */
     public function aaa(){
+
         $id=$_GET['goods_id'];
         $where=[
             'goods_id'=>$id,

@@ -12,6 +12,9 @@ class CartController extends Controller
      * @return array
      */
     public function cart(){
+        if(empty($_COOKIE['user_id'])){
+            echo "<script>alert('请先登录');location.href='/login';</script>";
+        }
         $goods_id=$_GET['goods_id'];
         $buy_num=$_GET['buy_num'];
         $user_id=$_COOKIE['user_id'];
@@ -81,6 +84,9 @@ class CartController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function cartlist(){
+        if(empty($_COOKIE['user_id'])){
+            echo "<script>alert('请先登录');location.href='/login';</script>";
+        }
         $where=[
             'user_id'=>$_COOKIE['user_id'],
             'status'=>1
@@ -99,6 +105,9 @@ class CartController extends Controller
      * 购物车删除
      */
     public function subtract(){
+        if(empty($_COOKIE['user_id'])){
+            echo "<script>alert('请先登录');location.href='/login';</script>";
+        }
         $goods_id=$_GET['goods_id'];
         $where=[
             'goods_id'=>$goods_id,
