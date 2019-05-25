@@ -374,14 +374,20 @@
                 <div class="order">
                     <img src="/{{$v['goods_img']}}" alt="">
                     <h6><a href="/goods/goodslist?goods_id={{$v['goods_id']}}">{{$v['goods_name']}}</a></h6>
+                    
                     <div class="price">
                         ${{$v['market_price']}} <span>${{$v['goods_price']}}</span>
                     </div>
+                   
                 </div>
             </div>
+           
             @endforeach
         </div>
-        <input type="button" class="button-default" id="btn" value="去支付">
+        <input type="button" class="button-default" id="btn" value="支付宝支付">
+        <!-- <input type="button" class="button-default" id="wx" value="微信支付"> -->
+        <button><a href="/wx_text?order_no=201905250310127793">微信支付</a></button>
+     
         <div class="row margin-bottom">
 
 
@@ -448,6 +454,7 @@
 
            }
         })
+        //支付宝支付
         $(document).on('click','#btn',function(){
             $.ajax({
                 url:"/z_pay",
@@ -459,5 +466,19 @@
                 }
             })
         })
+        //微信支付
+        // $(document).on('click','#wx',function(){
+        //     //alert('wx');
+        //     $.ajax({
+        //         url:"/wx_text",
+        //         method:"get",
+        //         data:{order_no:order_no},
+        //         dataType:"json",
+        //         success:function(res){
+        //                 console.log(res);
+        //         }
+        //     })
+        // })
+
     })
 </script>
