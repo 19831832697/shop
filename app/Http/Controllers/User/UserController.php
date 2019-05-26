@@ -181,20 +181,41 @@ Class UserController extends Controller
         $num = rand(1000,9999);
         $bol=100;
         if($bol == 100){
-            $arr=array(
-                'tel'=>$tel,
-                'code'=>$num,
-                'out_time'=>time()+60,
-                'status'=>1,
-            );
-            $res=DB::table('code')->insert($arr);
-            if ($res) {
-                $arr = ["code" => 1, "msg" => "发送验证码成功,有效期1分钟"];
-                return json_encode($arr,JSON_UNESCAPED_UNICODE);
-            }else {
-                $arr = ["code" => 0, "msg" => "添加数据库失败"];
-                return json_encode($arr,JSON_UNESCAPED_UNICODE);
+            $dataInfo=DB::table('code')->where(['tel'=>$tel])->first();
+            if($dataInfo){
+                $arr=array(
+                    'tel'=>$tel,
+                    'code'=>$num,
+                    'out_time'=>time()+60,
+                    'status'=>1,
+                );
+                $res=DB::table('code')->where(['tel'=>$tel])->update($arr);
+                if ($res) {
+                    $arr = ["code" => 1, "msg" => "发送验证码成功,有效期1分钟"];
+                    return json_encode($arr,JSON_UNESCAPED_UNICODE);
+                }else {
+                    $arr = ["code" => 0, "msg" => "添加数据库失败"];
+                    return json_encode($arr,JSON_UNESCAPED_UNICODE);
+                }
+            }else{
+                $arr=array(
+                    'tel'=>$tel,
+                    'code'=>$num,
+                    'out_time'=>time()+60,
+                    'status'=>1,
+                );
+                $res=DB::table('code')->insert($arr);
+                if ($res) {
+                    $arr = ["code" => 1, "msg" => "发送验证码成功,有效期1分钟"];
+                    return json_encode($arr,JSON_UNESCAPED_UNICODE);
+                }else {
+                    $arr = ["code" => 0, "msg" => "添加数据库失败"];
+                    return json_encode($arr,JSON_UNESCAPED_UNICODE);
+                }
+
             }
+
+
         }else{
             $arr=[
                 'code'=>0,
