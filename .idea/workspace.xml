@@ -38,6 +38,87 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/user-comment.jpg" afterPath="$PROJECT_DIR$/public/img/user-comment.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/wishlist1.png" afterPath="$PROJECT_DIR$/public/img/wishlist1.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/wishlist2.png" afterPath="$PROJECT_DIR$/public/img/wishlist2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/css/modules/laydate/icon.png" afterPath="$PROJECT_DIR$/public/layui/css/modules/laydate/icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/css/modules/layer/default/icon-ext.png" afterPath="$PROJECT_DIR$/public/layui/css/modules/layer/default/icon-ext.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/css/modules/layer/default/icon.png" afterPath="$PROJECT_DIR$/public/layui/css/modules/layer/default/icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/css/modules/layer/default/loading-0.gif" afterPath="$PROJECT_DIR$/public/layui/css/modules/layer/default/loading-0.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/css/modules/layer/default/loading-1.gif" afterPath="$PROJECT_DIR$/public/layui/css/modules/layer/default/loading-1.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/css/modules/layer/default/loading-2.gif" afterPath="$PROJECT_DIR$/public/layui/css/modules/layer/default/loading-2.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/font/iconfont.eot" afterPath="$PROJECT_DIR$/public/layui/font/iconfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/font/iconfont.ttf" afterPath="$PROJECT_DIR$/public/layui/font/iconfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/font/iconfont.woff" afterPath="$PROJECT_DIR$/public/layui/font/iconfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/0.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/0.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/1.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/1.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/10.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/10.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/11.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/11.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/12.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/12.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/13.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/13.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/14.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/14.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/15.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/15.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/16.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/16.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/17.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/17.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/18.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/18.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/19.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/19.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/2.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/2.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/20.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/20.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/21.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/21.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/22.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/22.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/23.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/23.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/24.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/24.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/25.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/25.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/26.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/26.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/27.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/27.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/28.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/28.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/29.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/29.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/3.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/3.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/30.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/30.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/31.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/31.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/32.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/32.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/33.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/33.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/34.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/34.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/35.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/35.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/36.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/36.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/37.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/37.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/38.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/38.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/39.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/39.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/4.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/4.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/40.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/40.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/41.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/41.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/42.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/42.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/43.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/43.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/44.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/44.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/45.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/45.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/46.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/46.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/47.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/47.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/48.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/48.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/49.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/49.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/5.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/5.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/50.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/50.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/51.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/51.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/52.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/52.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/53.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/53.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/54.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/54.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/55.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/55.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/56.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/56.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/57.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/57.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/58.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/58.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/59.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/59.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/6.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/6.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/60.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/60.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/61.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/61.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/62.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/62.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/63.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/63.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/64.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/64.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/65.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/65.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/66.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/66.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/67.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/67.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/68.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/68.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/69.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/69.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/7.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/7.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/70.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/70.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/71.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/71.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/8.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/8.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/images/face/9.gif" afterPath="$PROJECT_DIR$/public/layui/images/face/9.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/uploads/20190520/7brD5G3EBn1VcnhGr5u0PEjLv2gzCjioECQw8sAB.jpeg" afterPath="$PROJECT_DIR$/public/uploads/20190520/7brD5G3EBn1VcnhGr5u0PEjLv2gzCjioECQw8sAB.jpeg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/uploads/20190520/KtEttmsIrkQOLVzS43t2QT5HbyFils37a6KxSCKm.jpeg" afterPath="$PROJECT_DIR$/public/uploads/20190520/KtEttmsIrkQOLVzS43t2QT5HbyFils37a6KxSCKm.jpeg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/uploads/20190520/Wa0Ure3f7PjpSqdg5HtntjdkL8K5083l6euHCWiq.jpeg" afterPath="$PROJECT_DIR$/public/uploads/20190520/Wa0Ure3f7PjpSqdg5HtntjdkL8K5083l6euHCWiq.jpeg" />
@@ -296,6 +377,28 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/materialize.min.js" afterPath="$PROJECT_DIR$/public/js/materialize.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/owl.carousel.min.js" afterPath="$PROJECT_DIR$/public/js/owl.carousel.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/portfolio.js" afterPath="$PROJECT_DIR$/public/js/portfolio.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/css/layui.css" afterPath="$PROJECT_DIR$/public/layui/css/layui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/css/layui.mobile.css" afterPath="$PROJECT_DIR$/public/layui/css/layui.mobile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/css/modules/code.css" afterPath="$PROJECT_DIR$/public/layui/css/modules/code.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/css/modules/laydate/laydate.css" afterPath="$PROJECT_DIR$/public/layui/css/modules/laydate/laydate.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/css/modules/layer/default/layer.css" afterPath="$PROJECT_DIR$/public/layui/css/modules/layer/default/layer.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/font/iconfont.svg" afterPath="$PROJECT_DIR$/public/layui/font/iconfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/dest/layui.all.js" afterPath="$PROJECT_DIR$/public/layui/lay/dest/layui.all.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/code.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/code.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/element.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/element.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/flow.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/flow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/form.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/jquery.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/laydate.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/laydate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/layedit.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/layedit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/layer.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/layer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/laypage.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/laypage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/laytpl.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/laytpl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/mobile.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/mobile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/tree.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/tree.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/upload.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/upload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/lay/modules/util.js" afterPath="$PROJECT_DIR$/public/layui/lay/modules/util.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/layui/layui.js" afterPath="$PROJECT_DIR$/public/layui/layui.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/robots.txt" afterPath="$PROJECT_DIR$/public/robots.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/laravel-admin/AdminLTE/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/public/vendor/laravel-admin/AdminLTE/bootstrap/css/bootstrap.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/laravel-admin/AdminLTE/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/public/vendor/laravel-admin/AdminLTE/bootstrap/fonts/glyphicons-halflings-regular.svg" />
@@ -593,8 +696,8 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1169">
-              <caret line="183" column="23" lean-forward="true" selection-start-line="183" selection-start-column="23" selection-end-line="183" selection-end-column="23" />
+            <state relative-caret-position="2232">
+              <caret line="183" column="23" lean-forward="false" selection-start-line="183" selection-start-column="23" selection-end-line="183" selection-end-column="23" />
               <folding>
                 <element signature="e#44#80#0#PHP" expanded="true" />
                 <element signature="e#387#464#0#PHP" expanded="false" />
@@ -610,7 +713,7 @@
       <file leaf-file-name="pwdshow.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/user/pwdshow.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-389">
+            <state relative-caret-position="9960">
               <caret line="415" column="40" lean-forward="false" selection-start-line="415" selection-start-column="40" selection-end-line="415" selection-end-column="40" />
               <folding />
             </state>
@@ -620,11 +723,9 @@
       <file leaf-file-name="password.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/user/password.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="473" column="25" lean-forward="true" selection-start-line="473" selection-start-column="25" selection-end-line="473" selection-end-column="25" />
-              <folding>
-                <element signature="e#18579#20561#0#HTML" expanded="false" />
-              </folding>
+            <state relative-caret-position="288">
+              <caret line="460" column="34" lean-forward="true" selection-start-line="460" selection-start-column="34" selection-end-line="460" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -632,7 +733,7 @@
       <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/user/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
+            <state relative-caret-position="9048">
               <caret line="377" column="42" lean-forward="false" selection-start-line="377" selection-start-column="42" selection-end-line="377" selection-end-column="42" />
               <folding />
             </state>
@@ -642,7 +743,7 @@
       <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/user/register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="10464">
               <caret line="436" column="37" lean-forward="false" selection-start-line="436" selection-start-column="37" selection-end-line="436" selection-end-column="37" />
               <folding />
             </state>
@@ -801,6 +902,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -829,8 +932,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -937,17 +1038,18 @@
       <workItem from="1558671068226" duration="1624000" />
       <workItem from="1558680607844" duration="2942000" />
       <workItem from="1558702644566" duration="1111000" />
+      <workItem from="1558870229638" duration="291000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41214000" />
+    <option name="totallyTimeSpent" value="41505000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="1" width="1378" height="734" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08443466" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09765051" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -958,26 +1060,16 @@
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09765051" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -991,6 +1083,69 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="35" column="6" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4392">
+          <caret line="183" column="23" lean-forward="true" selection-start-line="183" selection-start-column="23" selection-end-line="183" selection-end-column="23" />
+          <folding>
+            <element signature="e#44#80#0#PHP" expanded="true" />
+            <element signature="e#387#464#0#PHP" expanded="false" />
+            <element signature="e#2202#2272#0#PHP" expanded="false" />
+            <element signature="e#2287#5042#0#PHP" expanded="false" />
+            <element signature="e#5061#5133#0#PHP" expanded="false" />
+            <element signature="e#7534#8185#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/pwdshow.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9960">
+          <caret line="415" column="40" lean-forward="false" selection-start-line="415" selection-start-column="40" selection-end-line="415" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9048">
+          <caret line="377" column="42" lean-forward="false" selection-start-line="377" selection-start-column="42" selection-end-line="377" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10464">
+          <caret line="436" column="37" lean-forward="false" selection-start-line="436" selection-start-column="37" selection-end-line="436" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/password.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11352">
+          <caret line="473" column="25" lean-forward="true" selection-start-line="473" selection-start-column="25" selection-end-line="473" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1034,9 +1189,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10704">
           <caret line="446" column="14" lean-forward="false" selection-start-line="446" selection-start-column="14" selection-end-line="446" selection-end-column="14" />
-          <folding>
-            <element signature="e#18579#20561#0#HTML" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1185,9 +1338,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="446" column="14" lean-forward="false" selection-start-line="446" selection-start-column="14" selection-end-line="446" selection-end-column="14" />
-          <folding>
-            <element signature="e#18579#20561#0#HTML" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1357,7 +1508,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="10464">
           <caret line="436" column="37" lean-forward="false" selection-start-line="436" selection-start-column="37" selection-end-line="436" selection-end-column="37" />
           <folding />
         </state>
@@ -1365,7 +1516,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/pwdshow.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-389">
+        <state relative-caret-position="9960">
           <caret line="415" column="40" lean-forward="false" selection-start-line="415" selection-start-column="40" selection-end-line="415" selection-end-column="40" />
           <folding />
         </state>
@@ -1373,7 +1524,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
+        <state relative-caret-position="9048">
           <caret line="377" column="42" lean-forward="false" selection-start-line="377" selection-start-column="42" selection-end-line="377" selection-end-column="42" />
           <folding />
         </state>
@@ -1381,8 +1532,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1169">
-          <caret line="183" column="23" lean-forward="true" selection-start-line="183" selection-start-column="23" selection-end-line="183" selection-end-column="23" />
+        <state relative-caret-position="2232">
+          <caret line="183" column="23" lean-forward="false" selection-start-line="183" selection-start-column="23" selection-end-line="183" selection-end-column="23" />
           <folding>
             <element signature="e#44#80#0#PHP" expanded="true" />
             <element signature="e#387#464#0#PHP" expanded="false" />
@@ -1396,11 +1547,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/password.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="473" column="25" lean-forward="true" selection-start-line="473" selection-start-column="25" selection-end-line="473" selection-end-column="25" />
-          <folding>
-            <element signature="e#18579#20561#0#HTML" expanded="false" />
-          </folding>
+        <state relative-caret-position="288">
+          <caret line="460" column="34" lean-forward="true" selection-start-line="460" selection-start-column="34" selection-end-line="460" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
