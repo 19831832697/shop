@@ -696,14 +696,20 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="355">
               <caret line="274" column="0" lean-forward="true" selection-start-line="274" selection-start-column="0" selection-end-line="274" selection-end-column="0" />
+=======
+            <state relative-caret-position="235">
+              <caret line="270" column="30" lean-forward="true" selection-start-line="270" selection-start-column="30" selection-end-line="270" selection-end-column="30" />
+>>>>>>> zhangyang
               <folding>
                 <element signature="e#44#80#0#PHP" expanded="true" />
                 <element signature="e#387#464#0#PHP" expanded="false" />
                 <element signature="e#2202#2272#0#PHP" expanded="false" />
                 <element signature="e#2287#5042#0#PHP" expanded="false" />
                 <element signature="e#5061#5133#0#PHP" expanded="false" />
+<<<<<<< HEAD
                 <marker date="1558871231015" expanded="true" signature="369:8189" ph="{...}" />
                 <marker date="1558871231015" expanded="false" signature="5187:6244" ph="..." />
                 <marker date="1558871231015" expanded="true" signature="5530:6066" ph="..." />
@@ -724,6 +730,11 @@
                 <marker date="1558871231015" expanded="true" signature="7857:7934" ph="..." />
                 <marker date="1558871231015" expanded="true" signature="8013:8177" ph="..." />
                 <marker date="1558871231015" expanded="true" signature="8032:8104" ph="..." />
+=======
+                <element signature="e#5148#7041#0#PHP" expanded="false" />
+                <element signature="e#7057#8225#0#PHP" expanded="false" />
+                <element signature="e#8330#8981#0#PHP" expanded="false" />
+>>>>>>> zhangyang
               </folding>
             </state>
           </provider>
@@ -1057,12 +1068,20 @@
       <workItem from="1558671068226" duration="1624000" />
       <workItem from="1558680607844" duration="2942000" />
       <workItem from="1558702644566" duration="1111000" />
+<<<<<<< HEAD
       <workItem from="1558870229638" duration="1072000" />
+=======
+      <workItem from="1558870229638" duration="973000" />
+>>>>>>> zhangyang
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="42286000" />
+=======
+    <option name="totallyTimeSpent" value="42187000" />
+>>>>>>> zhangyang
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="1" width="1378" height="734" extended-state="0" />
@@ -1128,6 +1147,7 @@
             <element signature="e#2202#2272#0#PHP" expanded="false" />
             <element signature="e#2287#5042#0#PHP" expanded="false" />
             <element signature="e#5061#5133#0#PHP" expanded="false" />
+<<<<<<< HEAD
             <marker date="1558871231015" expanded="true" signature="369:8189" ph="{...}" />
             <marker date="1558871231015" expanded="false" signature="5187:6244" ph="..." />
             <marker date="1558871231015" expanded="true" signature="5530:6066" ph="..." />
@@ -1148,6 +1168,11 @@
             <marker date="1558871231015" expanded="true" signature="7857:7934" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8013:8177" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8032:8104" ph="..." />
+=======
+            <element signature="e#5148#7041#0#PHP" expanded="false" />
+            <element signature="e#7057#8225#0#PHP" expanded="false" />
+            <element signature="e#8330#8981#0#PHP" expanded="false" />
+>>>>>>> zhangyang
           </folding>
         </state>
       </provider>
@@ -1210,6 +1235,7 @@
             <element signature="e#2202#2272#0#PHP" expanded="false" />
             <element signature="e#2287#5042#0#PHP" expanded="false" />
             <element signature="e#5061#5133#0#PHP" expanded="false" />
+<<<<<<< HEAD
             <marker date="1558871231015" expanded="true" signature="369:8189" ph="{...}" />
             <marker date="1558871231015" expanded="false" signature="5187:6244" ph="..." />
             <marker date="1558871231015" expanded="true" signature="5530:6066" ph="..." />
@@ -1230,6 +1256,11 @@
             <marker date="1558871231015" expanded="true" signature="7857:7934" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8013:8177" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8032:8104" ph="..." />
+=======
+            <element signature="e#5148#7041#0#PHP" expanded="false" />
+            <element signature="e#7057#8225#0#PHP" expanded="false" />
+            <element signature="e#8330#8981#0#PHP" expanded="false" />
+>>>>>>> zhangyang
           </folding>
         </state>
       </provider>
@@ -1292,6 +1323,7 @@
             <element signature="e#2202#2272#0#PHP" expanded="false" />
             <element signature="e#2287#5042#0#PHP" expanded="false" />
             <element signature="e#5061#5133#0#PHP" expanded="false" />
+<<<<<<< HEAD
             <marker date="1558871231015" expanded="true" signature="369:8189" ph="{...}" />
             <marker date="1558871231015" expanded="false" signature="5187:6244" ph="..." />
             <marker date="1558871231015" expanded="true" signature="5530:6066" ph="..." />
@@ -1312,6 +1344,11 @@
             <marker date="1558871231015" expanded="true" signature="7857:7934" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8013:8177" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8032:8104" ph="..." />
+=======
+            <element signature="e#5148#7041#0#PHP" expanded="false" />
+            <element signature="e#7057#8225#0#PHP" expanded="false" />
+            <element signature="e#8330#8981#0#PHP" expanded="false" />
+>>>>>>> zhangyang
           </folding>
         </state>
       </provider>
@@ -1358,6 +1395,7 @@
             <element signature="e#2202#2272#0#PHP" expanded="false" />
             <element signature="e#2287#5042#0#PHP" expanded="false" />
             <element signature="e#5061#5133#0#PHP" expanded="false" />
+<<<<<<< HEAD
             <marker date="1558871231015" expanded="true" signature="369:8189" ph="{...}" />
             <marker date="1558871231015" expanded="false" signature="5187:6244" ph="..." />
             <marker date="1558871231015" expanded="true" signature="5530:6066" ph="..." />
@@ -1378,6 +1416,11 @@
             <marker date="1558871231015" expanded="true" signature="7857:7934" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8013:8177" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8032:8104" ph="..." />
+=======
+            <element signature="e#5148#7041#0#PHP" expanded="false" />
+            <element signature="e#7057#8225#0#PHP" expanded="false" />
+            <element signature="e#8330#8981#0#PHP" expanded="false" />
+>>>>>>> zhangyang
           </folding>
         </state>
       </provider>
@@ -1408,6 +1451,7 @@
             <element signature="e#2202#2272#0#PHP" expanded="false" />
             <element signature="e#2287#5042#0#PHP" expanded="false" />
             <element signature="e#5061#5133#0#PHP" expanded="false" />
+<<<<<<< HEAD
             <marker date="1558871231015" expanded="true" signature="369:8189" ph="{...}" />
             <marker date="1558871231015" expanded="false" signature="5187:6244" ph="..." />
             <marker date="1558871231015" expanded="true" signature="5530:6066" ph="..." />
@@ -1428,6 +1472,11 @@
             <marker date="1558871231015" expanded="true" signature="7857:7934" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8013:8177" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8032:8104" ph="..." />
+=======
+            <element signature="e#5148#7041#0#PHP" expanded="false" />
+            <element signature="e#7057#8225#0#PHP" expanded="false" />
+            <element signature="e#8330#8981#0#PHP" expanded="false" />
+>>>>>>> zhangyang
           </folding>
         </state>
       </provider>
@@ -1474,6 +1523,7 @@
             <element signature="e#2202#2272#0#PHP" expanded="false" />
             <element signature="e#2287#5042#0#PHP" expanded="false" />
             <element signature="e#5061#5133#0#PHP" expanded="false" />
+<<<<<<< HEAD
             <marker date="1558871231015" expanded="true" signature="369:8189" ph="{...}" />
             <marker date="1558871231015" expanded="false" signature="5187:6244" ph="..." />
             <marker date="1558871231015" expanded="true" signature="5530:6066" ph="..." />
@@ -1494,6 +1544,11 @@
             <marker date="1558871231015" expanded="true" signature="7857:7934" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8013:8177" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8032:8104" ph="..." />
+=======
+            <element signature="e#5148#7041#0#PHP" expanded="false" />
+            <element signature="e#7057#8225#0#PHP" expanded="false" />
+            <element signature="e#8330#8981#0#PHP" expanded="false" />
+>>>>>>> zhangyang
           </folding>
         </state>
       </provider>
@@ -1540,6 +1595,7 @@
             <element signature="e#2202#2272#0#PHP" expanded="false" />
             <element signature="e#2287#5042#0#PHP" expanded="false" />
             <element signature="e#5061#5133#0#PHP" expanded="false" />
+<<<<<<< HEAD
             <marker date="1558871231015" expanded="true" signature="369:8189" ph="{...}" />
             <marker date="1558871231015" expanded="false" signature="5187:6244" ph="..." />
             <marker date="1558871231015" expanded="true" signature="5530:6066" ph="..." />
@@ -1560,6 +1616,11 @@
             <marker date="1558871231015" expanded="true" signature="7857:7934" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8013:8177" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8032:8104" ph="..." />
+=======
+            <element signature="e#5148#7041#0#PHP" expanded="false" />
+            <element signature="e#7057#8225#0#PHP" expanded="false" />
+            <element signature="e#8330#8981#0#PHP" expanded="false" />
+>>>>>>> zhangyang
           </folding>
         </state>
       </provider>
@@ -1606,6 +1667,7 @@
             <element signature="e#2202#2272#0#PHP" expanded="false" />
             <element signature="e#2287#5042#0#PHP" expanded="false" />
             <element signature="e#5061#5133#0#PHP" expanded="false" />
+<<<<<<< HEAD
             <marker date="1558871231015" expanded="true" signature="369:8189" ph="{...}" />
             <marker date="1558871231015" expanded="false" signature="5187:6244" ph="..." />
             <marker date="1558871231015" expanded="true" signature="5530:6066" ph="..." />
@@ -1626,6 +1688,11 @@
             <marker date="1558871231015" expanded="true" signature="7857:7934" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8013:8177" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8032:8104" ph="..." />
+=======
+            <element signature="e#5148#7041#0#PHP" expanded="false" />
+            <element signature="e#7057#8225#0#PHP" expanded="false" />
+            <element signature="e#8330#8981#0#PHP" expanded="false" />
+>>>>>>> zhangyang
           </folding>
         </state>
       </provider>
@@ -1656,6 +1723,7 @@
             <element signature="e#2202#2272#0#PHP" expanded="false" />
             <element signature="e#2287#5042#0#PHP" expanded="false" />
             <element signature="e#5061#5133#0#PHP" expanded="false" />
+<<<<<<< HEAD
             <marker date="1558871231015" expanded="true" signature="369:8189" ph="{...}" />
             <marker date="1558871231015" expanded="false" signature="5187:6244" ph="..." />
             <marker date="1558871231015" expanded="true" signature="5530:6066" ph="..." />
@@ -1676,6 +1744,11 @@
             <marker date="1558871231015" expanded="true" signature="7857:7934" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8013:8177" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8032:8104" ph="..." />
+=======
+            <element signature="e#5148#7041#0#PHP" expanded="false" />
+            <element signature="e#7057#8225#0#PHP" expanded="false" />
+            <element signature="e#8330#8981#0#PHP" expanded="false" />
+>>>>>>> zhangyang
           </folding>
         </state>
       </provider>
@@ -1730,14 +1803,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="355">
           <caret line="274" column="0" lean-forward="true" selection-start-line="274" selection-start-column="0" selection-end-line="274" selection-end-column="0" />
+=======
+        <state relative-caret-position="235">
+          <caret line="270" column="30" lean-forward="true" selection-start-line="270" selection-start-column="30" selection-end-line="270" selection-end-column="30" />
+>>>>>>> zhangyang
           <folding>
             <element signature="e#44#80#0#PHP" expanded="true" />
             <element signature="e#387#464#0#PHP" expanded="false" />
             <element signature="e#2202#2272#0#PHP" expanded="false" />
             <element signature="e#2287#5042#0#PHP" expanded="false" />
             <element signature="e#5061#5133#0#PHP" expanded="false" />
+<<<<<<< HEAD
             <marker date="1558871231015" expanded="true" signature="369:8189" ph="{...}" />
             <marker date="1558871231015" expanded="false" signature="5187:6244" ph="..." />
             <marker date="1558871231015" expanded="true" signature="5530:6066" ph="..." />
@@ -1758,6 +1837,11 @@
             <marker date="1558871231015" expanded="true" signature="7857:7934" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8013:8177" ph="..." />
             <marker date="1558871231015" expanded="true" signature="8032:8104" ph="..." />
+=======
+            <element signature="e#5148#7041#0#PHP" expanded="false" />
+            <element signature="e#7057#8225#0#PHP" expanded="false" />
+            <element signature="e#8330#8981#0#PHP" expanded="false" />
+>>>>>>> zhangyang
           </folding>
         </state>
       </provider>
