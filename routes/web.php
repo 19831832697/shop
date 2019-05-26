@@ -35,8 +35,19 @@ Route::post('checkId', 'User\UserController@checkId');
 Route::get('pwdShow', 'User\UserController@pwdShow');
 //修改密码成功
 Route::post('pwdChange', 'User\UserController@pwdChange');
+<<<<<<< HEAD
 //关于我们
 Route::get('/aboutus', 'Aboutus\AboutusController@aboutus');
+=======
+//个人中心页面
+Route::get('mycenter', 'User\UserController@mycenter');
+//注销登录
+Route::get('loginOut', 'User\UserController@loginOut');
+//切换用户
+Route::get('userChange', 'User\UserController@userChange');
+
+
+>>>>>>> zhangyang
 
 //商品详情
 Route::get('/goods/goodslist','Goods\GoodsController@goodslist');
