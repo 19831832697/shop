@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Cookie;
 
 
 Class UserController extends Controller
@@ -121,7 +121,7 @@ Class UserController extends Controller
                     ];
                     DB::table('user')->where(['user_id'=>$user_id])->update($where);
                 }
-                setcookie('user_id',$user_id);
+                Cookie::queue('user_id', $user_id);
                 $arr=[
                     'code'=>1,
                     'msg'=>'登陆成功'
@@ -292,6 +292,51 @@ Class UserController extends Controller
             return  json_encode($arr,JSON_UNESCAPED_UNICODE);
         }
 
+    }
+    //个人中心页面
+    public function mycenter(Request $request)
+    {
+        $user_id = $request->cookie('user_id');
+        if (empty($user_id)) {
+            echo '请先登录';
+            header('Refresh:2;url=login');die;
+        }
+        $data = DB::table('user')->where(['user_id' => $user_id])->first();
+        return view('user.mycenter', ['data' => $data]);
+    }
+    //注销登录
+    public function loginOut(){
+        Cookie::queue('user_id', '');
+        if (empty($user_id)) {
+            $arr=[
+                'code'=>1,
+                'msg'=>'注销登录成功'
+            ];
+            return json_encode($arr,JSON_UNESCAPED_UNICODE);
+        }else{
+            $arr=[
+                'code'=>0,
+                'msg'=>'注销登录失败'
+            ];
+            return json_encode($arr,JSON_UNESCAPED_UNICODE);
+        }
+    }
+    //切换用户
+    public function userChange(){
+        Cookie::queue('user_id', '');
+        if (empty($user_id)) {
+            $arr=[
+                'code'=>1,
+                'msg'=>'切换用户成功'
+            ];
+            return json_encode($arr,JSON_UNESCAPED_UNICODE);
+        }else{
+            $arr=[
+                'code'=>0,
+                'msg'=>'切换用户失败'
+            ];
+            return json_encode($arr,JSON_UNESCAPED_UNICODE);
+        }
     }
 
 
