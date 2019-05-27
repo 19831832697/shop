@@ -317,7 +317,7 @@
 <div class="pages section">
     <div class="container">
         <div class="pages-head">
-            <h3>LOGIN</h3>
+            <h3>登陆</h3>
         </div>
         <div class="login">
             <div class="row">
@@ -328,11 +328,11 @@
                     <div class="input-field">
                         <input type="password" class="validate" placeholder="PASSWORD" name="user_pwd" required>
                     </div>
-                    <a href="password"><h6>Forgot Password ?</h6></a>
-                    <a href="register"><h6>No Register?Go Register</h6></a>
+                    <a href="password"><h6>忘记密码?</h6></a>
+                    <a href="register"><h6>没有注册?去注册?</h6></a>
                     {{--<a href="" class="btn button-default" id="sub">LOGIN</a>--}}
                     {{--<button id="sub">登陆</button>--}}
-                    <div class="btn button-default" id="sub">LOGIN</div>
+                    <div class="btn button-default" id="sub">登陆</div>
                 </form>
             </div>
         </div>
