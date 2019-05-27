@@ -2,6 +2,13 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+<<<<<<< HEAD
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" packagePrefix="App\" />
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> master
       <excludeFolder url="file://$MODULE_DIR$/vendor/beyondcode/laravel-dump-server" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dnoegel/php-xdg-base-dir" />
@@ -84,9 +91,18 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
+<<<<<<< HEAD
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> zhangyang
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+>>>>>>> 7c7787479692daec1d9a015300637aaed85d1156
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
@@ -99,6 +115,8 @@
         </SOURCES>
       </library>
     </orderEntry>
+<<<<<<< HEAD
+=======
     <orderEntry type="module-library">
       <library name="PHP" type="php">
         <CLASSES>
@@ -271,5 +289,7 @@
         </SOURCES>
       </library>
     </orderEntry>
+>>>>>>> master
+>>>>>>> 7c7787479692daec1d9a015300637aaed85d1156
   </component>
 </module>

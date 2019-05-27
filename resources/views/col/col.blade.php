@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="zxx">
 <head>
     <meta charset="UTF-8">
-    <title>第七组</title>
+    <title>Mstore - Online Shop Mobile Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1 user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="HandheldFriendly" content="True">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/materialize.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/owl.transitions.css">
-    <link rel="stylesheet" href="css/fakeLoader.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/materialize.css">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <link rel="stylesheet" href="/css/owl.theme.css">
+    <link rel="stylesheet" href="/css/owl.transitions.css">
+    <link rel="stylesheet" href="/css/fakeLoader.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/style.css">
 
-    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="shortcut icon" href="/img/favicon.png">
 
 </head>
 <body>
@@ -29,7 +32,7 @@
 <div class="navbar-top">
     <!-- site brand	 -->
     <div class="site-brand">
-        <a href="/"><h1>Mstore</h1></a>
+        <a href="index.html"><h1>Mstore</h1></a>
     </div>
     <!-- end site brand	 -->
     <div class="side-nav-panel-right">
@@ -45,11 +48,11 @@
             <img src="img/profile.jpg" alt="">
             <h2>John Doe</h2>
         </li>
-        <li><a href="/mycenter"><i class="fa fa-cog"></i>个人中心</a></li>
-        <li><a href="/aboutus"><i class="fa fa-user"></i>关于我们</a></li>
-        <li><a href="contact"><i class="fa fa-envelope-o"></i>联系我们</a></li>
-        <li><a href="login"><i class="fa fa-sign-in"></i>登录</a></li>
-        <li><a href="/register"><i class="fa fa-user-plus"></i>注册</a></li>
+        <li><a href="setting.html"><i class="fa fa-cog"></i>Settings</a></li>
+        <li><a href="about-us.html"><i class="fa fa-user"></i>About Us</a></li>
+        <li><a href="contact.html"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
+        <li><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
+        <li><a href="register.html"><i class="fa fa-user-plus"></i>Register</a></li>
     </ul>
 </div>
 <!-- end side nav right-->
@@ -58,19 +61,19 @@
 <div class="navbar-bottom">
     <div class="row">
         <div class="col s2">
-            <a href="/"><i class="fa fa-home"></i></a>
+            <a href="index.html"><i class="fa fa-home"></i></a>
         </div>
         <div class="col s2">
-            <a href="/col/list"><i class="fa fa-heart"></i></a>
+            <a href="wishlist.html"><i class="fa fa-heart"></i></a>
         </div>
         <div class="col s4">
             <div class="bar-center">
-                <a href="/cartlist"><i class="fa fa-shopping-basket"></i></a>
+                <a href="#animatedModal" id="cart-menu"><i class="fa fa-shopping-basket"></i></a>
                 <span>2</span>
             </div>
         </div>
         <div class="col s2">
-            <a href="#"><i class="fa fa-envelope-o"></i></a>
+            <a href="contact.html"><i class="fa fa-envelope-o"></i></a>
         </div>
         <div class="col s2">
             <a href="#animatedModal2" id="nav-menu"><i class="fa fa-bars"></i></a>
@@ -88,78 +91,118 @@
         <div class="container">
             <div class="row">
                 <div class="col s4">
-                    <a href="/" class="button-link">
+                    <a href="index.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-home"></i>
                             </div>
-                            商品首页
+                            Home
                         </div>
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="/goods/goodsinfo" class="button-link">
+                    <a href="product-list.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-bars"></i>
                             </div>
-                            商品列表
+                            Product List
                         </div>
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="/col/list" class="button-link">
+                    <a href="shop-single.html" class="button-link">
+                        <div class="menu-link">
+                            <div class="icon">
+                                <i class="fa fa-eye"></i>
+                            </div>
+                            Single Shop
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s4">
+                    <a href="wishlist.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-heart"></i>
                             </div>
-                            收藏
+                            Wishlist
                         </div>
                     </a>
                 </div>
-            </div>
-            <div class="row">
-
                 <div class="col s4">
-                    <a href="cartlist" class="button-link">
+                    <a href="cart.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-shopping-cart"></i>
                             </div>
-                            购物车
+                            Cart
                         </div>
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="#" class="button-link">
+                    <a href="checkout.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-credit-card"></i>
                             </div>
-                            银行卡
-                        </div>
-                    </a>
-                </div>
-                <div class="col s4">
-                    <a href="historyShow" class="button-link">
-                        <div class="menu-link">
-                            <div class="icon">
-                                <i class="fa fa-file-text-o"></i>
-                            </div>
-                            浏览历史
+                            Checkout
                         </div>
                     </a>
                 </div>
             </div>
             <div class="row">
-
                 <div class="col s4">
-                    <a href="#" class="button-link">
+                    <a href="blog.html" class="button-link">
+                        <div class="menu-link">
+                            <div class="icon">
+                                <i class="fa fa-bold"></i>
+                            </div>
+                            Blog
+                        </div>
+                    </a>
+                </div>
+                <div class="col s4">
+                    <a href="blog-single.html" class="button-link">
+                        <div class="menu-link">
+                            <div class="icon">
+                                <i class="fa fa-file-text-o"></i>
+                            </div>
+                            Blog Single
+                        </div>
+                    </a>
+                </div>
+                <div class="col s4">
+                    <a href="error404.html" class="button-link">
+                        <div class="menu-link">
+                            <div class="icon">
+                                <i class="fa fa-hourglass-half"></i>
+                            </div>
+                            404
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s4">
+                    <a href="testimonial.html" class="button-link">
+                        <div class="menu-link">
+                            <div class="icon">
+                                <i class="fa fa-support"></i>
+                            </div>
+                            Testimonial
+                        </div>
+                    </a>
+                </div>
+                <div class="col s4">
+                    <a href="about-us.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-user"></i>
                             </div>
-                            联系我们
+                            About Us
                         </div>
                     </a>
                 </div>
@@ -170,42 +213,38 @@
                                 <i class="fa fa-envelope-o"></i>
                             </div>
                             Contact
-
-
-
-                        </div>
-                    </a>
-                </div>
-                <div class="col s4">
-                    <a href="#" class="button-link">
-                        <div class="menu-link">
-                            <div class="icon">
-                                <i class="fa fa-cog"></i>
-                            </div>
-                            个人中心
                         </div>
                     </a>
                 </div>
             </div>
             <div class="row">
-
                 <div class="col s4">
-                    <a href="login" class="button-link">
+                    <a href="setting.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
-                                <i class="fa fa-sign-in"></i>
+                                <i class="fa fa-cog"></i>
                             </div>
-                            登录
+                            Settings
                         </div>
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="register" class="button-link">
+                    <a href="login.html" class="button-link">
+                        <div class="menu-link">
+                            <div class="icon">
+                                <i class="fa fa-sign-in"></i>
+                            </div>
+                            Login
+                        </div>
+                    </a>
+                </div>
+                <div class="col s4">
+                    <a href="register.html" class="button-link">
                         <div class="menu-link">
                             <div class="icon">
                                 <i class="fa fa-user-plus"></i>
                             </div>
-                            注册
+                            Register
                         </div>
                     </a>
                 </div>
@@ -327,168 +366,93 @@
 </div>
 <!-- end cart menu -->
 
-<!-- slider -->
-<div class="slider">
-
-    <ul class="slides">
-        <li>
-            <img class="img"src="https://www.runoob.com/try/demo_source/pineapple.jpg" alt="">
-            <div class="caption slider-content  center-align">
-                <h2>跟我玩你指定输，整不好还得哭</h2>
-                <h4>每天努力奋斗一点点，以后的生活更扎实</h4>
-                <a href="" class="btn button-default">立即去购物</a>
-            </div>
-        </li>
-        <li>
-            <img class="img" src="https://www.runoob.com/try/demo_source/pineapple.jpg" alt="">
-            <div class="caption slider-content center-align">
-                <h2>跟我玩你指定输，整不好还得哭</h2>
-                <h4>不要辜负自己所受的苦难，并且配得上自己的野心</h4>
-                <a href="" class="btn button-default">立即去购物</a>
-            </div>
-        </li>
-
-    </ul>
-
-</div>
-<!-- end slider -->
-
-<!-- features -->
-<div class="features section">
+<!-- wishlist -->
+<div class="wishlist section">
     <div class="container">
-        <div class="row">
-            <div class="col s6">
-                <div class="content">
-                    <div class="icon">
-                        <i class="fa fa-car"></i>
-                    </div>
-                    <h6>Free Shipping</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content">
-                    <div class="icon">
-                        <i class="fa fa-dollar"></i>
-                    </div>
-                    <h6>Money Back</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-            </div>
+        <div class="pages-head">
+            <h3>WISHLIST</h3>
         </div>
-        <div class="row margin-bottom-0">
-            <div class="col s6">
-                <div class="content">
-                    <div class="icon">
-                        <i class="fa fa-lock"></i>
-                    </div>
-                    <h6>Secure Payment</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content">
-                    <div class="icon">
-                        <i class="fa fa-support"></i>
-                    </div>
-                    <h6>24/7 Support</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end features -->
-
-<!-- quote -->
-<div class="section quote">
-    <div class="container">
-        <h4>永远要相信边上的人比你聪明</h4>
-        <p>一个人真正的智慧，是用积极的心态，专注于自己喜欢的事，别人怎么说，怎么看，都不重要，重要的是要活出自己
-        </p>
-    </div>
-</div>
-<!-- end quote -->
-
-<!-- product -->
-<div class="section product">
-    <div class="container">
-        <div class="section-head">
-            <h4>最新商品</h4>
-            <div class="divider-top"></div>
-            <div class="divider-bottom"></div>
-        </div>
-        @foreach($goodsInfo as $k=>$v)
-        <div class="row " >
-            <div class="col s6">
-                <div class="content">
-                    <a href="/goods/goodslist?goods_id={{$v->goods_id}}"><img src="{{$v->goods_img}}" alt="" ></a>
-                    <h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
-                    <div class="price">
-                        ${{$v->goods_price}} <span>${{$v->market_price}}</span>
-                    </div>
-                    <button class="btn button-default" id="str" goods_id="{{$v->goods_id}}" buy_num="1">加入购物车</button>
-                </div>
-            </div>
-        @endforeach
-            </div>
-        </div>
-       
-        </div>
-    </div>
-</div>
-<!-- end product -->
-
-<!-- promo -->
-<div class="promo section">
-    <div class="container">
         <div class="content">
-            <h4>PRODUCT BUNDLE</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-            <button class="btn button-default">SHOP NOW</button>
-        </div>
-    </div>
-</div>
-<!-- end promo -->
 
-<!-- product -->
-<div class="section product">
-    <div class="container">
-        <div class="section-head">
-            <h4>顶级产品</h4>
-            <div class="divider-top"></div>
-            <div class="divider-bottom"></div>
-        </div>
-        @foreach($goods as $k=>$v)
-        <div class="row">
-            <div class="col s6">
-                <div class="content">
-                    <img src="{{$v->goods_img}}" alt="" >
-                    <h6><a href="/goods/goodslist?goods_id={{$v->goods_id}}">{{$v->goods_name}}</a></h6>
-                    <div class="price">
-                    ${{$v->market_price}} <span>${{$v->goods_price}}</span>
+            <div class="divider"></div>
+
+
+            {{--收藏展示--}}
+            @foreach($arr as $k=>$v)
+            <div class="cart-2">
+                <div class="row">
+                    <div class="col s5">
+                        <h5>Image</h5>
                     </div>
-                    <button class="btn button-default" id="str" goods_id="{{$v->goods_id}}" buy_num="1">加入购物车</button>
+                    <div class="col s7">
+                        <img src="/{{$v->praise_img}}" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s5">
+                        <h5>Name</h5>
+                    </div>
+                    <div class="col s7">
+                        <h5><a href="">{{$v->praise_name}}</a></h5>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s5">
+                        <h5>Price</h5>
+                    </div>
+                    <div class="col s7">
+                        <h5>${{$v->praise_price}}</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s5">
+                        <h5>Action</h5>
+                    </div>
+                    <div class="col s7">
+                        {{--删除--}}
+                        <h5>
+                         <div class="glyphicon glyphicon-trash" id="delete" praiseid="{{$v->praise_id}}"></div>
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s5">
+                        <h5>全部清空选择处</h5>
+                    </div>
+                    <div class="col s7">
+                        {{--删除--}}
+                        <h5>
+                            <input type="hidden" value="0" praiseid="{{$v->praise_id}}" class="b">
+                            <button class="a" style="background-color: #e7e7e7; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+
+">点击选择</button>
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col 12">
+                        <button class="btn button-default">添加到购物车</button>
+
+                    </div>
                 </div>
             </div>
             @endforeach
-      
-        </div>
+            <button class="btn button-default" id="aa">全部清空</button>
 
 
-        <div class="pagination-product">
-
-            <ul>
-                <!-- <li class="active"> -->
-                {{ $goods->links() }}
-                <!-- </li> -->
-
-            </ul>
         </div>
     </div>
 </div>
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<!-- end product -->
+<!-- end wishlist -->
 
 <!-- loader -->
 <div id="fakeLoader"></div>
@@ -498,8 +462,8 @@
 <div class="footer">
     <div class="container">
         <div class="about-us-foot">
-            <h6>成功便是站起比倒下多一次</h6>
-            <p>无论什么时候，不管遇到什么情况，我绝不允许自己有一点点灰心丧气</p>
+            <h6>Mstore</h6>
+            <p>is a lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.</p>
         </div>
         <div class="social-media">
             <a href=""><i class="fa fa-facebook"></i></a>
@@ -509,59 +473,78 @@
             <a href=""><i class="fa fa-instagram"></i></a>
         </div>
         <div class="copyright">
-            <span>© 2019 第七组</span>
+            <span>© 2017 All Right Reserved</span>
         </div>
     </div>
 </div>
 <!-- end footer -->
 
 <!-- scripts -->
-<script src="js/jquery.min.js"></script>
-<script src="js/materialize.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/fakeLoader.min.js"></script>
-<script src="js/animatedModal.min.js"></script>
-<script src="js/main.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/fakeLoader.min.js"></script>
+<script src="/js/animatedModal.min.js"></script>
+<script src="/js/main.js"></script>
 
 </body>
 </html>
 <script>
     $(function(){
-        $(document).on('click','#str',function () {
-            var buy_num=$(this).attr('buy_num');
-            var goods_id=$(this).attr('goods_id');
-
-            $.get(
-                    '/cart',
-                    {goods_id:goods_id,buy_num:buy_num},
-                    function(res){
-                        if(res.ser==0){
-                            alert(res.msg);
-                        }else{
-                            alert(res.msg);
-                        }
-                    }
-            );
+        //点击删除
+        $(document).on("click","#delete",function(){
+                //alert('aa');
+                var id=$(this).attr('praiseid');
+                //console.log(id);
+                    $.get(
+                            "/col/del",
+                            {id:id},
+                            function(res){
+                                //console.log(res);
+                                if(res.error==1){
+                                    alert('删除成功');
+                                    window.location.reload();
+                                }else{
+                                    alert('删除失败');
+                                }
+                            }
+                    )
         })
+        //全部删除
+        $(document).on("click",".a",function(){
+            var text=$(this).html();
+            if(text=='已经选择'){
+                $(this).html('请选择').prev().val('0');
+            }else{
+                $(this).html('已经选择').prev().val('1');
+            }
+
+
+        })
+
+        $(document).on("click","#aa",function(){
+            //alert('aa');
+            var div=$(".b");
+            //console.log(div);
+            var id="";
+            div.each(function(index){
+                if($(this).val()==1){
+                    id+=parseInt($(this).attr('praiseid'))+',';
+                }
+            })
+            id=id.substr(0,id.length-1);
+            console.log(id);
+            $.get(
+                    "/col/dela",
+                    {id:id},
+                    function(res){
+                       if(res.error==1){
+                            alert('删除成功');
+                            window.location.reload();
+                       }
+                    }
+            )
+        })
+
     })
 </script>
-<style>
-    .img {
-        -webkit-animation: mymove 7s infinite; /* Chrome, Safari, Opera */
-        animation: mymove 7s infinite;
-    }
-    /* Chrome, Safari, Opera */
-    @-webkit-keyframes mymove {
-        50% {
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
-        }
-    }
-    /* Standard syntax */
-    @keyframes mymove {
-        50% {
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
-        }
-    }
-</style>

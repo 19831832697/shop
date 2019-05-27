@@ -35,6 +35,10 @@ Route::post('checkId', 'User\UserController@checkId');
 Route::get('pwdShow', 'User\UserController@pwdShow');
 //修改密码成功
 Route::post('pwdChange', 'User\UserController@pwdChange');
+
+//关于我们
+Route::get('/aboutus', 'Aboutus\AboutusController@aboutus');
+
 //个人中心页面
 Route::get('mycenter', 'User\UserController@mycenter');
 //注销登录
@@ -43,22 +47,37 @@ Route::get('loginOut', 'User\UserController@loginOut');
 Route::get('userChange', 'User\UserController@userChange');
 
 
-
 //商品详情
 Route::get('/goods/goodslist','Goods\GoodsController@goodslist');
 Route::get('/goods/goodsinfo','Goods\GoodsController@goodsInfo');
+//浏览记录
+Route::get('historyShow','Goods\GoodsController@historyShow');
 //购物车
 Route::get('/cart','Cart\CartController@cart');
+//购物车展示
+Route::get('/cartlist','Cart\CartController@cartlist');
+ROute::get('/del','Cart\CartController@del');
 //加减号
 Route::get('/add','Cart\CartController@add');
 Route::get('/subtract','Cart\CartController@subtract');
-//购物车展示
-Route::get('/cartlist','Cart\CartController@cartlist');
-//生成订单
-Route::post('pay','pay\PayController@pay');
-//订单列表
-Route::post('payShow','pay\PayController@payShow');
-//去支付
+
+//加入,展示，删除收藏
+Route::get('/col/add','Collect\ColController@add');
+Route::get('/col/list','Collect\ColController@list');
+Route::get('/col/del','Collect\ColController@del');
+Route::get('/col/dela','Collect\ColController@dela');
+Route::get('/goods/aaa','Goods\GoodsController@aaa');
+
+//点击去结算生成订单
+Route::post('/pay','pay\PayController@pay');
+Route::get('/paylist','pay\PayController@paylist');
+
+//支付宝支付
 Route::get('z_pay','pay\MoneyController@z_pay');
-Route::post('notify','alipay\AlipayController@notify');//异步回调
-Route::get('aliReturn','alipay\AlipayController@aliReturn');//同步回调
+Route::post('notify','pay\MoneyController@notify');//异步回调
+Route::get('aliReturn','pay\MoneyController@aliReturn');//同步回调
+
+//微信支付
+Route::get('wx_text','Wei\WeiPayController@text');
+Route::post('wx_notify','Wei\WeiPayController@notify');
+Route::get('wx_success','Wei\WeiPayController@success');
