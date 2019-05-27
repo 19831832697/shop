@@ -84,3 +84,4 @@ Route::get('wx_success','Wei\WeiPayController@success');
 
 Route::get('/add','Auths\AuthsController@add');
 Route::get('/wxauth','Auths\AuthsController@wxauth');
+Route::get('/cc','Auths\AuthsController@cc');
