@@ -383,11 +383,11 @@
 				function(res){
 					if(res.ser==0){
 						alert(res.msg);
-					}else if(res.code==40025){
-                        alert(res.msg);
-                        window.location.href="/login";
-					}else{
+					}else if(res.ser==40025){
 						alert(res.msg);
+						window.location.href="/login";
+					}else{
+                        alert(res.msg);
 					}
 				}
 			);
