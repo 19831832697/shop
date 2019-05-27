@@ -17,10 +17,8 @@ class AuthsController extends Controller
         $appid=env('WX_APP');
         $secret=env('WX_APPSECRETl');
         $code=$_GET['code'];
-        $openid="openid";
-        $openid=Redis::get($openid);
         $token=$this->token($code);
-        dd($openid,'*****'.$token);
+        dd($token);
         $url="https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN";
     }
     //curl
@@ -44,7 +42,6 @@ class AuthsController extends Controller
         $appid=env('WX_APP');
         $secret=env('WX_APPSECRETl');
         $key="token";
-        $openid="openid";
         $access_token=Redis::get($key);
         if(!$access_token){
             $tokenurl="https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$secret&code=$code&grant_type=authorization_code";
@@ -52,12 +49,19 @@ class AuthsController extends Controller
             $token_arr=json_decode($token,true);
             $access_token1=$token_arr['access_token'];
             $openid=$token_arr['openid'];
+            $openid="openid$openid";
             Redis::set($openid,$openid);
             Redis::set($key,$access_token1);
             Redis::expire($key,3600);
-            return $access_token1;
+            return $arr=[
+                'access_token'=>$access_token1,
+                'openid'=>$openid
+            ];
         }else{
-            return $access_token;
+            return $arr=[
+                'access_token'=>$access_token,
+                'openid'=>Redis::get($openid)
+            ];
         }
     }
 }
