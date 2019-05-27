@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auths;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Contracts\Redis;
 class AuthsController extends Controller
 {
     //微信授权
@@ -17,14 +17,11 @@ class AuthsController extends Controller
         $appid=env('WX_APP');
         $secret=env('WX_APPSECRETl');
         $code=$_GET['code'];
-        $tokenurl="https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$secret&code=$code&grant_type=authorization_code";
-        $token=$this->getcurl($tokenurl);
-        dd(json_decode($token,true));
-        $access_tokenurl="https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=$appid&grant_type=refresh_token&refresh_token=$token";
-        $access_token=$this->getcurl($access_tokenurl);
-        $access_token_arr=json_decode($access_token,true);
-        print_r($access_token);echo "<br>";
-        dd($access_token_arr);
+        $openid="openid";
+        $openid=Redis::get($openid);
+        $token=$this->token($code);
+        dd($openid,'*****'.$token);
+        $url="https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN";
     }
     //curl
     public function getcurl($url){
@@ -36,9 +33,31 @@ class AuthsController extends Controller
         curl_close($ch);
     }
     public function cc(){
-        $cc='{"access_token":"21_v_vZAU_aFSZp44ujU9F8cl-aMJVstDJeerW0J_XEbxpdrC29GYyoY8rhMonqhLyMC-PlsNCiQ0o_N_uKPuPtZr_stgYykcY8V_jBcoHXjvo","expires_in":7200,"refresh_token":"21_sE7-q63XK9G6HAFdhvlK7EG1HyApXVfkSunx7yVGDcpcZCWvyn8ovOqfrUCU3i28LanTvYv6g9YuhPtjK6JF5NjMlfnn4mTNXZjlUfCo9IM","openid":"o4ekM6MX0DCu_8fmTXaECirRFjjc","scope":"snsapi_base"}{"errcode":41003,"errmsg":"refresh_token missing, hints: [ req_id: qEncy6yFe-X.QQla ]"}';
+        $cc='{"access_token":"21_OG16anbZuW-csAXPL12tYLDKs38OaLVlLyVY5rUF2SdpuVVebi__vIqWz6WNcg84HFx5TwzrBZ91lJDqueVpQ_GCHNGm6Af3YPIQUztcLss","expires_in":7200,"refresh_token":"21_X9osfsS9Py_v2BeMk5E4Uw2Z2cVmHKZfgy4Q-5z_ZDwHRIXOow2cNbCwbzkckaKQ0laGQAxVBwgBF7PPxfYW8IXQvFeybAVg-lSh2GW-jxg","openid":"o4ekM6MX0DCu_8fmTXaECirRFjjc","scope":"snsapi_base"}';
         echo $cc;echo "<br>";
         $access_token_arr=json_decode($cc,true);
         dd($access_token_arr);
+    }
+
+    //tokne
+    public function token($code){
+        $appid=env('WX_APP');
+        $secret=env('WX_APPSECRETl');
+        $key="token";
+        $openid="openid";
+        $access_token=Redis::get($key);
+        if(!$access_token){
+            $tokenurl="https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$secret&code=$code&grant_type=authorization_code";
+            $token=$this->getcurl($tokenurl);
+            $token_arr=json_decode($token,true);
+            $access_token1=$token_arr['access_token'];
+            $openid=$token_arr['openid'];
+            Redis::set($openid,$openid);
+            Redis::set($key,$access_token1);
+            Redis::expire($key,3600);
+            return $access_token1;
+        }else{
+            return $access_token;
+        }
     }
 }
