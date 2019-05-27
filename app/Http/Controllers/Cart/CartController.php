@@ -5,19 +5,20 @@ namespace App\Http\Controllers\Cart;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cookie;
 class CartController extends Controller
 {
     /**
      * 加入购物车
      * @return array
      */
-    public function cart(){
-        if(empty($_COOKIE['user_id'])){
+    public function cart(Request $request){
+        $user_id = $request->cookie('user_id');
+        if(empty($user_id)){
             echo "<script>alert('请先登录');location.href='/login';</script>";
         }
         $goods_id=$_GET['goods_id'];
         $buy_num=$_GET['buy_num'];
-        $user_id=$_COOKIE['user_id'];
         if(empty($user_id)){
             $res=[
                 'code'=>40025,
@@ -83,12 +84,13 @@ class CartController extends Controller
      * 购物车列表
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function cartlist(){
-        if(empty($_COOKIE['user_id'])){
+    public function cartlist(Request $request){
+        $user_id = $request->cookie('user_id');
+        if(empty($user_id)){
             echo "<script>alert('请先登录');location.href='/login';</script>";
         }
         $where=[
-            'user_id'=>$_COOKIE['user_id'],
+            'user_id'=>$user_id,
             'status'=>1
         ];
         $arr=DB::table('shop_cart')->get()->toArray();
@@ -104,8 +106,9 @@ class CartController extends Controller
     /**
      * 购物车删除
      */
-    public function subtract(){
-        if(empty($_COOKIE['user_id'])){
+    public function subtract(Request $request){
+        $user_id = $request->cookie('user_id');
+        if(empty($user_id)){
             echo "<script>alert('请先登录');location.href='/login';</script>";
         }
         $goods_id=$_GET['goods_id'];
