@@ -13,19 +13,17 @@ class CartController extends Controller
      * @return array
      */
     public function cart(Request $request){
+
         $user_id = $request->cookie('user_id');
         if(empty($user_id)){
-            echo "<script>alert('请先登录');location.href='/login';</script>";
+            return $res=[
+                'ser'=>40025,
+                'msg'=>"请先登录"
+            ];
         }
         $goods_id=$_GET['goods_id'];
         $buy_num=$_GET['buy_num'];
-        if(empty($user_id)){
-            $res=[
-                'code'=>40025,
-                'msg'=>'您还没有登录，请先去登录！'
-            ];
-            return json_encode($res,JSON_UNESCAPED_UNICODE);
-        }
+
         $where=[
             'goods_id'=>$goods_id,
             'user_id'=>$user_id
