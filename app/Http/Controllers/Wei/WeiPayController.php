@@ -183,19 +183,17 @@ class WeiPayController extends Controller
             if($sign){       //签名验证成功
                 //TODO 逻辑处理  订单状态更新
                 //更新数据库 xml->cash_fee物品最后交易成功的价格 
-                $pay_time = strtotime($xml->time_end);
-                OrderModel::where(['order_sn'=>$xml->out_trade_no])->update(['order_amount'=>$xml->cash_fee,'pay_time'=>$pay_time,'is_status'=>1]);
-                $out_trade_no=$xml->out_trade_no;
-                $where=[
-                    'order_no'=>$out_trade_no
-                ];
                 //修改订单表
                 $updateInfo=[
                     'pay_status'=>2,
                     'pay_way'=>2,
                     'status'=>2,
                 ];
-                DB::table('shop_order')->where($where)->update($updateInfo);
+                OrderModel::where(['order_no'=>$xml->out_trade_no])->update($updateInfo);
+                $out_trade_no=$xml->out_trade_no;
+                $where=[
+                    'order_no'=>$out_trade_no
+                ];
                 $dataInfo=DB::table('shop_order_detail')->where($where)->get();
                 $data=[];
                 foreach($dataInfo as $k=>$v){
