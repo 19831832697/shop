@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cookie;
 use App\Model\Wx_user;
+use App\Model\UserModel;
 class AuthsController extends Controller
 {
     public function wxauth(Request $request){
@@ -27,7 +28,7 @@ class AuthsController extends Controller
             'user_img'=>$urlinfo['headimgurl'],
             'add_time'=>time()
         ];
-        $res=Wx_user::insertGetId($info);
+        $res=UserModel::insertGetId($info);
         $wx_info=[
             'openid'=>$urlinfo['openid'],
             'nickname'=>$urlinfo['nickname'],
@@ -35,8 +36,7 @@ class AuthsController extends Controller
             'headimgurl'=>$urlinfo['headimgurl'],
             'user_id'=>$res
         ];
-        $res=Wx_user::insertGetId($wx_info);
+        $res=Wx_user::insert($wx_info);
         Cookie::queue('user_id', $res);
-
     }
 }
