@@ -31,10 +31,13 @@ class AuthsController extends Controller
         ];
         $acc=DB::table('wx_user')->where(['openid'=>$urlinfo['openid']])->first();
         if($acc){
-            echo "<script>alert('欢迎回来');location.href='/login';</script>";
+            $wx_id=$acc->wx_id;
+            Cookie::queue('wx_id', $wx_id);
+            echo "<script>alert('欢迎回来');location.href='/';</script>";
         }else{
-            $res=Wx_user::insertId($info);
-            dd($res);
+            $res=Wx_user::insertGetId($info);
+            $wx_id=$res;
+            Cookie::queue('wx_id', $wx_id);
             if($res){
                 echo "<script>alert('登录成功');location.href='/';</script>";
             }else{
