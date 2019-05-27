@@ -12,7 +12,9 @@ class GoodsController extends Controller
 {
     //商品详情
     public function goodslist(Request $request){
-
+        //测试
+            // $a=$_SERVER['HTTP_USER_AGENT'];
+            // dd($a);
         $id=$request->input('goods_id');
         $uid=$request->input('user_id');
         $where=[
