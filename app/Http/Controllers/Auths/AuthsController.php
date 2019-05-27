@@ -23,7 +23,8 @@ class AuthsController extends Controller
         $access_tokenurl="https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=$appid&grant_type=refresh_token&refresh_token=$token";
         $access_token=$this->getcurl($access_tokenurl);
         $access_token_arr=json_decode($access_token,true);
-        echo "获取access_token";print_r($access_token_arr);echo "<br>";
+        print_r($access_token);echo "<br>";
+        dd($access_token_arr);
     }
     //curl
     public function getcurl($url){
