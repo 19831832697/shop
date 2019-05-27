@@ -367,7 +367,7 @@
 <div class="pages section">
     <div class="container">
         <div class="pages-head">
-            <h3>CHECK YOUR IDENTITY</h3>
+            <h3>验证身份</h3>
         </div>
         <div class="register">
             <div class="row">
@@ -379,7 +379,7 @@
                     <div class="input-group">
                         <input type="text" class="validate" placeholder="YOUR CODE" id="code" name="code" required>
                     </div>
-                    <div class="btn button-default" id="submit">CHECK</div>
+                    <div class="btn button-default" id="submit">验证</div>
                 </form>
             </div>
         </div>
@@ -464,12 +464,9 @@
                         success:function(msg){
                             if(msg.code==1){
                                 layer.msg(msg.msg)
-
-
                             }else{
                                 alert(msg.msg)
                                 location.href="password";
-
                             }
                         }
 

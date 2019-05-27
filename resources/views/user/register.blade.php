@@ -367,7 +367,7 @@
 <div class="pages section">
     <div class="container">
         <div class="pages-head">
-            <h3>REGISTER</h3>
+            <h3>注册</h3>
         </div>
         <div class="register">
             <div class="row">
@@ -387,7 +387,7 @@
                     <div class="input-field">
                         <input type="password" class="validate" id="pwd2" placeholder="YOUR NEW PASSWORD AGAIN" name="user_pwd1"required>
                     </div>
-                    <div class="btn button-default" id="submit">REGISTER</div>
+                    <div class="btn button-default" id="submit">注册 </div>
                 </form>
             </div>
         </div>

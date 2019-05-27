@@ -333,8 +333,7 @@
         <div class="login">
             <h6>邮箱：{{$data->user_email}}</h6>
         </div>
-        <a href="password" class="btn button-default">我的收藏</a>
-        <a href="password" class="btn button-default">我的订单</a>
+        <a href="" class="btn button-default">我的收藏</a>
 
     </div>
 </div>

@@ -703,6 +703,7 @@
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
+<<<<<<< HEAD
               <caret line="60" column="45" lean-forward="false" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
               <folding />
             </state>
@@ -714,16 +715,47 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="7473">
               <caret line="421" column="25" lean-forward="false" selection-start-line="421" selection-start-column="25" selection-end-line="421" selection-end-column="25" />
+=======
+              <caret line="53" column="55" lean-forward="true" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
+>>>>>>> zhangyang
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/home/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8337">
+              <caret line="457" column="25" lean-forward="true" selection-start-line="457" selection-start-column="25" selection-end-line="457" selection-end-column="25" />
+              <folding>
+                <marker date="1558918633558" expanded="true" signature="17165:17178" ph="..." />
+                <marker date="1558918633558" expanded="true" signature="17251:17263" ph="..." />
+                <marker date="1558918633558" expanded="true" signature="17269:17283" ph="..." />
+                <marker date="1558918633558" expanded="true" signature="17362:17378" ph="..." />
+                <marker date="1558918633558" expanded="true" signature="17390:17405" ph="..." />
+                <marker date="1558918633558" expanded="true" signature="18407:18420" ph="..." />
+                <marker date="1558918633558" expanded="true" signature="18494:18506" ph="..." />
+                <marker date="1558918633558" expanded="true" signature="18512:18526" ph="..." />
+                <marker date="1558918633558" expanded="true" signature="18601:18617" ph="..." />
+                <marker date="1558918633558" expanded="true" signature="18629:18644" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> zhangyang
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="307">
+<<<<<<< HEAD
               <caret line="181" column="17" lean-forward="false" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
+=======
+              <caret line="181" column="17" lean-forward="true" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
+>>>>>>> zhangyang
               <folding>
                 <element signature="e#44#80#0#PHP" expanded="true" />
                 <element signature="e#386#463#0#PHP" expanded="false" />
@@ -743,6 +775,7 @@
             <state relative-caret-position="451">
               <caret line="335" column="17" lean-forward="false" selection-start-line="335" selection-start-column="17" selection-end-line="335" selection-end-column="17" />
               <folding>
+<<<<<<< HEAD
                 <marker date="1558921284161" expanded="true" signature="12735:12751" ph="..." />
                 <marker date="1558921284161" expanded="true" signature="12824:12839" ph="..." />
                 <marker date="1558921284161" expanded="true" signature="12911:12928" ph="..." />
@@ -758,6 +791,11 @@
                 <marker date="1558921284161" expanded="true" signature="14288:14565" ph="{...}" />
                 <marker date="1558921284161" expanded="true" signature="14327:14437" ph="{...}" />
                 <marker date="1558921284161" expanded="true" signature="14441:14547" ph="{...}" />
+=======
+                <marker date="1558920994965" expanded="true" signature="12735:12751" ph="..." />
+                <marker date="1558920994965" expanded="true" signature="12824:12839" ph="..." />
+                <marker date="1558920994965" expanded="true" signature="12911:12928" ph="..." />
+>>>>>>> zhangyang
               </folding>
             </state>
           </provider>
@@ -766,11 +804,17 @@
       <file leaf-file-name="CartController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cart/CartController.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="67">
               <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
               <folding>
                 <marker date="1558921292501" expanded="true" signature="3527:3535" ph="{...}" />
               </folding>
+=======
+            <state relative-caret-position="43">
+              <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+              <folding />
+>>>>>>> zhangyang
             </state>
           </provider>
         </entry>
@@ -779,6 +823,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/user/pwdshow.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
+<<<<<<< HEAD
               <caret line="368" column="32" lean-forward="false" selection-start-line="368" selection-start-column="32" selection-end-line="368" selection-end-column="32" />
               <folding>
                 <marker date="1558921284161" expanded="true" signature="14860:14889" ph="..." />
@@ -802,6 +847,10 @@
                 <marker date="1558921284161" expanded="true" signature="17202:17316" ph="{...}" />
                 <marker date="1558921284161" expanded="true" signature="17320:17430" ph="{...}" />
               </folding>
+=======
+              <caret line="368" column="32" lean-forward="true" selection-start-line="368" selection-start-column="32" selection-end-line="368" selection-end-column="32" />
+              <folding />
+>>>>>>> zhangyang
             </state>
           </provider>
         </entry>
@@ -811,6 +860,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="369" column="20" lean-forward="false" selection-start-line="369" selection-start-column="20" selection-end-line="369" selection-end-column="20" />
+<<<<<<< HEAD
               <folding>
                 <marker date="1558921284161" expanded="true" signature="17884:17914" ph="{...}" />
                 <marker date="1558921284161" expanded="true" signature="17884:17940" ph="{...}" />
@@ -847,6 +897,9 @@
                 <marker date="1558921284161" expanded="true" signature="21651:21779" ph="{...}" />
                 <marker date="1558921284161" expanded="true" signature="21783:21907" ph="{...}" />
               </folding>
+=======
+              <folding />
+>>>>>>> zhangyang
             </state>
           </provider>
         </entry>
@@ -855,6 +908,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/user/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="341">
+<<<<<<< HEAD
               <caret line="334" column="66" lean-forward="false" selection-start-line="334" selection-start-column="66" selection-end-line="334" selection-end-column="66" />
               <folding>
                 <marker date="1558921284161" expanded="true" signature="13243:13272" ph="..." />
@@ -869,6 +923,10 @@
                 <marker date="1558921284161" expanded="true" signature="14338:14444" ph="{...}" />
                 <marker date="1558921284161" expanded="true" signature="14464:14527" ph="{...}" />
               </folding>
+=======
+              <caret line="334" column="63" lean-forward="false" selection-start-line="334" selection-start-column="63" selection-end-line="334" selection-end-column="63" />
+              <folding />
+>>>>>>> zhangyang
             </state>
           </provider>
         </entry>
@@ -878,6 +936,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="96">
               <caret line="369" column="18" lean-forward="false" selection-start-line="369" selection-start-column="18" selection-end-line="369" selection-end-column="18" />
+<<<<<<< HEAD
               <folding>
                 <marker date="1558921284161" expanded="true" signature="15396:15425" ph="..." />
                 <marker date="1558921284161" expanded="true" signature="15396:15444" ph="..." />
@@ -907,6 +966,9 @@
                 <marker date="1558921284161" expanded="true" signature="19069:19183" ph="{...}" />
                 <marker date="1558921284161" expanded="true" signature="19187:19254" ph="{...}" />
               </folding>
+=======
+              <folding />
+>>>>>>> zhangyang
             </state>
           </provider>
         </entry>
@@ -937,13 +999,20 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/pay/MoneyController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/setting.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/history/HistoryController.php" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/routes/web.php" />
+>>>>>>> zhangyang
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/pwdshow.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/password.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/mycenter.blade.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/routes/web.php" />
+=======
+>>>>>>> zhangyang
       </list>
     </option>
   </component>
@@ -1282,7 +1351,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="45362000" />
+=======
+    <option name="totallyTimeSpent" value="45288000" />
+>>>>>>> zhangyang
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -2221,9 +2294,34 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home/index.blade.php">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7473">
           <caret line="421" column="25" lean-forward="false" selection-start-line="421" selection-start-column="25" selection-end-line="421" selection-end-column="25" />
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8337">
+          <caret line="457" column="25" lean-forward="true" selection-start-line="457" selection-start-column="25" selection-end-line="457" selection-end-column="25" />
+          <folding>
+            <marker date="1558918633558" expanded="true" signature="17165:17178" ph="..." />
+            <marker date="1558918633558" expanded="true" signature="17251:17263" ph="..." />
+            <marker date="1558918633558" expanded="true" signature="17269:17283" ph="..." />
+            <marker date="1558918633558" expanded="true" signature="17362:17378" ph="..." />
+            <marker date="1558918633558" expanded="true" signature="17390:17405" ph="..." />
+            <marker date="1558918633558" expanded="true" signature="18407:18420" ph="..." />
+            <marker date="1558918633558" expanded="true" signature="18494:18506" ph="..." />
+            <marker date="1558918633558" expanded="true" signature="18512:18526" ph="..." />
+            <marker date="1558918633558" expanded="true" signature="18601:18617" ph="..." />
+            <marker date="1558918633558" expanded="true" signature="18629:18644" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="369" column="18" lean-forward="false" selection-start-line="369" selection-start-column="18" selection-end-line="369" selection-end-column="18" />
+>>>>>>> zhangyang
           <folding />
         </state>
       </provider>
@@ -2267,6 +2365,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/user/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
+<<<<<<< HEAD
           <caret line="334" column="66" lean-forward="false" selection-start-line="334" selection-start-column="66" selection-end-line="334" selection-end-column="66" />
           <folding>
             <marker date="1558921284161" expanded="true" signature="13243:13272" ph="..." />
@@ -2281,6 +2380,10 @@
             <marker date="1558921284161" expanded="true" signature="14338:14444" ph="{...}" />
             <marker date="1558921284161" expanded="true" signature="14464:14527" ph="{...}" />
           </folding>
+=======
+          <caret line="334" column="63" lean-forward="false" selection-start-line="334" selection-start-column="63" selection-end-line="334" selection-end-column="63" />
+          <folding />
+>>>>>>> zhangyang
         </state>
       </provider>
     </entry>
@@ -2288,6 +2391,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="369" column="20" lean-forward="false" selection-start-line="369" selection-start-column="20" selection-end-line="369" selection-end-column="20" />
+<<<<<<< HEAD
           <folding>
             <marker date="1558921284161" expanded="true" signature="17884:17914" ph="{...}" />
             <marker date="1558921284161" expanded="true" signature="17884:17940" ph="{...}" />
@@ -2324,13 +2428,20 @@
             <marker date="1558921284161" expanded="true" signature="21651:21779" ph="{...}" />
             <marker date="1558921284161" expanded="true" signature="21783:21907" ph="{...}" />
           </folding>
+=======
+          <folding />
+>>>>>>> zhangyang
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
+<<<<<<< HEAD
           <caret line="181" column="17" lean-forward="false" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
+=======
+          <caret line="181" column="17" lean-forward="true" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
+>>>>>>> zhangyang
           <folding>
             <element signature="e#44#80#0#PHP" expanded="true" />
             <element signature="e#386#463#0#PHP" expanded="false" />
@@ -2345,17 +2456,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cart/CartController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="67">
           <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding>
             <marker date="1558921292501" expanded="true" signature="3527:3535" ph="{...}" />
           </folding>
+=======
+        <state relative-caret-position="43">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+>>>>>>> zhangyang
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/pwdshow.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
+<<<<<<< HEAD
           <caret line="368" column="32" lean-forward="false" selection-start-line="368" selection-start-column="32" selection-end-line="368" selection-end-column="32" />
           <folding>
             <marker date="1558921284161" expanded="true" signature="14860:14889" ph="..." />
@@ -2379,6 +2497,10 @@
             <marker date="1558921284161" expanded="true" signature="17202:17316" ph="{...}" />
             <marker date="1558921284161" expanded="true" signature="17320:17430" ph="{...}" />
           </folding>
+=======
+          <caret line="368" column="32" lean-forward="true" selection-start-line="368" selection-start-column="32" selection-end-line="368" selection-end-column="32" />
+          <folding />
+>>>>>>> zhangyang
         </state>
       </provider>
     </entry>
@@ -2387,6 +2509,7 @@
         <state relative-caret-position="451">
           <caret line="335" column="17" lean-forward="false" selection-start-line="335" selection-start-column="17" selection-end-line="335" selection-end-column="17" />
           <folding>
+<<<<<<< HEAD
             <marker date="1558921284161" expanded="true" signature="12735:12751" ph="..." />
             <marker date="1558921284161" expanded="true" signature="12824:12839" ph="..." />
             <marker date="1558921284161" expanded="true" signature="12911:12928" ph="..." />
@@ -2402,6 +2525,11 @@
             <marker date="1558921284161" expanded="true" signature="14288:14565" ph="{...}" />
             <marker date="1558921284161" expanded="true" signature="14327:14437" ph="{...}" />
             <marker date="1558921284161" expanded="true" signature="14441:14547" ph="{...}" />
+=======
+            <marker date="1558920994965" expanded="true" signature="12735:12751" ph="..." />
+            <marker date="1558920994965" expanded="true" signature="12824:12839" ph="..." />
+            <marker date="1558920994965" expanded="true" signature="12911:12928" ph="..." />
+>>>>>>> zhangyang
           </folding>
         </state>
       </provider>
@@ -2409,7 +2537,11 @@
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
+<<<<<<< HEAD
           <caret line="60" column="45" lean-forward="false" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
+=======
+          <caret line="53" column="55" lean-forward="true" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
+>>>>>>> zhangyang
           <folding />
         </state>
       </provider>

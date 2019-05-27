@@ -367,7 +367,7 @@
 <div class="pages section">
     <div class="container">
         <div class="pages-head">
-            <h3>CHANGE YOUR PASSWORD</h3>
+            <h3>修改密码</h3>
         </div>
         <div class="register">
             <div class="row">
@@ -378,7 +378,7 @@
                     <div class="input-group">
                         <input type="password" id="pwd2" class="validate" placeholder="YOUR NEW PASSWORD AGAIN" name="pwd2" required>
                     </div>
-                    <div class="btn button-default" id="submit">CHANGE</div>
+                    <div class="btn button-default" id="submit">修改</div>
                 </form>
             </div>
         </div>
