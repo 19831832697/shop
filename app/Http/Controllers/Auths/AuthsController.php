@@ -10,6 +10,7 @@ use App\Model\Wx_user;
 class AuthsController extends Controller
 {
     public function wxauth(){
+        
         $appid=env('WX_APP');
         $secret=env('WX_APPSECRETl');
         $code=$_GET['code'];
