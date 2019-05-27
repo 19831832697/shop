@@ -13,7 +13,6 @@ class CartController extends Controller
      * @return array
      */
     public function cart(Request $request){
-
         $user_id = $request->cookie('user_id');
         if(empty($user_id)){
             return $res=[
@@ -26,7 +25,8 @@ class CartController extends Controller
 
         $where=[
             'goods_id'=>$goods_id,
-            'user_id'=>$user_id
+            'user_id'=>$user_id,
+            'status'=>1
         ];
         $catr=DB::table('shop_cart')->where($where)->first();
         $arr=DB::table('shop_goods')->where(['goods_id'=>$goods_id])->first();

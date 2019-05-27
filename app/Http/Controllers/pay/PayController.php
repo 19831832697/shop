@@ -67,7 +67,6 @@ class PayController extends Controller
             }
             if($orderInfo){
                 $updateInfo=[
-                    'buy_num'=>0,
                     'status'=>2
                 ];
                 //修改购物车状态
@@ -104,6 +103,7 @@ class PayController extends Controller
             ->join('shop_order','shop_order.order_id','=','shop_order_detail.order_id')
             ->where($where)->get();
         $arr=json_decode($arrInfo,true);
+//        var_dump($arr);die;
         return view('pay/paylist',['arr'=>$arr,'order_no'=>$order_no]);
     }
 }
