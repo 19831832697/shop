@@ -14,6 +14,14 @@ class WeiPayController extends Controller
     public $notify_url='http://app_shop.ffddd.top/wx_notify';
     //微信支付测试
     public function text(){
+   
+        $user_agent=$_SERVER['HTTP_USER_AGENT'];
+        if(strpos($user_agent, 'Android')){ 
+             //手机端微信支付
+
+        }else{
+
+      
         $order_no = intval($_GET['order_no']);    // 订单号
     //   dd($order_no);
       $orderInfo=OrderModel::where(['order_no'=>$order_no])->first();
@@ -66,6 +74,7 @@ class WeiPayController extends Controller
         ];
        
         return view('wei/test',$data);
+    }
     }
 
 
