@@ -14,28 +14,27 @@ class GoodsController extends Controller
     public function goodslist(Request $request){
 
         $id=$request->input('goods_id');
+        $uid=$request->input('user_id');
         $where=[
-            'goods_id'=>$id
+            'goods_id'=>$id,
+//            'user_id'=>$uid
         ];
         //查询商品表
         $res=GoodsModel::where($where)->first();
         $user_id = $request->cookie('user_id');
-        if(empty($user_id)){
-            echo "<script>alert('请先登录');location.href='/login';</script>";
-        }
-        $whereInfo=[
+        if($user_id){
+            $whereInfo=[
             'goods_id'=>$id,
             'user_id'=>$user_id,
-        ];
-        //查询购物车表
-        $car=DB::table('shop_cart')->where($whereInfo)->first();
-        if($car){
-            $status=$car->status;
-            if($status==2){
-                DB::table('shop_cart')->where($whereInfo)->update(['buy_num'=>1]);
-            }
+            ];
+            $car=DB::table('shop_cart')->where($whereInfo)->first();
+        }else{
+            $whereInfo=[
+                'goods_id'=>0,
+                'user_id'=>0,
+            ];
+            $car=DB::table('shop_cart')->where($whereInfo)->first();
         }
-
         //浏览历史
         if(empty($user_id)){
             $data=DB::table('shop_goods')->where($where)->first();
