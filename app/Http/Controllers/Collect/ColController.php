@@ -12,6 +12,7 @@ class ColController extends Controller
     //收藏
     public function add(Request $request){
         $user_id = $request->cookie('user_id');
+        // echo $user_id;die;
         if(empty($user_id)){
             echo "<script>alert('请先登录');location.href='/login';</script>";
         }
@@ -25,7 +26,7 @@ class ColController extends Controller
         if($arr){
             $pwhere=[
                 'praise_id'=>$arr->praise_id,
-                'user_id'=>$_COOKIE['user_id'],
+                'user_id'=>$user_id
             ];
             $p=PraiseModel::where($pwhere)->delete();
 
@@ -40,7 +41,7 @@ class ColController extends Controller
         //添加
         $goodsInfo=GoodsModel::where($where)->first();
         $info=[
-            'user_id'=>$_COOKIE['user_id'],
+            'user_id'=>$user_id,
             'goods_id'=>$goodsInfo->goods_id,
             'praise_name'=>$goodsInfo->goods_name,
             'praise_price'=>$goodsInfo->goods_price,
@@ -62,7 +63,7 @@ class ColController extends Controller
     }
     //展示
     public function list(Request $request){
-        $arr=PraiseModel::where(['user_id'=>$_COOKIE['user_id']])->orderBy('praise_id','desc')->get();
+        $arr=PraiseModel::where(['user_id'=>$user_id])->orderBy('praise_id','desc')->get();
        // dd($arr);
             return view('col.col',['arr'=>$arr]);
     }
