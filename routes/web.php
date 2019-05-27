@@ -82,5 +82,5 @@ Route::get('wx_text','Wei\WeiPayController@text');
 Route::post('wx_notify','Wei\WeiPayController@notify');
 Route::get('wx_success','Wei\WeiPayController@success');
 
-Route::get('auth/add','Auths\AuthsController@add');
+//微信第三方登录
 Route::get('auth/wxauth','Auths\AuthsController@wxauth');

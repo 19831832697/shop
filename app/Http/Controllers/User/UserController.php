@@ -79,7 +79,10 @@ Class UserController extends Controller
     //登陆页面
     public function login()
     {
-        return view('user.login');
+        $appid=env('WX_APP');
+        $urls=$_SERVER['HTTP_HOST'].'/auth/wxauth';
+        $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=$appid&redirect_uri=http://$urls&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+        return view('user.login',['url'=>$url]);
     }
 
     //登陆

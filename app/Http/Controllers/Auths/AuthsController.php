@@ -8,13 +8,6 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\DB;
 class AuthsController extends Controller
 {
-    //微信授权
-    public function add(){
-        $appid=env('WX_APP');
-        $urls=$_SERVER['HTTP_HOST'].'/wxauth';
-        $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=$appid&redirect_uri=http://$urls&scope=snsapi_userinfo&state=STATE#wechat_redirect";
-        dd($url);
-    }
     public function wxauth(){
         $appid=env('WX_APP');
         $secret=env('WX_APPSECRETl');
