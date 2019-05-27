@@ -378,14 +378,12 @@
                     <div class="price">
                         价格:<span>{{$v['goods_price']}}</span> 市场价格:{{$v['market_price']}}
                     </div>
-                    <div>
-                        总价:{{$v['order_amount']}}
-                    </div>
-
                 </div>
             </div>
-           
             @endforeach
+            <div>
+                <h3>总价:{{$v['order_amount']}}</h3>
+            </div>
         </div>
         {{--<input type="button" class="button-default" id="btn" value="支付宝支付">--}}
         <button><a href="/z_pay?order_no={{$order_no}}">支付宝支付</a></button>
