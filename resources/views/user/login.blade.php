@@ -328,8 +328,16 @@
                     <div class="input-field">
                         <input type="password" class="validate" placeholder="PASSWORD" name="user_pwd" required>
                     </div>
-                    <a href="password"><h6>忘记密码?</h6></a>
-                    <a href="register"><h6>没有注册?去注册?</h6></a>
+                        <a href="password">忘记密码?</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="register">没有注册?去注册?</a>
+                    <div class="input-field">
+                        <h6>第三方登录</h6>
+                        <p>
+                            <a href="/auth/add">
+                                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558948129305&di=7b077979fe155a14ff77fd0225ce3e13&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Ff89a35d2617c0c2b83f9c6149021b383cd6b977730fa-Al3vpM_fw658" alt="" style="width: 40px;;">
+                            </a>
+                        </p>
+                    </div>
+
                     {{--<a href="" class="btn button-default" id="sub">LOGIN</a>--}}
                     {{--<button id="sub">登陆</button>--}}
                     <div class="btn button-default" id="sub">登陆</div>

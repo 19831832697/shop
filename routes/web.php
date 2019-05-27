@@ -82,5 +82,5 @@ Route::get('wx_text','Wei\WeiPayController@text');
 Route::post('wx_notify','Wei\WeiPayController@notify');
 Route::get('wx_success','Wei\WeiPayController@success');
 
-Route::get('/add','Auths\AuthsController@add');
-Route::get('/wxauth','Auths\AuthsController@wxauth');
+Route::get('auth/add','Auths\AuthsController@add');
+Route::get('auth/wxauth','Auths\AuthsController@wxauth');

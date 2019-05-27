@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auths;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\DB;
 class AuthsController extends Controller
 {
     //微信授权
@@ -26,7 +27,18 @@ class AuthsController extends Controller
         $url="https://api.weixin.qq.com/sns/userinfo?access_token=$access_token&openid=$openid&lang=zh_CN";
         $user=file_get_contents($url);
         $urlinfo=json_decode($user,true);
-        dd($urlinfo);
+        $info=[
+            'openid'=>$urlinfo['openid'],
+            'nickname'=>$urlinfo['nickname'],
+            'sex'=>$urlinfo['sex'],
+            'headimgurl'=>$urlinfo['headimgurl'],
+        ];
+        $ser=DB::table('wx_user')->insert($info);
+        if($res){
+            echo "<script>alert('登录成功');location.href='/';</script>";
+        }else{
+            echo "<script>alert('微信授权失败');location.href='/login';</script>";
+        }
     }
     //getcurl
     public function getcurl($url){
