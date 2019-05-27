@@ -332,7 +332,7 @@
                     <div class="input-field">
                         <h6>第三方登录</h6>
                         <p>
-                            <a href="/auth/add">
+                            <a href="{{$url}}">
                                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558948129305&di=7b077979fe155a14ff77fd0225ce3e13&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Ff89a35d2617c0c2b83f9c6149021b383cd6b977730fa-Al3vpM_fw658" alt="" style="width: 40px;;">
                             </a>
                         </p>
