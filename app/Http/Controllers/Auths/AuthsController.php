@@ -23,20 +23,33 @@ class AuthsController extends Controller
         $url="https://api.weixin.qq.com/sns/userinfo?access_token=$access_token&openid=$openid&lang=zh_CN";
         $user=file_get_contents($url);
         $urlinfo=json_decode($user,true);
-        $info=[
-            'user_name'=>$urlinfo['nickname'],
-            'user_img'=>$urlinfo['headimgurl'],
-            'add_time'=>time()
-        ];
-        $res=UserModel::insertGetId($info);
-        $wx_info=[
-            'openid'=>$urlinfo['openid'],
-            'nickname'=>$urlinfo['nickname'],
-            'sex'=>$urlinfo['sex'],
-            'headimgurl'=>$urlinfo['headimgurl'],
-            'user_id'=>$res
-        ];
-        $res=Wx_user::insert($wx_info);
-        Cookie::queue('user_id', $res);
+        $user_info=UserModel::where(['user_name'=>$urlinfo['nickname']])->first();
+        if($user_info){
+            $user_id=$user_info->user_id;
+            Cookie::queue('user_id', $user_id);
+            echo "<script>alert('欢迎回来');location.href='/';</script>";
+        }else{
+            $info=[
+                'user_name'=>$urlinfo['nickname'],
+                'user_img'=>$urlinfo['headimgurl'],
+                'add_time'=>time()
+            ];
+            $res=UserModel::insertGetId($info);
+            $wx_info=[
+                'openid'=>$urlinfo['openid'],
+                'nickname'=>$urlinfo['nickname'],
+                'sex'=>$urlinfo['sex'],
+                'headimgurl'=>$urlinfo['headimgurl'],
+                'user_id'=>$res
+            ];
+            $reas=Wx_user::insert($wx_info);
+            Cookie::queue('user_id', $res);
+            if($res){
+                echo "<script>alert('授权成功');location.href='/';</script>";
+            }else{
+                echo "<script>alert('授权失败');location.href='/login';</script>";
+            }
+        }
+
     }
 }
