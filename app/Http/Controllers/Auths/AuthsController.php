@@ -11,7 +11,8 @@ class AuthsController extends Controller
     public function add(){
         $appid=env('WX_APP');
         $urls=$_SERVER['HTTP_HOST'].'/wxauth';
-        $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=$appid&redirect_uri=$urls&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+        $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=$appid&redirect_uri=http://$urls&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+        dd($url);
     }
     public function wxauth(){
         $appid=env('WX_APP');
