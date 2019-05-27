@@ -63,6 +63,7 @@ class ColController extends Controller
     }
     //展示
     public function list(Request $request){
+        $user_id = $request->cookie('user_id');
         $arr=PraiseModel::where(['user_id'=>$user_id])->orderBy('praise_id','desc')->get();
        // dd($arr);
             return view('col.col',['arr'=>$arr]);
