@@ -18,11 +18,12 @@ class AuthsController extends Controller
         $appid=env('WX_APP');
         $secret=env('WX_APPSECRETl');
         $code=$_GET['code'];
-        $token="https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$secret&code=$code&grant_type=authorization_code";
-        echo $this->getcurl($token);die;
-//        echo "获取token";print_r($token);echo "<br>";
-//        $access_token="https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=$appid&grant_type=refresh_token&refresh_token=$token";
-//        echo "获取access_token";print_r($access_token);echo "<br>";
+        $tokenurl="https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$secret&code=$code&grant_type=authorization_code";
+        $token=$this->getcurl($tokenurl);
+        $access_tokenurl="https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=$appid&grant_type=refresh_token&refresh_token=$token";
+        $access_token=$this->getcurl($access_tokenurl);
+        $access_token_arr=json_decode($access_token,true);
+        echo "获取access_token";print_r($access_token_arr);echo "<br>";
     }
     //curl
     public function getcurl($url){
