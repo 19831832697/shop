@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\Cookie;
 use App\Model\Wx_user;
 class AuthsController extends Controller
 {
-    public function wxauth(){
-        
+    public function wxauth(Request $request){
         $appid=env('WX_APP');
         $secret=env('WX_APPSECRETl');
         $code=$_GET['code'];
@@ -24,25 +23,20 @@ class AuthsController extends Controller
         $user=file_get_contents($url);
         $urlinfo=json_decode($user,true);
         $info=[
+            'user_name'=>$urlinfo['nickname'],
+            'user_img'=>$urlinfo['headimgurl'],
+            'add_time'=>time()
+        ];
+        $res=Wx_user::insertGetId($info);
+        $wx_info=[
             'openid'=>$urlinfo['openid'],
             'nickname'=>$urlinfo['nickname'],
             'sex'=>$urlinfo['sex'],
             'headimgurl'=>$urlinfo['headimgurl'],
+            'user_id'=>$res
         ];
-        $acc=DB::table('wx_user')->where(['openid'=>$urlinfo['openid']])->first();
-        if($acc){
-            $wx_id=$acc->wx_id;
-            Cookie::queue('wx_id', $wx_id);
-            echo "<script>alert('欢迎回来');location.href='/';</script>";
-        }else{
-            $res=Wx_user::insertGetId($info);
-            $wx_id=$res;
-            Cookie::queue('wx_id', $wx_id);
-            if($res){
-                echo "<script>alert('登录成功');location.href='/';</script>";
-            }else{
-                echo "<script>alert('微信授权失败');location.href='/login';</script>";
-            }
-        }
+        $res=Wx_user::insertGetId($wx_info);
+        Cookie::queue('user_id', $res);
+
     }
 }
