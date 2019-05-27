@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\DB;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Cookie;
+=======
+>>>>>>> cuifang
 use App\Model\Wx_user;
 class AuthsController extends Controller
 {
@@ -28,6 +31,7 @@ class AuthsController extends Controller
             'sex'=>$urlinfo['sex'],
             'headimgurl'=>$urlinfo['headimgurl'],
         ];
+<<<<<<< HEAD
         $acc=DB::table('wx_user')->where(['openid'=>$urlinfo['openid']])->first();
         $wx_id=$acc->wx_id;
         if($acc){
@@ -38,6 +42,15 @@ class AuthsController extends Controller
             
             if($res){
                 Cookie::queue('wx_id', $wx_id);
+=======
+        $acc=DB::table('wx_user')->where(['openid'=>$openid])->first();
+        if($acc){
+            echo "<script>alert('欢迎回来');location.href='/login';</script>";
+        }else{
+            $res=Wx_user::insertId($info);
+            dd($res);
+            if($res){
+>>>>>>> cuifang
                 echo "<script>alert('登录成功');location.href='/';</script>";
             }else{
                 echo "<script>alert('微信授权失败');location.href='/login';</script>";
