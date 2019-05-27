@@ -81,3 +81,6 @@ Route::get('aliReturn','pay\MoneyController@aliReturn');//同步回调
 Route::get('wx_text','Wei\WeiPayController@text');
 Route::post('wx_notify','Wei\WeiPayController@notify');
 Route::get('wx_success','Wei\WeiPayController@success');
+
+Route::get('/add','Auths\AuthsController@add');
+Route::get('/wxauth','Auths\AuthsController@wxauth');

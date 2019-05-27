@@ -14,4 +14,7 @@ Route::group([
     $router->resource('/goods', GoodsController::class);
 
     $router->resource('/goods', GoodsController::class);
+
+    //购物车
+    $router->resource('/crue', CrueController::class);
 });
