@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\PraiseModel;
 use App\Model\GoodsModel;
+use Illuminate\Support\Facades\Cookie;
 class ColController extends Controller
 {
     //收藏
     public function add(Request $request){
-        if(empty($_COOKIE['user_id'])){
+        $user_id = $request->cookie('user_id');
+        if(empty($user_id)){
             echo "<script>alert('请先登录');location.href='/login';</script>";
         }
         $id=$request->input('id');

@@ -6,6 +6,7 @@ use App\Model\PayModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cookie;
 
 class PayController extends Controller
 {
@@ -15,7 +16,7 @@ class PayController extends Controller
      * @return false|string
      */
     public function pay(Request $request){
-        $user_id=$_COOKIE['user_id'];
+        $user_id = $request->cookie('user_id');
         $goods_id=$request->input('goods_id');
         $order_amount=$request->input('order_amount');
         if(empty($user_id)){
@@ -93,7 +94,7 @@ class PayController extends Controller
      */
     public function paylist(Request $request){
         $order_no=$request->input('order_no');
-        $user_id=$_COOKIE['user_id'];
+        $user_id = $request->cookie('user_id');
         $where=[
             'shop_order_detail.order_no'=>$order_no,
             'shop_order_detail.user_id'=>$user_id

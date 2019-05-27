@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Model\GoodsModel;
 use App\Model\PraiseModel;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cookie;
 class GoodsController extends Controller
 {
     //商品详情
@@ -18,12 +19,13 @@ class GoodsController extends Controller
         ];
         //查询商品表
         $res=GoodsModel::where($where)->first();
-        if(empty($_COOKIE['user_id'])){
+        $user_id = $request->cookie('user_id');
+        if(empty($user_id)){
             echo "<script>alert('请先登录');location.href='/login';</script>";
         }
         $whereInfo=[
             'goods_id'=>$id,
-            'user_id'=>$_COOKIE['user_id'],
+            'user_id'=>$user_id,
         ];
         //查询购物车表
         $car=DB::table('shop_cart')->where($whereInfo)->first();
@@ -35,7 +37,6 @@ class GoodsController extends Controller
         }
 
         //浏览历史
-        $user_id=$_COOKIE['user_id'];
         if(empty($user_id)){
             $data=DB::table('shop_goods')->where($where)->first();
             if($data){
@@ -86,11 +87,11 @@ class GoodsController extends Controller
      * 浏览记录展示
      * @return false|string
      */
-    public function historyShow(){
-        if(empty($_COOKIE['user_id'])){
+    public function historyShow(Request $request){
+        $user_id = $request->cookie('user_id');
+        if(empty($user_id)){
             echo "<script>alert('请先登录');location.href='/login';</script>";
         }
-        $user_id=$_COOKIE['user_id'];
         if(empty($user_id)){
             $arr=DB::table('shop_goods')->orderBy('is_tell','desc')->limit(10);
         }else{
@@ -107,12 +108,12 @@ class GoodsController extends Controller
     /**
      * 收藏
      */
-    public function aaa(){
-
+    public function aaa(Request $request){
+        $user_id = $request->cookie('user_id');
         $id=$_GET['goods_id'];
         $where=[
             'goods_id'=>$id,
-            'user_id'=>$_COOKIE['user_id']
+            'user_id'=>$user_id
         ];
         $res=PraiseModel::where($where)->first();
         if(empty($res)){
