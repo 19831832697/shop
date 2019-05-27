@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cookie;
+use App\Model\Wx_user;
 class AuthsController extends Controller
 {
     public function wxauth(){
@@ -26,11 +28,20 @@ class AuthsController extends Controller
             'sex'=>$urlinfo['sex'],
             'headimgurl'=>$urlinfo['headimgurl'],
         ];
-        $ser=DB::table('wx_user')->insert($info);
-        if($res){
-            echo "<script>alert('登录成功');location.href='/';</script>";
+        $acc=DB::table('wx_user')->where(['openid'=>$urlinfo['openid']])->first();
+        $wx_id=$acc->wx_id;
+        if($acc){
+            echo "<script>alert('欢迎回来');location.href='/';</script>";
         }else{
-            echo "<script>alert('微信授权失败');location.href='/login';</script>";
+            $res=DB::insertId($info);
+            dd($res);
+            
+            if($res){
+                Cookie::queue('wx_id', $wx_id);
+                echo "<script>alert('登录成功');location.href='/';</script>";
+            }else{
+                echo "<script>alert('微信授权失败');location.href='/login';</script>";
+            }
         }
     }
     //getcurl
