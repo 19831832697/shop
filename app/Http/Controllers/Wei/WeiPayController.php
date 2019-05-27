@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Wei;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Wei\WXBizDataCryptController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Model\OrderModel;
 class WeiPayController extends Controller
@@ -184,7 +185,41 @@ class WeiPayController extends Controller
                 //更新数据库 xml->cash_fee物品最后交易成功的价格 
                 $pay_time = strtotime($xml->time_end);
                 OrderModel::where(['order_sn'=>$xml->out_trade_no])->update(['order_amount'=>$xml->cash_fee,'pay_time'=>$pay_time,'is_status'=>1]);
+                $out_trade_no=$xml->out_trade_no;
+                $where=[
+                    'order_no'=>$out_trade_no
+                ];
+                //修改订单表
+                $updateInfo=[
+                    'pay_status'=>2,
+                    'pay_way'=>2,
+                    'status'=>2,
+                ];
+                DB::table('shop_order')->where($where)->update($updateInfo);
+                $dataInfo=DB::table('shop_order_detail')->where($where)->get();
+                $data=[];
+                foreach($dataInfo as $k=>$v){
+                    $data[]=$v->goods_id;
+                }
+                //查询商品表获取商品库存
+                $arrInfo=DB::table('shop_goods')
+                    ->join('shop_cart','shop_goods.goods_id','=','shop_cart.goods_id')
+                    ->whereIn('shop_goods.goods_id',$data)->get();
 
+                foreach($arrInfo as $k=>$v){
+                    $goods_num=$v->goods_num;
+                    $buy_num=$v->buy_num;
+                    $goodsInfo=[
+                        'goods_num'=>$goods_num-$buy_num
+                    ];
+                    DB::table('shop_goods')->where('goods_id',$v->goods_id)->update($goodsInfo);
+                }
+                //修改订单详情表
+                $detailInfo=[
+                    'buy_num'=>0,
+                    'utime'=>time(),
+                ];
+                DB::table('shop_order_detail')->where($where)->update($detailInfo);
             }else{
                 //TODO 验签失败
                 echo '验签失败，IP: '.$_SERVER['REMOTE_ADDR'];

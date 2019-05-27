@@ -26,8 +26,9 @@ class GoodsController extends Controller
         $user_id = $request->cookie('user_id');
         if($user_id){
             $whereInfo=[
-            'goods_id'=>$id,
-            'user_id'=>$user_id,
+                'goods_id'=>$id,
+                'user_id'=>$user_id,
+                'status'=>1
             ];
             $car=DB::table('shop_cart')->where($whereInfo)->first();
         }else{
