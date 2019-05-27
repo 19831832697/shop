@@ -49,6 +49,7 @@ class PayController extends Controller
         //订单详情
         $arrInfo=DB::table('shop_goods')
             ->join('shop_cart','shop_goods.goods_id','=','shop_cart.goods_id')
+            ->where('status',1)
             ->whereIn('shop_goods.goods_id',$goodsId)
             ->get()->toArray();
         if(!empty($arrInfo)){
@@ -103,7 +104,6 @@ class PayController extends Controller
             ->join('shop_order','shop_order.order_id','=','shop_order_detail.order_id')
             ->where($where)->get();
         $arr=json_decode($arrInfo,true);
-//        var_dump($arr);die;
         return view('pay/paylist',['arr'=>$arr,'order_no'=>$order_no]);
     }
 }
