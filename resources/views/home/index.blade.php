@@ -45,7 +45,7 @@
             <img src="img/profile.jpg" alt="">
             <h2>John Doe</h2>
         </li>
-        <li><a href="/aboutus"><i class="fa fa-cog"></i>个人中心</a></li>
+        <li><a href="/mycenter"><i class="fa fa-cog"></i>个人中心</a></li>
         <li><a href="/aboutus"><i class="fa fa-user"></i>关于我们</a></li>
         <li><a href="contact"><i class="fa fa-envelope-o"></i>联系我们</a></li>
         <li><a href="login"><i class="fa fa-sign-in"></i>登录</a></li>
